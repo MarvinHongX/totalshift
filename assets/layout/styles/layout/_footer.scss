@@ -1,0 +1,31 @@
+.layout-footer {
+    transition: margin-left $transitionDuration;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--gray-400);
+    background-color: var(--surface-c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 9rem 3rem 9rem;
+    border-top: 1px solid var(--surface-border);
+
+    .footer-content {
+        width: 100%;
+        color: var(--gray-400);
+    }
+    .footer-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-separator {
+        height: 1px;
+        background-color: var(--surface-200);
+        margin: 2.5rem 0;
+    }
+    .footer-copyright {
+        font-weight: 600;
+        text-align: right;
+    }
+}

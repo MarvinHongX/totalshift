@@ -1,0 +1,271 @@
+<script setup>
+import { ref, onBeforeMount } from 'vue';
+const { filecoinUrl, filecoinBackgroundUrl } = useImg();
+const loading =ref(true);
+const tabItems = ref([
+    { name: 'f01115949', score: null, power: null, balance: null },
+    { name: 'f01770778', score: null, power: null, balance: null },
+    { name: 'f01900525', score: null, power: null, balance: null },
+    { name: 'f01924824', score: null, power: null, balance: null },
+    { name: 'f01927163', score: null, power: null, balance: null },
+    { name: 'f01924891', score: null, power: null, balance: null },
+]);
+
+const getScore = async (minerId) => {
+    // return 96;
+    try {
+        const response = await $fetch('/api/miner/score', {
+            method: 'POST',
+            body: minerId,
+            headers: {
+                'Content-Type': 'text/plain'
+            }
+        });
+        const scoreData = response.data;
+        return scoreData.miner.score || 96;
+    } catch (error) {
+        console.error('Error fetching score:', error);
+        return 96;
+    }
+};
+const getPower = async (minerId) => {
+    try {
+        const response = await $fetch('/api/miner/power', {
+            method: 'POST',
+            body: minerId,
+            headers: {
+                'Content-Type': 'text/plain'
+            }
+        });
+        const powerData = response;
+        const lastPowerInfo = powerData[powerData.length - 1];
+
+        const extractedInfo = {
+            height: lastPowerInfo.height,
+            timestamp: lastPowerInfo.timestamp,
+            rawBytePower: lastPowerInfo.rawBytePower,
+            qualityAdjPower: lastPowerInfo.qualityAdjPower
+        };
+
+        return extractedInfo;
+    } catch (error) {
+        console.error('Error fetching power:', error);
+        return null;
+    }
+};
+
+const getBalance = async (minerId) => {
+    try {
+        const response = await $fetch('/api/miner/balance', {
+            method: 'POST',
+            body: minerId,
+            headers: {
+                'Content-Type': 'text/plain'
+            }
+        });
+        const balanceData = response;
+        const lastBalanceInfo = balanceData[balanceData.length - 1];
+
+        const extractedInfo = {
+            height: lastBalanceInfo.height,
+            timestamp: lastBalanceInfo.timestamp,
+            balance: lastBalanceInfo.balance,
+            availableBalance: lastBalanceInfo.availableBalance,
+            sectorPledgeBalance: lastBalanceInfo.sectorPledgeBalance,
+            vestingFunds: lastBalanceInfo.vestingFunds
+
+        };
+
+        return extractedInfo;
+    } catch (error) {
+        console.error('Error fetching balance:', error);
+        return null;
+    }
+};
+
+onBeforeMount(async () => {
+    const scorePromises = tabItems.value.map(tab => getScore(tab.name));
+    const powerPromises = tabItems.value.map(tab => getPower(tab.name));
+    const balancePromises = tabItems.value.map(tab => getBalance(tab.name));
+
+    const scores = await Promise.all(scorePromises);
+    const powers = await Promise.all(powerPromises);
+    const balances = await Promise.all(balancePromises);
+
+    tabItems.value = tabItems.value.map((item, index) => ({
+        ...item,
+        score: scores[index],
+        power: powers[index],
+        balance: balances[index],
+    }));
+
+    loading.value = false;
+});
+</script>
+<template>
+    <FullCard v-if="!loading" class="section-filecoinnode flex flex-column align-items-start justify-content-start">
+        <div class="filecoinnode-header mb-1">
+            <span>Total Shift</span>
+        </div>
+        <div class="filecoinnode-header mb-4">
+            <span>Filecoin Node</span>
+        </div>
+        <div class="filecoinnode-header2 mb-7">
+            <span>(주) 토탈쉬프트 파일코인 노드 운영현황</span>
+        </div>
+        <div class="filecoinnode-header2 mb-1">
+            <span>Update: {{ formatTimestampYYYYMMDDHHMMSS(tabItems[0].balance.timestamp) }}</span>
+        </div>
+        <div class="filecoinnode-item flex flex-row justify-content-between mb-7">
+            <div class="filecoinnode-item-left flex flex-column align-items-center justify-content-center" :style="{ backgroundImage: `url(${filecoinBackgroundUrl})` }">
+                <div class="filecoinnode-img-wrapper">
+                    <img :src="filecoinUrl" alt="filecoin" class="filecoinnode-img" />
+                </div>
+            </div>
+            <div class="filecoinnode-item-center flex flex-column align-items-center justify-content-evenly">
+                <div class="flex flex-column align-items-center justify-content-end">
+                    <div class="filecoinnode-header5">
+                        Total Adjusted Power
+                    </div>
+                    <div class="flex flex-row align-items-end">
+                        <span v-if="tabItems" class="filecoinnode-header3-point">
+                            {{
+                                tabItems.length > 0 
+                                    ? bytesToPiB(tabItems.reduce((acc, tab) => acc + (parseFloat(tab.power?.qualityAdjPower || 0)), 0))
+                                    : '0.00'
+                            }}
+                        </span>
+                        <span class="filecoinnode-header4-point">PiB</span>
+                    </div>
+                </div>
+                <div class="filecoinnode-header2">
+                    <span>filfox.io</span>
+                </div>                  
+            </div>
+            <div class="filecoinnode-item-right flex flex-column align-items-center justify-content-evenly">
+                <div class="flex flex-column align-items-center justify-content-end">
+                    <div class="filecoinnode-header5">
+                        Average Score
+                    </div>
+                    <div class="flex flex-row align-items-end">
+                        <span v-if="tabItems" class="filecoinnode-header3-point">
+                            {{
+                                tabItems.length > 0 
+                                    ? (tabItems.reduce((acc, tab) => acc + (tab.score || 0), 0) / tabItems.length).toFixed(2)
+                                    : '0.00'
+                            }}
+                        </span>
+                    </div>
+                </div>
+                <div class="filecoinnode-header2">
+                    <span>console.filswan.com</span>
+                </div>                  
+            </div>
+        </div>
+        <div v-if="tabItems" class="filecoinnode-tab flex flex-rows">
+            <TabView2 :tabItems="tabItems" />
+        </div>
+    </FullCard>
+</template>
+
+<style lang="scss" scoped>
+.section-filecoinnode {
+    height: 1500px;
+    padding-top: 0rem;
+    background-color: #070707;
+    padding: 9rem;
+    .filecoinnode-header {
+        color: #EEEEEE;
+        font-weight: 700;
+        font-size: 45px;
+    }
+    .filecoinnode-header-point {
+        color: #42C1CA;
+    }
+    .filecoinnode-header2 {
+        color: #EEEEEE;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .filecoinnode-header3-point {
+        color: #42C1CA;
+        font-weight: 500;
+        font-size: 90px;
+    }
+    .filecoinnode-header4-point {
+        color: #42C1CA;
+        font-weight: 500;
+        font-size: 50px;
+    }
+    .filecoinnode-header5 {
+        color: #EEEEEE;
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .filecoinnode-header6 {
+        color: #FFFFFF;
+        font-weight: 700;
+        font-size: 35px;
+    }
+    .filecoinnode-header7 {
+        color: #EEEEEE;
+        font-weight: 600;
+        font-size: 72px;
+    }
+    .filecoinnode-header8 {
+        color: #999999;
+        font-weight: 600;
+        font-size: 40px;
+    }
+    .filecoinnode-items {
+        background-color:#1C1C1C;
+    }
+    .filecoinnode-item {
+        height: 326px;
+    }
+    .filecoinnode-item-left {
+        width: 450px;
+        height: 100%;
+        
+        background-color: #EEEEEE;
+        margin-right: 2rem;
+        padding: 2.5em;
+    }
+    .filecoinnode-item-center {
+        width: 450px;
+        height: 100%;
+        background-color: #1C1C1C;
+        margin-right: 2rem;
+        padding-top: 2rem;
+    }
+    .filecoinnode-item-right {
+        width: 450px;
+        height: 100%;
+        background-color: #1C1C1C;
+        padding-top: 2rem;
+    }
+
+    .filecoinnode-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+    }
+
+    .filecoinnode-img-wrapper {
+        width: 291px;
+        height: 97px;
+        overflow: hidden;
+    }
+    .filecoinnode-tab {
+        font-weight: 700;
+        font-size: 25px;
+        color: #EEEEEE;
+        // width: 100%;
+    }
+  
+
+
+}
+</style>
+
