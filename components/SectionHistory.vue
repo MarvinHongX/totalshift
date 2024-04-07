@@ -28,22 +28,27 @@ const events = ref([
 
 
 <template>
-<FullCard class="section-history flex flex-row align-items-center justify-content-start">
-    <div class="history-left flex flex-column align-items-end">
-        <div class="auth-img-wrapper flex flex-column">
-            <img :src="authBUrl" alt="authB" class="auth-img" />
+<FullCard class="section-history">
+    <div class="history-left">
+        <div class="auth-img-wrapper">
+            <img :src="authBUrl" alt="authB" class="auth-img mb-4" />
+            <div class="auth-img-header mb-1">
+                <span>도전의 시작을 알리다.</span>
+            </div>
+            <div class="auth-img-header">
+                <span class="auth-img-header-point">기술평가 우수기업 인증서</span>
+                <span> 입니다.</span>
+            </div>
         </div>
     </div>
 
-    <div class="history-timeline flex flex-column">
+    <div class="history-timeline">
         <div class="timeline-logo">
             <img :src="historyLogUrl" alt="historyLog" />
         </div>
         <div v-for="event in events" :key="event.year" class="timeline-event flex flex-row mb-8">
             <div class="timeline-event-left">
-                <!-- <div class="vertical-line"></div>  -->
-                <div class="timeline-marker"></div> <!-- 점 추가 -->
-                <!-- <div class="timeline-line"></div>  -->
+                <div class="timeline-marker"></div>
             </div>
             <div class="timeline-event-right">    
                 <div class="event-right-year">{{ event.year }}</div>
@@ -69,101 +74,197 @@ const events = ref([
 
 <style lang="scss" scoped>
 .section-history {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
     color: #ECECEC;
     background-color: #111112;
     padding: 10rem 0;
-    height: 1700px;
-}
-
-.history-left {
-    width: 45%;
-    height: 100%;
-}
-.auth-img-wrapper {
-    position: relative; 
-    width: 353px;
-    height: 100%;
-    overflow: hidden;
-    margin-bottom: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 4; 
-}
-.auth-img {
     width: 100%;
-    height: auto;
-    
-}
-
-.history-timeline {
-    // background-color: white;
-    border-left: 1.4px solid #3E3E3E;
-    width: 50%;
-    margin-left: 4rem;
-    .timeline-logo > img {
-        transform: translate(-50%, -73%);
-    }
-    .timeline-event {
-        padding-bottom: 5rem;
-        .timeline-event-left {
-            width: 21px;
+    height: 1700px;
+    .history-left {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        width: 45%;
+        height: 100%;
+        .auth-img-wrapper {
+            display: flex;
+            flex-direction: column;
+            position: relative; 
+            width: 353px;
             height: 100%;
-            border-top: 1.4px solid #3E3E3E;
-        }
-        .timeline-marker {
-            position: relative;
-            top: 50%;
-            // left: 50%;
-            transform: translate(-55%, -52%);
-            width: 12px;
-            height: 12px;
-            // border-radius: 50%;
-            background-color: #37459B;
-        }    
-        .timeline-event-right {
-            padding-left: 25px;
-            .event-right-year {
-                position: relative;
-                top: -20px;
-
-                font-weight: 800;
-                font-size: 30px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 4; 
+            .auth-img {
+                width: 100%;
+                height: auto;
+                
+            }
+            .auth-img-header {
                 color: #EEEEEE;
             }
-            .event-right-month {
-                font-weight: 700;
-                font-size: 18px;
-                color: #A3A3A3;
+            .auth-img-header-point {
+                color: #057FFC;
             }
-            .event-right-detail {
-                font-weight: 500;
-                font-size: 18px;
-                color: #A3A3A3;
-                padding-left: 15px;
+        }
+    }
+    .history-timeline {
+        display: flex;
+        flex-direction: column;
+        // background-color: white;
+        border-left: 1.4px solid #3E3E3E;
+        width: 50%;
+        margin-left: 4rem;
+        .timeline-logo > img {
+            transform: translate(-50%, -73%);
+        }
+        .timeline-event {
+            padding-bottom: 5rem;
+            .timeline-event-left {
+                width: 21px;
+                height: 100%;
+                border-top: 1.4px solid #3E3E3E;
+            }
+            .timeline-marker {
+                position: relative;
+                top: 50%;
+                // left: 50%;
+                transform: translate(-55%, -52%);
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: #37459B;
+            }    
+            .timeline-event-right {
+                padding-left: 25px;
+                .event-right-year {
+                    position: relative;
+                    top: -20px;
+
+                    font-weight: 800;
+                    font-size: 30px;
+                    color: #EEEEEE;
+                }
+                .event-right-month {
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: #A3A3A3;
+                }
+                .event-right-detail {
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: #A3A3A3;
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+@media (max-width: 890px) {
+    .section-history {
+        flex-direction: column;
+        height: 2400px;
+        .history-left {
+            align-items: center;
+            width: 100%;
+            .auth-img-wrapper {
+                height: 620px;
+                .auth-img {
+                    width: 100%;
+                    height: auto;
+                    
+                }
+                .auth-img-header {
+                    color: #EEEEEE;
+                }
+                .auth-img-header-point {
+                    color: #057FFC;
+                }
+            }
+        }
+        .history-timeline {
+            width: 70%;
+            margin-left: 0rem;
+            .timeline-event {
+                padding-bottom: 1rem;
+                .timeline-marker {
+                    position: relative;
+                    top: 0%;
+                    // left: 50%;
+                    transform: translate(-55%, -52%);
+                }    
+                .timeline-event-right {
+                    padding-left: 25px;
+                    .event-right-year {
+                        position: relative;
+                        top: -20px;
+
+                        font-weight: 800;
+                        font-size: 30px;
+                        color: #EEEEEE;
+                    }
+                    .event-right-month {
+                        font-weight: 700;
+                        font-size: 18px;
+                        color: #A3A3A3;
+                    }
+                    .event-right-detail {
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: #A3A3A3;
+                        padding-left: 15px;
+                    }
+                }
             }
         }
     }
 }
 
 
+@media (max-width: 530px) {
+    .section-history {
+        .history-left {
+            .auth-img-wrapper {
+                width: 303px;
+            }
+        }
+        .history-timeline {
+            width: 80%;
+            .timeline-event {
+                padding-bottom: 1rem;
+                .timeline-event-right {
+                    padding-left: 15px;
+                    .event-right-year {
+                        position: relative;
+                        top: -10px;
 
-.timeline-marker {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    margin-right: 1rem;
-}
-
-.timeline-year {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.timeline-content {
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
+                        font-weight: 600;
+                        font-size: 20px;
+                        color: #EEEEEE;
+                    }
+                    .event-right-month {
+                        font-weight: 500;
+                        font-size: 12px;
+                        color: #A3A3A3;
+                    }
+                    .event-right-detail {
+                        font-weight: 400;
+                        font-size: 12px;
+                        color: #A3A3A3;
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+    }
 }
 </style>

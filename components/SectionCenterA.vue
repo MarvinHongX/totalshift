@@ -2,7 +2,7 @@
 const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeUrl } = useImg();
 </script>
 <template>
-    <FullCard class="section-centerA flex flex-column align-items-start">
+    <FullCard class="section-centerA">
         <div class="flex flex-column justify-content-start mb-5">
             <div class="centerA-header mb-4">
                 <span>가산 캠퍼스</span>
@@ -24,6 +24,10 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
 
 <style lang="scss" scoped>
 .section-centerA {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
     height: 1000px;
     padding: 9rem;
     background-color: #070707;
@@ -48,6 +52,38 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
         position: relative; 
         top: 0; left: 0;
         // object-fit: cover;
+    }
+}
+@media (max-width: 890px) {
+    .section-centerA {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        height: 530px;
+        padding: 9rem 1rem;
+        background-color: #070707;
+        .centerA-header {
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 24px;
+        }
+        .centerA-header2 {
+            color: #FFFFFF;
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .centerA-img-wrapperer {
+            width: 95%;
+            overflow: visible; 
+        }
+        
+        .centerA-img {
+            width: 100%;
+            // position: relative; 
+            // top: 0; left: 0;
+            // object-fit: cover;
+        }
     }
 }
 </style>

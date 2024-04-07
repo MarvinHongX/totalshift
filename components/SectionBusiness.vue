@@ -2,32 +2,32 @@
 const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
 </script>
 <template>
-    <FullCard class="section-business flex flex-row align-items-center justify-content-between">
-        <div class="business-left flex flex-column justify-content-end align-items-start">
-            <div class="business-left-top flex flex-column align-items-start">
+    <FullCard class="section-business">
+        <div class="business-left">
+            <div class="business-left-top">
                 <div class="business-header2 mb-4">
                     <span>Business</span>
                 </div>
                 <div class="business-header">
                     <span>최고로 향하는</span>
                 </div>
-                <div class="business-header mb-4">
+                <div class="business-header">
                     <span class="business-header-point">발걸음</span>
                 </div>
             </div>
-            <div class="business-left-body flex flex-column align-items-start justify-content-end">
+            <div class="business-left-body">
                 <div class="business-header2 mb-2">
                     <span>토탈쉬프트에서</span>
                 </div>
-                <div class="business-header2 mb-2">
+                <div class="business-header2">
                     <span class="business-header2-point">진행중인 사업</span>
                     <span> 입니다.</span>
                 </div>
             </div>
         </div>
-        <div class="business-right flex flex-column justify-content-end align-items-end">
-            <div  class="business-items flex flex-row align-items-start justify-content-start">
-                <div class="business-item flex flex-column mr-2">
+        <div class="business-right">
+            <div  class="business-items">
+                <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper flex">
                         <img :src="businessAUrl" alt="businessA" class="business-img" />
                         <div class="business-label">
@@ -40,7 +40,7 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
                         </div>
                     </div>
                 </div>
-                <div class="business-item flex flex-column mr-2">
+                <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper">
                         <img :src="businessBUrl" alt="businessB" class="business-img" />
                         <span class="business-label">
@@ -53,7 +53,7 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
                         </span>
                     </div>
                 </div>
-                <div class="business-item flex flex-column mr-2">
+                <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper">
                         <img :src="businessCUrl" alt="businessC" class="business-img" />
                         <span class="business-label">
@@ -66,7 +66,7 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
                         </span>
                     </div>
                 </div>
-                <div class="business-item flex flex-column mr-2">
+                <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper">
                         <img :src="businessDUrl" alt="businessD" class="business-img" />
                         <span class="business-label">
@@ -86,6 +86,11 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
 
 <style lang="scss" scoped>
 .section-business {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: between;
+    width: 100%;
     height: 420px;
     padding-top: 0rem;
     background-color: #111112;
@@ -107,79 +112,182 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
         color: #057FFC;
     }
     .business-left {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: end;
         width: 800px; 
         height: 630px;
         padding: 0 3.5rem;
         position: relative;
         .business-left-top {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: end;
             width: 100%;
-            text-align: right;
             padding-right: 3rem;
         }    
         .business-left-body {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: end;
             width: 100%;
             height: 150px;
         }
     }
 
     .business-right {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: end;
         width: calc(100% - 500px);
         height: 800px;
     }
     .business-items {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: start;
         width: 100%;
         overflow-x: scroll;
-    }
-
-
-
-    .business-item {
-        width: 340px;
-        height: 420px;
-        color: #FFFFFF;
-        font-weight: 500;
-        font-size: 18px;
-        flex-shrink: 0;
-
-        .business-item-header {
+        .business-item {
+            width: 340px;
+            height: 420px;
             color: #FFFFFF;
-            font-weight: 600;
-            font-size: 32px;
-        }
-    }
-
-    .business-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 30px;
-        position: relative;
-    }
-
-    .business-img-wrapper {
-        width: 320px;
-        height: 320px;
-        overflow: hidden;
-        position: relative;
-        border-radius: 30px;
-        margin-bottom: 10px;
-        background-color: #2c2d2f;
-    }
-
-    .business-label {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgb(32,32,34, 1);
-        color: #ffffff;
-        font-size: 25px;
-        font-weight: 600;
-        text-align: left;
-        padding: 20px;
-        .business-label-small {
             font-weight: 500;
             font-size: 18px;
+            flex-shrink: 0;
+    
+            .business-item-header {
+                color: #FFFFFF;
+                font-weight: 600;
+                font-size: 32px;
+            }
+            .business-img-wrapper {
+                width: 320px;
+                height: 320px;
+                overflow: hidden;
+                position: relative;
+                border-radius: 30px;
+                margin-bottom: 10px;
+                background-color: #2c2d2f;
+                .business-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 30px;
+                    position: relative;
+                }
+                .business-label {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: rgb(32,32,34, 1);
+                    color: #ffffff;
+                    font-size: 25px;
+                    font-weight: 600;
+                    text-align: left;
+                    padding: 20px;
+                    .business-label-small {
+                        font-weight: 500;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 890px) {
+    .section-business {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: between;
+        height: 464px;
+        padding-top: 0rem;
+        .business-header {
+            font-weight: 700;
+            font-size: 30px;
+        }
+        .business-header2 {
+            color: #FFFFFF;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        .business-header2-point {
+            color: #057FFC;
+        }
+        .business-left {
+            flex-direction: row;
+            align-items: end;
+            justify-content: start;
+            width: 100%; 
+            height: 100%;
+            padding: 0 1rem;
+            position: relative;
+            .business-left-top {
+                width: 100%;
+                height: 100%;
+                padding: 0rem;
+            }    
+            .business-left-body {
+                align-items: end;
+                justify-content: end;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .business-right {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: end;
+            width: 100%;
+            height: 100%;
+            padding: 2rem 1rem;
+        }
+        .business-items {
+            display: flex;
+            flex-direction: row;
+            align-items: start;
+            justify-content: start;
+            width: 100%;
+            overflow-x: scroll;
+            .business-item {
+                width: 200px;
+                height: 233px;        
+                .business-item-header {
+                    color: #FFFFFF;
+                    font-weight: 600;
+                    font-size: 32px;
+                }
+                .business-img-wrapper {
+                    width: 200px;
+                    height: 200px;
+                    overflow: hidden;
+                    position: relative;
+                    border-radius: 15px;
+                    margin-bottom: 10px;
+                    .business-img {
+                        border-radius: 15px;
+                    }
+                    .business-label {
+                        font-size: 16px;
+                        font-weight: 500;
+                        text-align: left;
+                        padding: 15px;
+                        .business-label-small {
+                            font-weight: 400;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -2,10 +2,10 @@
 const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeUrl } = useImg();
 </script>
 <template>
-    <FullCard class="section-centerADetail flex flex-column align-items-start">
-        <div class="centerADetail-items flex flex-row">
-            <div class="centerADetail-item flex flex-row justify-content-between">
-                <div class="centerADetail-item-left flex flex-column align-items-start">
+    <FullCard class="section-centerADetail">
+        <div class="centerADetail-items">
+            <div class="centerADetail-item">
+                <div class="centerADetail-item-left">
                     <div class="centerADetail-header mb-4">
                         <span>NSA2650</span>
                     </div>
@@ -42,7 +42,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                         <img :src="firewallUrl" alt="firewall" class="centerADetail-img" />
                     </div>
                 </div>
-                <div class="centerADetail-item-right flex flex-column justify-content-between">
+                <div class="centerADetail-item-right">
                     <div class="centerADetail-header">
                         1 / 5    
                     </div>
@@ -53,141 +53,31 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                         <div class="centerADetail-header2">
                             <span>시스템</span>
                         </div>
-                    </div>
-                    <div>
-                        <div class="mb-2">
-                            <span>토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                        <div class="mb-2">
-                            <span>아마두 토탈쉬프트 비즈니스에 관련한 아무 내용입니다. </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>제가보기엔 토탈쉬프트 비즈니스에 관련한 내용 </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>다시한번 토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                    </div>                  
+                    </div>               
                 </div>
             </div>
-            <div class="centerADetail-item flex flex-row justify-content-between">
-                <div class="centerADetail-item-left flex flex-column align-items-start">
+            <div class="centerADetail-item">
+                <div class="centerADetail-item-left">
                     <div class="centerADetail-header mb-4">
-                        <span>모델명</span>
+                        <span>HT-A10GC</span>
                     </div>
                     <div class="mb-2">
-                        <span>· 용량 : 3상 100 KVA</span>
+                        <span>· 20YCLE 스탠드 상향식 챔버다임</span>
                     </div>
                     <div class="mb-2">
-                        <span>· 입력 : 3상4선식 380/220V</span>
+                        <span>· 실내조건 : 2542도 DB, 55%45% PH 기준,</span>
                     </div>
                     <div class="mb-2">
-                        <span>· 출력 : 3상4선식 380/220V</span>
+                        <span> 천환경냉매 R-407C 적용</span>
                     </div>
                     <div class="mb-2">
-                        <span>· 정전보상 : 서버 300대 풀가동시 30분</span>
+                        <span>· 10RT - 냉방농력 27,000kcalh,</span>
                     </div>
                     <div class="mb-2">
-                        <span>· Battery : 12V 200AH 30CELL</span>
-                    </div>
-                </div>
-                <div class="centerADetail-item-center flex">
-                    <div class="centerADetail-img-wrapper">
-                        <img :src="upsUrl" alt="ups" class="centerADetail-img" />
-                    </div>
-                </div>
-                <div class="centerADetail-item-right flex flex-column justify-content-between">
-                    <div class="centerADetail-header">
-                        2 / 5    
-                    </div>
-                    <div>
-                        <div class="centerADetail-header2">
-                            <span>무정전 UPS</span>
-                        </div>
-                        <div class="centerADetail-header2">
-                            <span>시스템</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2">
-                            <span>토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                        <div class="mb-2">
-                            <span>아마두 토탈쉬프트 비즈니스에 관련한 아무 내용입니다. </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>제가보기엔 토탈쉬프트 비즈니스에 관련한 내용 </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>다시한번 토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                    </div>                  
-                </div>
-            </div>
-            <div class="centerADetail-item flex flex-row justify-content-between">
-                <div class="centerADetail-item-left flex flex-column align-items-start">
-                    <div class="centerADetail-header mb-4">
-                        <span>모델명</span>
+                        <span>· 난방능력 17,200kcal</span>
                     </div>
                     <div class="mb-2">
-                        <span>· 소화 약제 : HFC-125</span>
-                    </div>
-                    <div class="mb-2">
-                        <span>· 방호 체적 : 62.4㎥</span>
-                    </div>
-                    <div class="mb-2">
-                        <span>· 예비 전원 : Ni-Cd DC 24V, 1300㎃</span>
-                    </div>
-                    <div class="mb-2">
-                        <span>· 경보 : 싸이렌 및 음성경보 주의 온도 : -10℃ ~ 40℃</span>
-                    </div>
-                </div>
-                <div class="centerADetail-item-center flex">
-                    <div class="centerADetail-img-wrapper">
-                        <img :src="extinguisherUrl" alt="extinguisher" class="centerADetail-img" />
-                    </div>
-                </div>
-                <div class="centerADetail-item-right flex flex-column justify-content-between">
-                    <div class="centerADetail-header">
-                        3 / 5    
-                    </div>
-                    <div>
-                        <div class="centerADetail-header2">
-                            <span>자동 소화</span>
-                        </div>
-                        <div class="centerADetail-header2">
-                            <span>시스템</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2">
-                            <span>토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                        <div class="mb-2">
-                            <span>아마두 토탈쉬프트 비즈니스에 관련한 아무 내용입니다. </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>제가보기엔 토탈쉬프트 비즈니스에 관련한 내용 </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>다시한번 토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                    </div>                  
-                </div>
-            </div>
-            <div class="centerADetail-item flex flex-row justify-content-between">
-                <div class="centerADetail-item-left flex flex-column align-items-start">
-                    <div class="centerADetail-header mb-4">
-                        <span>모델명</span>
-                    </div>
-                    <div class="mb-2">
-                        <span>· 냉방능력 27,000kcal/h</span>
-                    </div>
-                    <div class="mb-2">
-                        <span>· 난방능력 17,200kcal/h</span>
-                    </div>
-                    <div class="mb-2">
-                        <span>· 가습능력 7.0kg/h</span>
+                        <span>· 가슴농력 7.0kgAh,</span>
                     </div>
                     <div class="mb-2">
                         <span>· 풍량 105CMM</span>
@@ -198,47 +88,155 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                         <img :src="tempHumidityUrl" alt="tempHumidity" class="centerADetail-img" />
                     </div>
                 </div>
-                <div class="centerADetail-item-right flex flex-column justify-content-between">
+                <div class="centerADetail-item-right">
+                    <div class="centerADetail-header">
+                        2 / 5    
+                    </div>
+                    <div>
+                        <div class="centerADetail-header2">
+                            <span>항온항습</span>
+                        </div>
+                        <div class="centerADetail-header2">
+                            <span>시스템</span>
+                        </div>
+                    </div>                 
+                </div>
+            </div>
+            <div class="centerADetail-item">
+                <div class="centerADetail-item-left">
+                    <div class="centerADetail-header mb-4">
+                        <span>HFC-125</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 소화 약재: HFC-125</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 외형 치수(mm): W 400*D 400*H 1900</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 약제 중량 : 50k</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 방호 체적 : 62.4mt</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 상용 전원 : AC 220V</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 601- 예비 전원 : NICd Battery DC 24V, 1300 m</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 경보: 싸이렌 및 음성경보</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· •주의 온도:-10°C~ 40°C</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 외함 재질: KSD 3503 1.6t</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 외부 기지 : 김지기, 수동조직, 빙표시</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 슬레노이드: DC 24V, 15</span>
+                    </div>
+                </div>
+                <div class="centerADetail-item-center flex">
+                    <div class="centerADetail-img-wrapper">
+                        <img :src="extinguisherUrl" alt="extinguisher" class="centerADetail-img" />
+                    </div>
+                </div>
+                <div class="centerADetail-item-right">
+                    <div class="centerADetail-header">
+                        3 / 5    
+                    </div>
+                    <div>
+                        <div class="centerADetail-header2">
+                            <span>자동 소화</span>
+                        </div>
+                        <div class="centerADetail-header2">
+                            <span>시스템</span>
+                        </div>
+                    </div>             
+                </div>
+            </div>
+            <div class="centerADetail-item">
+                <div class="centerADetail-item-left">
+                    <div class="centerADetail-header mb-4">
+                        <span>무정전전원장치</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 용량 : 3상 100 KV</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 입력 : 3상4선식 380/220V</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 출력 : 3상4선식 380/220V</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 정전보상 : 30분용</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· Battery : 12V 200AH 30CELL</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 입출력 분전반</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· SIT 분전반 600*1200 200mm</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· Malh MCCB 4P150A 2EA</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 휘다 MCCB 4P50A 2EA</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· MCCB 2P50A/30A 10EA</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· (양문 DOOR 및 계량기 포함)</span>
+                    </div>
+                </div>
+                <div class="centerADetail-item-center flex">
+                    <div class="centerADetail-img-wrapper">
+                        <img :src="upsUrl" alt="ups" class="centerADetail-img" />
+                    </div>
+                </div>
+                <div class="centerADetail-item-right">
                     <div class="centerADetail-header">
                         4 / 5    
                     </div>
                     <div>
                         <div class="centerADetail-header2">
-                            <span>온/습도 유지</span>
+                            <span>무정전 UPS</span>
                         </div>
                         <div class="centerADetail-header2">
                             <span>시스템</span>
                         </div>
-                    </div>
-                    <div>
-                        <div class="mb-2">
-                            <span>토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                        <div class="mb-2">
-                            <span>아마두 토탈쉬프트 비즈니스에 관련한 아무 내용입니다. </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>제가보기엔 토탈쉬프트 비즈니스에 관련한 내용 </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>다시한번 토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                    </div>                  
+                    </div>               
                 </div>
             </div>
-            <div class="centerADetail-item flex flex-row justify-content-between">
-                <div class="centerADetail-item-left flex flex-column align-items-start">
+            <div class="centerADetail-item">
+                <div class="centerADetail-item-left">
                     <div class="centerADetail-header mb-4">
-                        <span>모델명</span>
+                        <span>KT 기가센싱</span>
                     </div>
                     <div class="mb-2">
-                        <span>· KT 기가센싱</span>
+                        <span>· 출입문 감지</span>
                     </div>
                     <div class="mb-2">
-                        <span>· 입출입 시 보안검사</span>
+                        <span>· 화재 감지</span>
                     </div>
                     <div class="mb-2">
-                        <span>· CCTV 모니터링</span>
+                        <span>· 누수 감지</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· 온/습도 측정</span>
+                    </div>
+                    <div class="mb-2">
+                        <span>· UPS 전압측정</span>
                     </div>
                 </div>
                 <div class="centerADetail-item-center flex">
@@ -246,7 +244,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                         <img :src="realtimeUrl" alt="realtime" class="centerADetail-img" />
                     </div>
                 </div>
-                <div class="centerADetail-item-right flex flex-column justify-content-between">
+                <div class="centerADetail-item-right">
                     <div class="centerADetail-header">
                         5 / 5    
                     </div>
@@ -258,20 +256,6 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                             <span>시스템</span>
                         </div>
                     </div>
-                    <div>
-                        <div class="mb-2">
-                            <span>토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                        <div class="mb-2">
-                            <span>아마두 토탈쉬프트 비즈니스에 관련한 아무 내용입니다. </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>제가보기엔 토탈쉬프트 비즈니스에 관련한 내용 </span>
-                        </div>
-                        <div class="mb-2">
-                            <span>다시한번 토탈쉬프트 비즈니스에 관련한 아무 내용</span>
-                        </div>
-                    </div>                  
                 </div>
             </div>
         </div>
@@ -280,12 +264,17 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
 
 <style lang="scss" scoped>
 .section-centerADetail {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     height: 860px;
     width: 100%;
     padding: 9rem;
     background-color: #1C1C1C;
 
     .centerADetail-items {
+        display: flex;
+        flex-direction: row;
         width: 100%;
         overflow: visible; 
         padding-top: 2.5rem;
@@ -293,6 +282,9 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
         scroll-snap-type: x mandatory; 
     }
     .centerADetail-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         height: 450px;
         color: #ECECEC;
         flex-shrink: 0;
@@ -309,6 +301,9 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
             font-size: 45px;
         }
         .centerADetail-item-left {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
             width: 450px;
             height: 100%;
             
@@ -323,6 +318,9 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
             margin-right: 2rem;
         }
         .centerADetail-item-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: between;
             width: 450px;
             height: 100%;
             background-color: transparent;
@@ -342,6 +340,71 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
         overflow: hidden;
         position: relative;
         margin-bottom: 10px;
+    }
+}
+@media (max-width: 890px) {
+    .section-centerADetail {
+        height: 1060px;
+        padding: 1rem;
+        align-items: center;
+        .centerADetail-items {
+            display: flex;
+            flex-direction: row;
+            width: 264px;
+            height: 2000px;
+            overflow: visible; 
+            padding-top: 2.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory; 
+        }
+        .centerADetail-item {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            height: 800px;
+            color: #ECECEC;
+            flex-shrink: 0;
+            font-size: 12px;
+            scroll-snap-align: start; 
+            .centerADetail-header {
+                color:#ECECEC;
+                font-weight: 400;
+                font-size: 18px;
+            }
+            .centerADetail-header2 {
+                color:#FFFFFF;
+                font-weight: 700;
+                font-size: 24px;
+            }
+            .centerADetail-item-left {
+                width: 240px;
+                // height: 400px !important;
+                height: 600px;
+                
+                background-color: #202022;
+                padding: 2.5em;
+                margin-right: 2rem;
+            }
+            .centerADetail-item-center {
+                width: 240px;
+                height: 325px;
+                margin-right: 2rem;
+            }
+            .centerADetail-item-right {
+                // display: none;
+                width: 240px;
+                height: 170px;
+                background-color: transparent;
+            }
+        }
+
+        .centerADetail-img-wrapper {
+            width: 240px;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 10px;
+        }
     }
 }
 </style>

@@ -2,7 +2,7 @@
 const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoUrl } = useImg();
 </script>
 <template>
-    <FullCard class="section-partner flex flex-column align-items-center">
+    <FullCard class="section-partner">
         <div class="partner-header mb-4">
             <span>PARTNER & CLIENT</span>
         </div>
@@ -13,27 +13,35 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
             <span>앞으로의 성장을 함께합니다.</span>
         </div>
         <div class="partner-separator"></div>
-        <div class="partner-items flex flex-row align-items-center justify-content-between">
-            <div class="partner-item mr-3">
-                <img :src="ktUrl" alt="kt" style="width: 80%;" />
+        <div class="partner-items">
+            <div class="item-group">
+                <div class="partner-item mr-3">
+                    <img :src="ktUrl" alt="kt" />
+                </div>
+                <div class="partner-item">
+                    <img :src="seagateUrl" alt="seagate" />
+                </div>
             </div>
-            <div class="partner-item">
-                <img :src="seagateUrl" alt="seagate" style="width: 80%;" />
+            <div class="item-group">
+                <div class="partner-item">
+                    <img :src="protocolLabsUrl" alt="protocolLabs"/>
+                </div>
+                <div class="partner-item">
+                    <img :src="ipfsUrl" alt="IPFS" />
+                </div>
             </div>
-            <div class="partner-item">
-                <img :src="protocolLabsUrl" alt="protocolLabs" style="width: 80%;" />
+            <div class="item-group">
+                <div class="partner-item mr-3">
+                    <img :src="filecoinUrl" alt="filecoin" />
+                </div>
+                <div class="partner-item mr-4">
+                    <img :src="kidcUrl" alt="KIDC" />
+                </div>
             </div>
-            <div class="partner-item">
-                <img :src="ipfsUrl" alt="IPFS" style="width: 80%;" />
-            </div>
-            <div class="partner-item">
-                <img :src="filecoinUrl" alt="filecoin" style="width: 80%;" />
-            </div>
-            <div class="partner-item mr-3">
-                <img :src="kidcUrl" alt="KIDC" style="width: 80%;" />
-            </div>
-            <div class="partner-item">
-                <img :src="aleoUrl" alt="aleo" style="width: 80%;" />
+            <div class="item-group">
+                <div class="partner-item">
+                    <img :src="aleoUrl" alt="aleo" />
+                </div>
             </div>
         </div>
     </FullCard>
@@ -41,8 +49,13 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
 
 <style lang="scss" scoped>
 .section-partner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     height: 825px;
-    padding-top: 11rem;
+    // padding-top: 11rem;
+    padding: 11rem 2rem;
     background-color: #FFFFFF;
     .partner-header {
         font-weight: 700;
@@ -55,7 +68,26 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
         color: #333333;
     }
     .partner-items {
-        width: 70%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        .item-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;   
+            justify-content: between;  
+            .partner-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: auto; 
+                overflow: hidden;  // 이미지 비율 유지를 위해 필요
+                
+            }
+        }
     }
     .partner-separator {
         height: 1.5px;
@@ -63,5 +95,48 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
         background-color: #707070;
         margin: 6.5rem 0 3rem 0;
     }
+}
+@media (max-width: 890px) {
+    .section-partner {
+        height: 825px;
+        padding: 8rem 1rem;
+        .partner-header {
+            font-weight: 700;
+            font-size: 12px;
+        }
+        .partner-header2 {
+            font-weight: 800;
+            font-size: 25px;
+        }
+        .partner-items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: between;
+            width: 100%;
+            .item-group {
+                width: 100%;
+                height: auto;
+                align-items: center;  
+                justify-content: start;
+                margin-bottom: 30px;
+                .partner-item {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: start;
+                    height: auto; 
+                }
+            }
+        }
+        .partner-separator {
+            height: 1px;
+            width: 75%;
+            background-color: #707070;
+            margin: 2.5rem 0 3rem 0;
+        }
+    }
+
 }
 </style>

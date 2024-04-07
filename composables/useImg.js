@@ -1,4 +1,7 @@
 export const useImg = () => {
+    const gotoUrl = computed(() => {
+        return `/layout/images/goto.png`;
+    });
     const introduceUrl = computed(() => {
         return `/layout/images/home/introduce.mov`;
     });
@@ -47,11 +50,15 @@ export const useImg = () => {
     const yooUrl = computed(() => {
         return `/layout/images/home/yoo.png`;
     });
-
+    const yooProfileUrl = computed(() => {
+        return `/layout/images/home/yooProfile.png`;
+    });
     const songUrl = computed(() => {
         return `/layout/images/home/song.png`;
     });
-
+    const songProfileUrl = computed(() => {
+        return `/layout/images/home/songProfile.png`;
+    });
     const youtubeUrl = computed(() => {
         return `/layout/images/home/youtube.png`;
     });
@@ -61,11 +68,9 @@ export const useImg = () => {
     const seagateUrl = computed(() => {
         return `/layout/images/home/seagate.png`;
     });
-
     const protocolLabsUrl = computed(() => {
         return `/layout/images/home/protocolLabs.png`;
     });
-
     const ipfsUrl = computed(() => {
         return `/layout/images/home/IPFS.png`;
     });
@@ -84,11 +89,9 @@ export const useImg = () => {
     const filfoxBtnUrl = computed(() => {
         return `/layout/images/web3/filfoxBtn.png`;
     });
-
     const kidcUrl = computed(() => {
         return `/layout/images/home/KIDC.png`;
     });
-
     const aleoUrl = computed(() => {
         return `/layout/images/home/aleo.png`;
     });
@@ -98,11 +101,9 @@ export const useImg = () => {
     const skyzoneUrl = computed(() => {
         return `/layout/images/home/skyzone.png`;
     });
-
     const aleoTrackUrl = computed(() => {
         return `/layout/images/home/aleoTrack.png`;
     });
-
     const aleoCatUrl = computed(() => {
         return `/layout/images/home/aleoCat.png`;
     });
@@ -115,7 +116,6 @@ export const useImg = () => {
     const idcBackgroundUrl = computed(() => {
         return `/layout/images/home/idcBackground.png`;
     });
-
     const tempHumidityUrl = computed(() => {
         return `/layout/images/home/tempHumidity.png`;
     });
@@ -145,6 +145,7 @@ export const useImg = () => {
     });
 
     return {
+        gotoUrl,
         introduceUrl,
         logoUrl,
         logoSecondaryUrl,
@@ -161,7 +162,9 @@ export const useImg = () => {
         teamCUrl,
         teamDUrl,
         yooUrl,
+        yooProfileUrl,
         songUrl,
+        songProfileUrl,
         youtubeUrl,
         ktUrl,
         seagateUrl,

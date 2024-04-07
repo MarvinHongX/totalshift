@@ -1,9 +1,12 @@
 <script setup>
-const { songUrl } = useImg();
+const { songUrl, songProfileUrl } = useImg();
 </script>
 <template>
-    <FullCard class="section-song flex flex-row align-items-center">
-        <div class="song-me flex flex-column align-items-center">
+    <FullCard class="section-song">
+        <div class="song-pic2">
+            <img :src="songProfileUrl" alt="song" style="width: 80%;" />
+        </div>
+        <div class="song-me">
             <div class="song-me-header mb-6">
                 <span class="song-me-name">CEO 송 창 익</span>
             </div>
@@ -12,14 +15,14 @@ const { songUrl } = useImg();
                     <span>“디지털 혁신은 전분야 비즈니스의 형태를 근본적으로 변화시키고 있습니다. </span>  
                 </div>
                 <div class="inline-flex mb-2">
-                    <span>웹3.0 시대에 부합하는 차세대 IPFS 프로토콜을 기반으로 효율적인 데이타 관리를 위한</span>
+                    <span>웹3.0 시대에 부합하는 차세대 IPFS 프로토콜을 기반으로</span>
                 </div>
                 <div class="inline-flex mb-2">
-                    <span>연구와 서비스 개발에 매진하고 있습니다.”</span>
+                    <span>효율적인 데이타 관리를 위한 연구와 서비스 개발에 매진하고 있습니다.”</span>
                 </div>
             </div>
         </div>
-        <div class="song-pic flex flex-column align-items-center justify-content-end">
+        <div class="song-pic">
             <img :src="songUrl" alt="song" style="width: 80%;" />
         </div>
     </FullCard>
@@ -27,6 +30,10 @@ const { songUrl } = useImg();
 
 <style lang="scss" scoped>
 .section-song {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
     height: 799px;
     background-color:#2F3445;
     color: #EEEEEE;
@@ -34,9 +41,16 @@ const { songUrl } = useImg();
     font-size: 18px;
 
     .song-pic {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
         width: 500px; 
         height: 100%;
         overflow: hidden;
+    }
+    .song-pic2 {
+        display: none;
     }
     .song-pic > img {
         width: 100%; 
@@ -45,6 +59,9 @@ const { songUrl } = useImg();
     }
 
     .song-me {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: calc(100% - 500px);
         height: 100%;
         padding-top: 14rem;
@@ -53,5 +70,42 @@ const { songUrl } = useImg();
             font-size: 30px;            
         }
     }
+}
+@media (max-width: 890px) {
+    .section-song {
+        flex-direction: column;
+        align-items: center;
+        height: 612px;
+        font-weight: 500;
+        font-size: 12px;
+        padding-top: 6rem;
+        .song-pic {
+            display: none;
+        }
+        .song-pic2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            width: 210px; 
+            height: 210px;
+            overflow: hidden;
+        }
+        .song-pic2 > img {
+            width: 100%; 
+            height: auto;
+        }
+
+        .song-me {
+            width: 100%;
+            height: 100px;
+            padding-top: 1rem;
+            .song-me-name {
+                font-weight: 500;
+                font-size: 18px;
+            }
+        }
+    }
+
 }
 </style>

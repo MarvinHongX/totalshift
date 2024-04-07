@@ -4,9 +4,9 @@ const { logoSecondaryUrl } = useImg();
 
 <template>
     <div class="layout-footer">
-        <div class="footer-content flex flex-column">
+        <div class="footer-content">
             <!-- 상단  -->
-            <div class="flex flex-row justify-content-between align-items-start">
+            <div class="content-top">
                 <div class="flex flex-column">
                     <div class="flex flex-row">
                         <span class="mb-1">주식회사 토탈쉬프트</span>
@@ -24,7 +24,7 @@ const { logoSecondaryUrl } = useImg();
                         <span class="mb-1">전화 : 02-6215-3891</span>
                     </div>
                 </div>
-                <div class="flex flex-column">
+                <div class="footer-logo">
                     <img :src="logoSecondaryUrl" alt="logo-secondary" />
                 </div>
 

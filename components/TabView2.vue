@@ -25,7 +25,7 @@ const getMinerInfo = () => {
 
 <template>
     <div class="tab-view">
-        <div class="tabs flex flex-row justify-content-between">
+        <div class="tabs">
             <span
                 v-for="(tab, index) in tabItems"
                 :key="index"
@@ -49,9 +49,11 @@ const getMinerInfo = () => {
     width: 100%;
 }
 .tabs {
+    display: flex;
+    flex-direction: row; 
+    justify-content: start;
     width: 100%;
     display: flex;
-    justify-content: start;
 }
 
 .tabs span {
@@ -78,5 +80,49 @@ const getMinerInfo = () => {
 .contents {
     width: 100%;
     // margin-top: 5rem;
+}
+@media (max-width: 890px) {
+    .tab-view {
+        width: 100%;
+    }
+    .tabs {
+        display: flex;
+        flex-direction: row; 
+        justify-content: start;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .tabs span {
+        padding: 0px;
+        cursor: pointer;
+        margin-right: 0;
+    }
+
+    .tabs span:last-child {
+        margin-right: 0;
+    }
+
+    .active-tab {
+        font-size: 12px;
+    }
+    .inactive-tab {
+        color: #666666; 
+        font-size: 12px;
+    }
+
+    .separator {
+        width: 100%;
+        height: 2px;
+        background-color: #707070;
+        margin: 20px 0;
+    }
+
+    .contents {
+        width: 100%;
+        // margin-top: 5rem;
+    }
 }
 </style>

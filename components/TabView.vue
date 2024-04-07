@@ -9,7 +9,7 @@ const props = defineProps({
 const activeTab = ref(0);
 
 const toggleMenu = (index) => {
-    return;
+    // return;
     activeTab.value = index;
 }
 </script>
@@ -68,5 +68,17 @@ const toggleMenu = (index) => {
 .contents {
     width: 100%;
     margin-top: 5rem;
+}
+@media (max-width: 890px) {
+    .active-tab {
+        font-size: 18px;
+    }
+    .inactive-tab {
+        color: #525252; 
+        font-size: 18px;
+    }
+    .contents {
+        margin-top: 1rem;
+    } 
 }
 </style>

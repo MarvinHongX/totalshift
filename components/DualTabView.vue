@@ -90,14 +90,14 @@ const changeSubCategory = (index) => {
     <div class="dual-tab-view">
         <div class="left-panel">
             <div class="category-tabs">
-            <span
-                v-for="(category, categoryIndex) in categories"
-                :key="categoryIndex"
-                :class="{'active-tab': activeCategory === categoryIndex, 'inactive-tab': activeCategory !== categoryIndex}"
-                @click="changeCategory(categoryIndex)"
-            >
-                > {{ category.name }}
-            </span>
+                <span
+                    v-for="(category, categoryIndex) in categories"
+                    :key="categoryIndex"
+                    :class="{'active-tab': activeCategory === categoryIndex, 'inactive-tab': activeCategory !== categoryIndex}"
+                    @click="changeCategory(categoryIndex)"
+                >
+                    > {{ category.name }}
+                </span>
             </div>
             <div class="sub-category-tabs">
             <div
@@ -201,5 +201,79 @@ const changeSubCategory = (index) => {
     font-size: 20px;
     padding: 4rem;
 }
-  </style>
+@media (max-width: 890px) {
+    .dual-tab-view {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0rem;
+        color: #FFFFFF;
+        
+    }
+
+    .left-panel {
+        width: 100%;
+    }
+    .point {
+        color: #057FFC
+    }
+    .point2 {
+        color: rgb(8,43,81)
+        
+    }
+    .category-tabs {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .sub-category-tabs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        font-size: 12px;  
+    }
+    .category-tabs span, .sub-category-tabs span {
+        padding: 10px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .right-panel {
+        width: 100%;
+    }
+
+    .active-tab {
+        color: #FFFFFF;
+        border-bottom: 2px solid #000;
+    }
+
+    .inactive-tab {
+        color: #525252;
+    }
+
+    .separator {
+        width: 100%;
+        height: 2px;
+        background-color: #707070;
+        margin-bottom: 20px;
+    }
+    .content-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    .content {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        background-color: rgba(28, 28, 28, 1);
+        color: #FFFFFF;
+        font-size: 12px;
+        padding: 2rem;
+    }
+}
+</style>
   

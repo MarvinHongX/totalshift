@@ -1,10 +1,14 @@
 <script setup>
-const { yooUrl, youtubeUrl } = useImg();
+const { yooUrl, yooProfileUrl, youtubeUrl } = useImg();
+const { youtubeHref } = useHref();
 </script>
 <template>
-    <FullCard class="section-yoo flex flex-row align-items-center">
-        <div class="yoo-pic flex flex-column align-items-center justify-content-end">
+    <FullCard class="section-yoo">
+        <div class="yoo-pic">
             <img :src="yooUrl" alt="yoo" style="width: 100%;" />
+        </div>
+        <div class="yoo-pic2 mb-4">
+            <img :src="yooProfileUrl" alt="yoo" style="width: 100%;" />
         </div>
         <div class="yoo-me flex flex-column align-items-center">
             <div class="yoo-me-header mb-6">
@@ -18,8 +22,8 @@ const { yooUrl, youtubeUrl } = useImg();
                     <span>고객과의 소통을 넓히고 강화해 나가는데 최선을 다하고 있습니다.</span>
                 </div>
                 <div class="flex flex-row align-items-center">
-                    <a href="https://www.youtube.com/@FIL-ALEO" target="_blank" class="youtube-link flex flex-row">
-                        <img :src="youtubeUrl" alt="youtube" class="mr-3" /> 
+                    <a :href="youtubeHref" target="_blank" class="youtube-link flex flex-row">
+                        <img :src="youtubeUrl" alt="youtube" class="youtube mr-3" /> 
                         <div class="flex flex-row align-items-center">
                             <span class="mr-3">파일&알레오TV 채널운영</span>
                             <span class="mr-1"> 바로가기</span><span>▶</span>
@@ -33,6 +37,10 @@ const { yooUrl, youtubeUrl } = useImg();
 
 <style lang="scss" scoped>
 .section-yoo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
     height: 812px;
     background-color: #CECED6;
     color: #070707;
@@ -40,9 +48,16 @@ const { yooUrl, youtubeUrl } = useImg();
     font-size: 18px;
     
     .yoo-pic {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
         width: 500px; 
         height: 100%;
         overflow: hidden;
+    }
+    .yoo-pic2 {
+        display: none;
     }
     .yoo-pic > img {
         width: 100%; 
@@ -62,6 +77,52 @@ const { yooUrl, youtubeUrl } = useImg();
             align-items: center;
             text-decoration: none;
             color: inherit;
+        }
+    }
+}
+@media (max-width: 890px) {
+    .section-yoo {
+        flex-direction: column;
+        align-items: center;
+        height: 612px;
+        font-weight: 500;
+        font-size: 12px;
+        padding-top: 6rem;
+        .yoo-pic {
+            display: none;
+        }
+        .yoo-pic2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 210px; 
+            height: 210px;
+            overflow: hidden;
+        }
+        .yoo-pic2 > img {
+            width: 100%; 
+            height: auto;
+        }
+
+        .yoo-me {
+            width: 100%;
+            height: 100px;
+            padding-top: 1rem;
+            .yoo-me-name {
+                font-weight: 500;
+                font-size: 18px;
+            }
+            .youtube-link {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+        .youtube {
+            width: 22px;
+
         }
     }
 

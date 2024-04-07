@@ -1,8 +1,11 @@
 <script setup>
+definePageMeta({
+    middleware: ['disable-scroll']
+});
 </script>
 
 <template>
-    <div class="flex flex-column">
+    <div class="flex flex-column" style="width:100%">
         <SectionTotalshift />
         <SectionIntroduce />
         <SectionHistory />
@@ -17,4 +20,5 @@
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>
