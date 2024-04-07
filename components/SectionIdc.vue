@@ -160,7 +160,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
             margin-top: 4rem;
         }
         .idc-main {
-            width: 100%;
+            width: 95%;
             color: #FFFFFF;
             font-weight: 500;
             font-size: 18px;
@@ -245,7 +245,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                 border-radius: 10px;
             }
             .idc-main {
-                width: 365px;
+                width: 95%;
                 color: #FFFFFF;
                 font-weight: 500;
                 font-size: 18px;
@@ -256,6 +256,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                 }
             }
             .idc-main > img {
+                width: 100%;
                 border-radius: 10px;
             }
 
