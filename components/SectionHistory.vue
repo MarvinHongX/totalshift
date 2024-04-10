@@ -29,7 +29,7 @@ const events = ref([
     { year: '2023', 
         content: [
             { month: '05', detail: 'Aleo Proving Center 구축(경기도 안성)' },
-            { month: '07', detail: 'Aloe 익스플로러(aleotrak.com) 개발' },
+            { month: '07', detail: 'Aloe 익스플로러(aleotrack.com) 개발' },
             { month: '09', detail: '한국IPFS발전협동조합 이사회 참여' },
         ],
         class: 'timeline-eventEnd flex flex-row mb-1',
