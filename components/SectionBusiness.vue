@@ -12,7 +12,7 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
                     <span>최고로 향하는</span>
                 </div>
                 <div class="business-header">
-                    <span class="business-header-point">발걸음</span>
+                    <span class="business-point">발걸음</span>
                 </div>
             </div>
             <div class="business-left-body">
@@ -20,7 +20,7 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
                     <span>토탈쉬프트에서</span>
                 </div>
                 <div class="business-header2">
-                    <span class="business-header2-point">진행중인 사업</span>
+                    <span class="business-point2">진행중인 사업</span>
                     <span> 입니다.</span>
                 </div>
             </div>
@@ -93,6 +93,9 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
     width: 100%;
     height: 420px;
     padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     background-color: #111112;
 
     .business-header {
@@ -100,7 +103,7 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
         font-weight: 700;
         font-size: 45px;
     }
-    .business-header-point {
+    .business-point {
         color: #666666;
     }
     .business-header2 {
@@ -108,7 +111,7 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
         font-weight: 500;
         font-size: 18px;
     }
-    .business-header2-point {
+    .business-point2 {
         color: #057FFC;
     }
     .business-left {
@@ -116,7 +119,6 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
         flex-direction: column;
         align-items: start;
         justify-content: end;
-        width: 800px; 
         height: 630px;
         padding: 0 3.5rem;
         position: relative;
@@ -137,7 +139,6 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
             height: 150px;
         }
     }
-
     .business-right {
         display: flex;
         flex-direction: column;
@@ -160,7 +161,6 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
             font-weight: 500;
             font-size: 18px;
             flex-shrink: 0;
-    
             .business-item-header {
                 color: #FFFFFF;
                 font-weight: 600;
@@ -202,25 +202,18 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
     }
 }
 
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-business {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: between;
-        height: 464px;
+        height: 308px;
         padding-top: 0rem;
         .business-header {
             font-weight: 700;
             font-size: 30px;
         }
         .business-header2 {
-            color: #FFFFFF;
             font-weight: 400;
             font-size: 14px;
-        }
-        .business-header2-point {
-            color: #057FFC;
         }
         .business-left {
             flex-direction: row;
@@ -229,57 +222,34 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
             width: 100%; 
             height: 100%;
             padding: 0 1rem;
-            position: relative;
             .business-left-top {
-                width: 100%;
-                height: 100%;
                 padding: 0rem;
             }    
             .business-left-body {
                 align-items: end;
                 justify-content: end;
-                width: 100%;
                 height: 100%;
             }
         }
         .business-right {
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            justify-content: end;
             width: 100%;
             height: 100%;
             padding: 2rem 1rem;
         }
         .business-items {
-            display: flex;
-            flex-direction: row;
-            align-items: start;
-            justify-content: start;
-            width: 100%;
-            overflow-x: scroll;
             .business-item {
                 width: 200px;
                 height: 233px;        
-                .business-item-header {
-                    color: #FFFFFF;
-                    font-weight: 600;
-                    font-size: 32px;
-                }
                 .business-img-wrapper {
                     width: 200px;
-                    height: 200px;
-                    overflow: hidden;
-                    position: relative;
+                    height: 200px;;
                     border-radius: 15px;
-                    margin-bottom: 10px;
                     .business-img {
                         border-radius: 15px;
                     }
                     .business-label {
                         font-size: 16px;
                         font-weight: 500;
-                        text-align: left;
                         padding: 15px;
                         .business-label-small {
                             font-weight: 400;
@@ -289,6 +259,12 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
                 }
             }
         }
+    }
+}
+
+@media (max-width: 530px) {
+    .section-business {
+        height: 285px;
     }
 }
 </style>

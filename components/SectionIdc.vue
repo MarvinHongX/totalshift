@@ -4,23 +4,25 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
 <template>
     <FullCard class="section-idc" :style="{ backgroundImage: 'url(' + idcBackgroundUrl + ')' }">
         <div class="idc-left">
-            <div class="idc-header mb-4">
-                <span>IDC 가산 캠퍼스</span>
-            </div>
-            <div class="idc-header2 mb-2">
-                <span>서울 금천구 가산로9길 66 더리즌밸리 501호~507호</span>
-            </div>
-            <div class="idc-header2">
-                <span>최대 70페타바이트 스토리지 용량</span>
+            <div class="left-wrapper">
+                <div class="idc-header mb-4">
+                    <span>IDC 가산 캠퍼스</span>
+                </div>
+                <div class="idc-header2 mb-2">
+                    <span>서울 금천구 가산로9길 66 더리즌밸리 501호~507호</span>
+                </div>
+                <div class="idc-header2">
+                    <span>최대 70페타바이트 스토리지 용량</span>
+                </div>
             </div>
         </div>
         <div class="idc-right">
             <div class="idc-main mb-8">
                 <img :src="idcUrl" alt="idc" style="width: 100%;" />
             </div>
-            <div class="flex flex-row align-items-center">
-                <div class="dic-right-a flex flex-column justify-content-start">
-                    <div class="idc-item flex flex-column mb-8">
+            <div class="idc-body">
+                <div class="dic-right-a">
+                    <div class="idc-item">
                         <img class="mb-3" :src="realtimeUrl" alt="realtime" style="width: 80%;" />
                         <div class="idc-item-header mb-3">
                             <span>실시간 제어 시스템</span>
@@ -35,7 +37,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                             <span>CCTV 모니터링</span>
                         </div>
                     </div>
-                    <div class="idc-item flex flex-column mb-8">
+                    <div class="idc-item">
                         <img class="mb-3" :src="extinguisherUrl" alt="extinguisher" style="width: 80%;" />
                         <div class="idc-item-header mb-3">
                             <span>자동소화 시스템</span>
@@ -54,7 +56,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                         </div>
                         
                     </div>
-                    <div class="idc-item flex flex-column">
+                    <div class="idc-item">
                         <img class="mb-3" :src="firewallUrl" alt="firewall" style="width: 80%;" />
                         <div class="idc-item-header mb-3">
                             <span>방화벽 시스템</span>
@@ -73,8 +75,8 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                         </div>
                     </div>
                 </div>
-                <div class="dic-right-b flex flex-column justify-content-start">
-                    <div class="idc-item flex flex-column mb-8">
+                <div class="dic-right-b">
+                    <div class="idc-item">
                         <img class="mb-3" :src="tempHumidityUrl" alt="tempHumidity" style="width: 80%;" />
                         <div class="idc-item-header mb-3">
                             <span>항온항습 시스템</span>
@@ -92,7 +94,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                             <span>풍량 105CMM</span>
                         </div>
                     </div>
-                    <div class="idc-item flex flex-column">
+                    <div class="idc-item">
                         <img class="mb-3" :src="upsUrl" alt="ups" style="width: 80%;" />
                         <div class="idc-item-header mb-3">
                             <span>무정전 UPS 시스템</span>
@@ -125,15 +127,17 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: between;
+    justify-content: center;
     width: 100%;
-    height: 3582px;
-    padding-top: 30rem;
-
+    height: 2800px;
+    padding-top: 10rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     .idc-header {
         color: #FFFFFF;
         font-weight: 700;
-        font-size: 45px;
+        font-size: 35px;
     }
     .idc-header2 {
         color: #FFFFFF;
@@ -143,24 +147,34 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
     .idc-left {
         display: flex;
         flex-direction: column;
+        align-items: start;
         justify-content: start;
-        padding: 5rem;
+        padding: 2rem;
+        width: 500px;
         height: 100%;
+        .left-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            position: relative; 
+            // width: 353px;
+            overflow: hidden;
+            padding: 5rem 0rem;
+            position: sticky;
+            top: 0;
+            z-index: 4; 
+        }
     }
    
     .idc-right {
         display: flex;
         flex-direction: column;
         justify-content: start;
+        width: 780px;
         height: 100%;
-        .idc-right-a {
-            margin-top: 2rem;
-        }
-        .idc-right-b {
-            margin-top: 4rem;
-        }
         .idc-main {
-            width: 95%;
+            width: 100%;
             color: #FFFFFF;
             font-weight: 500;
             font-size: 18px;
@@ -173,11 +187,32 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
         .idc-main > img {
             border-radius: 15px;
         }
+        .idc-body {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            .idc-right-a {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                margin-top: 2rem;
+            }
+            .idc-right-b {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                margin-top: 4rem;
+            }
+        }
         .idc-item {
+            display: flex;
+            flex-direction: column;
             width: 100%;
             color: #FFFFFF;
             font-weight: 500;
             font-size: 18px;
+            margin-bottom: 14rem;
             .idc-item-header {
                 color: #FFFFFF;
                 font-weight: 600;
@@ -189,46 +224,59 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
         }
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-idc {
         flex-direction: column;
         align-items: start;
         justify-content: start;
-        height: 1400px;
-        padding: 10rem 0rem;
+        width: 100%;
+        height: 3050px;
+        padding: 4rem 1rem;
 
-        .idc-header {
-            color: #FFFFFF;
-            font-weight: 700;
-            font-size: 35px;
-        }
         .idc-header2 {
-            color: #FFFFFF;
-            font-weight: 500;
             font-size: 14px;
         }
         .idc-left {
             display: flex;
             flex-direction: column;
+            align-items: start;
             justify-content: start;
             padding: 1rem;
+            width: 100%;
             height: 140px;
+            .left-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: start;
+                overflow: hidden;
+                padding: 5rem 0rem;
+                position: relative;
+                top: 0;
+                z-index: 4; 
+            }
         }
+   
     
         .idc-right {
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            height: 825px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
             padding: 1rem;
-            .idc-right-a {
-                margin-top: 2rem;
+            .idc-main > img {
+                width: 100%;
+                border-radius: 10px;
             }
-            .idc-right-b {
-                margin-top: 4rem;
+            .idc-body {
+                .idc-right-a {
+                    margin-top: 2rem;
+                }
+                .idc-right-b {
+                    margin-top: 4rem;
+                }
             }
             .idc-item {
-                width: 172px;
+                // width: 172px;
                 color: #FFFFFF;
                 font-weight: 500;
                 font-size: 18px;
@@ -244,24 +292,22 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
             .idc-item > img {
                 border-radius: 10px;
             }
-            .idc-main {
-                width: 95%;
-                color: #FFFFFF;
-                font-weight: 500;
-                font-size: 18px;
-                .idc-item-header {
-                    color: #FFFFFF;
-                    font-weight: 600;
-                    font-size: 32px;
-                }
-            }
-            .idc-main > img {
-                width: 100%;
-                border-radius: 10px;
-            }
-
-            
         }
+    }
+}
+@media (max-width: 690px) {
+    .section-idc {
+        height: 1950px;
+    }
+}
+@media (max-width: 500px) {
+    .section-idc {
+        height: 1650px;
+    }
+}
+@media (max-width: 420px) {
+    .section-idc {
+        height: 1450px;
     }
 }
 </style>

@@ -10,7 +10,7 @@ const { songUrl, songProfileUrl } = useImg();
             <div class="song-me-header mb-6">
                 <span class="song-me-name">CEO 송 창 익</span>
             </div>
-            <div class="song-me-body flex flex-column align-items-center">
+            <div class="song-me-body">
                 <div class="inline-flex mb-2">
                     <span>“디지털 혁신은 전분야 비즈니스의 형태를 근본적으로 변화시키고 있습니다. </span>  
                 </div>
@@ -34,12 +34,15 @@ const { songUrl, songProfileUrl } = useImg();
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 799px;
+    height: 599px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     background-color:#2F3445;
     color: #EEEEEE;
     font-weight: 500;
     font-size: 18px;
-
     .song-pic {
         display: flex;
         flex-direction: column;
@@ -55,30 +58,34 @@ const { songUrl, songProfileUrl } = useImg();
     .song-pic > img {
         width: 100%; 
         height: auto;
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), 0 100%);
+        margin-bottom: -130px; 
     }
-
     .song-me {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: calc(100% - 500px);
         height: 100%;
-        padding-top: 14rem;
+        padding-top: 13rem;
+        .song-me-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .song-me-name {
             font-weight: 600;
             font-size: 30px;            
         }
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-song {
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
         height: 612px;
         font-weight: 500;
         font-size: 12px;
-        padding-top: 6rem;
+        // padding-top: 6rem;
         .song-pic {
             display: none;
         }
@@ -86,7 +93,7 @@ const { songUrl, songProfileUrl } = useImg();
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: end;
+            justify-content: center;
             width: 210px; 
             height: 210px;
             overflow: hidden;
@@ -106,6 +113,5 @@ const { songUrl, songProfileUrl } = useImg();
             }
         }
     }
-
 }
 </style>

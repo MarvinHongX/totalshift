@@ -36,19 +36,19 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
                     </a>
                 </div>
             </div>
-            <div class="item-group">
+            <div class="item-groupEnd">
                 <div class="service-item mr-3">
                     <a :href="aleocatHref" target="_blank" class="service-link">
                         <div class="mb-6">
                             <img :src="aleoCatUrl" alt="aleocat" style="width: 90%;" />
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" >
                             <span>알레오 캣</span>
                         </div>
                     </a>
                 </div>
-                <div class="service-item service-item-none">
-                </div>
+                <!-- <div class="service-item service-item-none">
+                </div> -->
             </div>
         </div>
     </FullCard>
@@ -59,13 +59,16 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: center;
     width: 100%;
-    height: 825px;
-    padding: 4rem 8rem;  
+    height: 725px;
     background-color: #111112;
-    color: #111112;
     font-weight: 600;
     font-size: 18px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     .service-header {
         font-weight: 700;
         font-size: 45px;
@@ -81,22 +84,34 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
         flex-direction: row;
         align-items: center;
         justify-content: between;
+        // width: 1024px;
         width: 100%;
         .item-group {
-            // min-width: 550px;
-            height: 362px;
+            // display: flex;
+            // flex-direction: columns;
+            // align-items: center;
+            // justify-content: start;   
+            width: 65%;
+        }
+        .item-groupEnd {
+            width: 32.5%;
+        }
+        .item-group, .item-groupEnd {
+            color: #111112;
+            // width: 800px;
+            height: 310px;
             display: flex;
             flex-direction: row;
             align-items: center;
             // justify-content: center;
             margin-right: 15px;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             .service-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: end;
-                width: 448px;
+                width: 548px;
                 height: 100%;
                 background-color: #FFFFFF;
                 padding-bottom: 50px;
@@ -119,44 +134,43 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
         }
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-service {
         height: 625px;
         padding: 1rem 1rem;  
-        font-weight: 600;
         font-size: 7px;
         .service-header {
             font-weight: 600;
             font-size: 24px;
-            color: #FFFFFF;
         }
         .service-header2 {
             font-weight: 400;
             font-size: 12px;
-            color: #FFFFFF;
         }
         .service-items {
             flex-direction: column;
-            align-items: center;
-            justify-content: between;
+            justify-content: center;
+            width: 100%;
             .item-group {
-                height: 148px;
+                .service-item {
+                    width: 100%;
+                }
+            }
+            .item-groupEnd {
+                .service-item {
+                    width: 156px;
+                }
+            }
+            .item-group, .item-groupEnd {
+                width: 324px;
+                height: 113px;
                 .service-item-none {
                     background-color: transparent;
                 }
                 .service-item {
                     padding: 0rem;
-                    justify-content: end;
-                    width: 165px;
-                    height: 138px;
                     .service-link {
                         padding: 1.5rem 1.5rem 0 1.5rem;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: end;
-                        text-decoration: none;
-                        color: inherit;
                     }
                 }
             }

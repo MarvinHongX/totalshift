@@ -1,4 +1,6 @@
 <script setup>
+const { filfoxBtnUrl } = useImg();
+const { filfoxHref } = useHref();
 const props = defineProps({
     item: {
         type: Object,
@@ -23,8 +25,12 @@ const props = defineProps({
                     </div>  
                     <div class="filecoinnode-header5">
                         <span>Initial Pledge: {{ convertToFil(props.item.balance.sectorPledgeBalance) }} FIL</span>
-                        
                     </div>  
+                    <a :href="filfoxHref" target="_blank" class="filecoinnode-link filecoinnode-display">
+                        <div class="filfox-img-wrapper">
+                            <img :src="filfoxBtnUrl" alt="filecoin" class="filfox-img" />
+                        </div>
+                    </a>
                 </div>
                 <div class="filecoinnode-tabitem-center">
                     <div class="filecoinnode-header5 mb-3">
@@ -36,6 +42,12 @@ const props = defineProps({
                     <div class="filecoinnode-header5">
                         <span>Raw Byte Power: {{ bytesToPiB(props.item.power.rawBytePower) }} PiB</span>
                     </div>  
+                    <div class="filecoinnode-display align-items-end" style="height: 75px">
+                        <span class="filecoinnode-header mr-3">
+                            {{ props.item.score }}
+                        </span>
+                        <span class="filecoinnode-header9 mb-1">Score</span>
+                    </div>
                 </div>
                 <div class="filecoinnode-tabitem-right">
                     <div class="flex flex-row align-items-end">
@@ -57,39 +69,46 @@ const props = defineProps({
     border: 1px solid;
 }
 .filecoinnode-tabitems-wrapper {
-    padding: 2rem;
-    height: 410px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     background-color:#1C1C1C;
 }
 .filecoinnode-tabitems {
+    display: flex;
+    flex-direction: row; 
     background-color:#1C1C1C;
+    height: 280px;
 }
 
 .filecoinnode-tabitem {
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
-    height: 326px;
+    padding: 1.5rem 0rem;
+    height: 280px;
 }
 .filecoinnode-tabitem-left {
     display: flex;
     flex-direction: column; 
     align-items: start;
     justify-content: start;
-    width: 450px;
+    width: 320px;
     height: 100%;
-    padding: 4rem 0rem 0rem 3.5rem;
+    padding: 2.5rem 0rem 0rem 1.5rem;
 }
 .filecoinnode-tabitem-center {
     display: flex;
     flex-direction: column; 
     align-items: start;
     justify-content: start;
-    width: 450px;
+    width: 320px;
     height: 100%;
     background-color: #1C1C1C;
     border-left: 1px solid #707070;
-    padding: 4rem 0rem 0rem 6rem;
+    padding: 2.5rem 0rem 0rem 4rem;
 }
 .filecoinnode-tabitem-right {
     display: flex;
@@ -97,53 +116,38 @@ const props = defineProps({
     align-items: center;
     justify-content: center;
     
-    width: 450px;
+    width: 320px;
     height: 100%;
     background-color: #1C1C1C;
-    padding: 3rem;
-}
-.filecoinnode-header {
-    color: #EEEEEE;
-    font-weight: 700;
-    font-size: 45px;
-}
-.filecoinnode-header-point {
-    color: #42C1CA;
-}
-.filecoinnode-header2 {
-    color: #EEEEEE;
-    font-weight: 500;
-    font-size: 18px;
-}
-.filecoinnode-header3-point {
-    color: #42C1CA;
-    font-weight: 500;
-    font-size: 90px;
-}
-.filecoinnode-header4-point {
-    color: #42C1CA;
-    font-weight: 500;
-    font-size: 50px;
+    // padding: 3rem;
 }
 .filecoinnode-header5 {
     color: #EEEEEE;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
 }
 .filecoinnode-header6 {
     color: #FFFFFF;
     font-weight: 700;
-    font-size: 35px;
+    font-size: 25px;
 }
 .filecoinnode-header7 {
     color: #EEEEEE;
     font-weight: 600;
-    font-size: 72px;
+    font-size: 70px;
 }
 .filecoinnode-header8 {
     color: #999999;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 30px;
+}
+.filecoinnode-header9 {
+    color: #999999;
+    font-weight: 600;
+    font-size: 22px;
+}
+.filecoinnode-display {
+    display: none;
 }
 @media (max-width: 890px) {
     .miner {
@@ -151,13 +155,16 @@ const props = defineProps({
         border: 1px solid;
     }
     .filecoinnode-tabitems-wrapper {
+        width: 100%;
+        min-width: 280px;
         padding: 1rem;
-        height: 636px;
+        height: 100%;
         background-color:#1C1C1C;
     }
     .filecoinnode-tabitems {
         display: flex;
         flex-direction: column;
+        width: 100%;
         height: 100%;
         background-color:#1C1C1C;
     }
@@ -166,16 +173,17 @@ const props = defineProps({
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 616px;
+        width: 100%;
+        height: 100%;
     }
     .filecoinnode-tabitem-left {
         width: 100%;
-        height: 308px;
+        height: 50%;
         padding: 2rem;
     }
     .filecoinnode-tabitem-center {
         width: 100%;
-        height: 308px;
+        height: 50%;
         flex-direction: column;
         border-top: 1px solid #707070;
         border-left: 0px;
@@ -210,12 +218,12 @@ const props = defineProps({
     .filecoinnode-header5 {
         color: #EEEEEE;
         font-weight: 400;
-        font-size: 15px;
+        font-size: 12px;
     }
     .filecoinnode-header6 {
         color: #FFFFFF;
         font-weight: 700;
-        font-size: 27px;
+        font-size: 22px;
     }
     .filecoinnode-header7 {
         color: #EEEEEE;
@@ -226,6 +234,28 @@ const props = defineProps({
         color: #999999;
         font-weight: 600;
         font-size: 40px;
+    }
+    .filecoinnode-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        text-decoration: none;
+        color: inherit;
+        font-size: 8px;
+    }
+    .filfox-img-wrapper {
+        width: 89px;
+        height: 39px;
+        border-radius: 5px;
+        margin-top: 10px;
+        .filfox-img {
+            width: 80%;
+            height: 80%;
+        }
+    }
+    .filecoinnode-display {
+        display: flex;
     }
 }
 

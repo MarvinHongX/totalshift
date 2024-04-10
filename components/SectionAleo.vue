@@ -3,7 +3,7 @@ const { aleoLogoUrl } = useImg();
 const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
 </script>
 <template>
-    <FullCard class="section-aleo">
+    <FullFoldCard class="section-aleo" :logoUrl="aleoLogoUrl" logoName="Aleo" :isExpanded="false">
         <div class="aleo-img-wrapperer">
             <img :src="aleoLogoUrl" alt="aleoLogo" class="aleo-img"/>
         </div>
@@ -63,20 +63,50 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
         </div>  
         <div class="aleo-link-wrapper mb-5">
             <a :href="aleoIntroHref" target="_blank" class="aleo-link">
-                <div class="aleo-header4">Aleo Intro ▶</div>
+                <div class="aleo-header4">
+                    <span class="mr-2">Aleo Intro </span>
+                    <svg class="aleo-none" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#707070" stroke-width="1.5"/>
+                        <polygon points="23,15 12,23 12,7" fill="#333333" />
+                    </svg>
+                    <svg class="aleo-display" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="8" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+                        <polygon points="14,9 6,14 6,4" fill="#333333" />
+                    </svg>
+                </div>
             </a>    
         </div>
         <div class="aleo-link-wrapper mb-5">
             <a :href="aleoDocsHref" target="_blank" class="aleo-link">
-                <div class="aleo-header4">Aleo Docs ▶</div>
+                <div class="aleo-header4">
+                    <span class="mr-2">Aleo Docs </span>
+                    <svg class="aleo-none" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#707070" stroke-width="1.5"/>
+                        <polygon points="23,15 12,23 12,7" fill="#333333" />
+                    </svg>
+                    <svg class="aleo-display" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="8" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+                        <polygon points="14,9 6,14 6,4" fill="#333333" />
+                    </svg>
+                </div>
             </a>    
         </div>
         <div class="aleo-link-wrapper">
             <a :href="aleoBlogHref" target="_blank" class="aleo-link">
-                <div class="aleo-header4">Aleo Blog ▶</div>
+                <div class="aleo-header4">
+                    <span class="mr-2">Aleo Blog </span>
+                    <svg class="aleo-none" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#707070" stroke-width="1.5"/>
+                        <polygon points="23,15 12,23 12,7" fill="#333333" />
+                    </svg>
+                    <svg class="aleo-display" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="8" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+                        <polygon points="14,9 6,14 6,4" fill="#333333" />
+                    </svg>
+                </div>
             </a>    
         </div>
-    </FullCard>
+    </FullFoldCard>
 </template>
 
 <style lang="scss" scoped>
@@ -86,12 +116,16 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
     align-items: start;
     justify-content: start;
     width: 100%;
-    height: 1700px;
+    // height: 1700px;
     padding: 9rem;
     background-color: #F4F6F8;
     color: #333333;
     font-weight: 400;
     font-size: 20px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
 
 
     .aleo-bold {
@@ -111,11 +145,15 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
         font-size: 20px;
     }
     .aleo-header3 {
+        display: flex;
+        flex-direction: row;
         color: #333333;
         font-weight: 500;
         font-size: 30px;
     }
     .aleo-header4 {
+        display: flex;
+        flex-direction: row;
         color: #666666;
         font-weight: 500;
         font-size: 25px;
@@ -126,16 +164,29 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
     .aloe-top {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     .aleo-top-paragraph {
         padding-bottom: 4px;
     }
     .aleo-top-block {
         padding-bottom: 50px;
+        .aleo-top-paragraph2 {
+            display: inline-block;
+        }
+        .aleo-top-paragraph2 > span{
+            display: inline-block;
+        }
     }
     .aleo-img-wrapperer {
         width: 87px;
         margin-bottom: 50px;
+    }
+    .aleo-none {
+        display: block;
+    }
+    .aleo-display {
+        display: none;
     }
     .aleo-img {
         width: 87px;
@@ -152,19 +203,19 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
         .aleo-link {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: start;
             justify-content: end;
             text-decoration: none;
             color: inherit;
         }
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-aleo {
-        padding: 5rem 1rem;
+        padding: 2rem 2rem;
         font-weight: 400;
         font-size: 12px;
-        height: 1500px;
+        // height: 1500px;
         align-items: center;
         background-color: #FFFFFF;
         .aleo-bold {
@@ -239,10 +290,18 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
             margin-top: 30px;
         }
         .aleo-img-wrapperer {
-            width: 58px;
+            // width: 58px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
         .aleo-none {
-            display: none;
+            display: none !important;
+        }
+        .aleo-display {
+            display: block !important;
         }
         .aleo-img {
             width: 58px;

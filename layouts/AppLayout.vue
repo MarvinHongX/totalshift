@@ -1,18 +1,10 @@
 <script setup>
-import { computed, ref, watch, onMounted, onUnmounted } from 'vue';
+import { computed, ref, onMounted, onUnmounted } from 'vue';
 import AppTopbar from './AppTopbar.vue';
 import AppFooter from './AppFooter.vue';
 import AppGoto from './AppGoto.vue';
 
 const { layoutConfig, layoutState } = useLayout();
-
-// watch(layoutState.hamburgerMenuActive , (newVal) => {
-//     if (newVal) {
-//         bindOutsideClickListener();
-//     } else {
-//         unbindOutsideClickListener();
-//     }
-// });
 
 const scrollDirection = ref('up'); 
 

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue';
-const { filecoinUrl, filecoinBackgroundUrl } = useImg();
+const { filecoinUrl, filecoinBackgroundUrl, filfoxBtnUrl } = useImg();
 const { filfoxHref, filswanHref } = useHref();
 const loading =ref(true);
 const tabItems = ref([
@@ -170,6 +170,11 @@ onBeforeMount(async () => {
         <div v-if="tabItems" class="filecoinnode-tab flex flex-rows">
             <TabView2 :tabItems="tabItems" />
         </div>
+        <div class="filfox-img-wrapper filecoinnode-none">
+            <a :href="filfoxHref" target="_blank" class="filecoinnode-link">
+                <img :src="filfoxBtnUrl" alt="filecoin" class="filfox-img" />
+            </a>
+        </div>
     </FullCard>
 </template>
 
@@ -178,12 +183,15 @@ onBeforeMount(async () => {
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: start;
+    justify-content: center;
     width: 100%;
-    height: 1500px;
+    height: 1300px;
     padding-top: 0rem;
     background-color: #070707;
-    padding: 9rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     .filecoinnode-header {
         color: #EEEEEE;
         font-weight: 700;
@@ -200,12 +208,12 @@ onBeforeMount(async () => {
     .filecoinnode-header3-point {
         color: #42C1CA;
         font-weight: 500;
-        font-size: 90px;
+        font-size: 70px;
     }
     .filecoinnode-header4-point {
         color: #42C1CA;
         font-weight: 500;
-        font-size: 50px;
+        font-size: 35px;
     }
     .filecoinnode-header5 {
         color: #EEEEEE;
@@ -227,21 +235,19 @@ onBeforeMount(async () => {
         font-weight: 600;
         font-size: 40px;
     }
-    .filecoinnode-items {
-        background-color:#1C1C1C;
-    }
     .filecoinnode-item {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        height: 326px;
+        width: 1000px;
+        height: 230px;
     }
     .filecoinnode-item-left {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 450px;
+        width: 320px;
         height: 100%;
         
         background-color: #EEEEEE;
@@ -253,7 +259,7 @@ onBeforeMount(async () => {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        width: 450px;
+        width: 320px;
         height: 100%;
         background-color: #1C1C1C;
         margin-right: 2rem;
@@ -284,7 +290,7 @@ onBeforeMount(async () => {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        width: 450px;
+        width: 320px;
         height: 100%;
         background-color: #1C1C1C;
         padding-top: 2rem;
@@ -318,21 +324,31 @@ onBeforeMount(async () => {
     }
     .filecoinnode-tab {
         font-weight: 700;
-        font-size: 25px;
+        font-size: 20px;
         color: #EEEEEE;
-        // width: 100%;
+        width: 100%;
+        height: 360px;
+    }
+    
+    .filfox-img-wrapper {
+        margin-top: 5px;
+        width: 109px;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .filfox-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
     }
 
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-filecoinnode {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
         justify-content: start;
-        height: 1300px;
-        padding-top: 0rem;
-        background-color: #070707;
+        height: 1200px;
         padding: 6rem 1rem;
         .filecoinnode-none {
             display: none;
@@ -344,94 +360,45 @@ onBeforeMount(async () => {
             font-size: 12px;
         }
         .filecoinnode-header3-point {
-            color: #42C1CA;
             font-weight: 500;
-            font-size: 35px;
+            font-size: 24px;
         }
         .filecoinnode-header4-point {
-            color: #42C1CA;
-            font-weight: 500;
-            font-size: 19px;
+            font-size: 14px;
         }
         .filecoinnode-header5 {
-            color: #EEEEEE;
-            font-weight: 400;
             font-size: 10px;
-        }
-        .filecoinnode-header6 {
-            color: #FFFFFF;
-            font-weight: 700;
-            font-size: 35px;
-        }
-        .filecoinnode-header7 {
-            color: #EEEEEE;
-            font-weight: 600;
-            font-size: 72px;
-        }
-        .filecoinnode-header8 {
-            color: #999999;
-            font-weight: 600;
-            font-size: 40px;
         }
         .filecoinnode-items {
             background-color:#1C1C1C;
         }
         .filecoinnode-item {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            height: 128px;
+            width: 325px;
+            height: 100px;
         }
         .filecoinnode-item-left {
             display: none;
         }
         .filecoinnode-item-center {
-            justify-content: start;
+            justify-content: space-evenly;
             width: 175px;
             height: 100%;
-            background-color: #1C1C1C;
-            .filcoinnode-link-wrapper  {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: end;
-            }
+            margin-right: 1rem;
+            padding-top: 1rem;
         }
         .filecoinnode-item-right {
-            justify-content: start;
+            justify-content: space-evenly;
             width: 175px;
-            height: 100%;
-            background-color: #1C1C1C;
-            padding-top: 2rem;
-        }
-
-        .filecoinnode-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-        }
-
-        .filecoinnode-img-wrapper {
-            width: 291px;
-            height: 97px;
-            overflow: hidden;
+            padding-top: 1rem;
+            .filcoinnode-link-wrapper  {
+                .filecoinnode-link {
+                    font-size: 8px;
+                }
+            }
         }
         .filecoinnode-tab {
-            font-weight: 700;
             font-size: 25px;
-            color: #EEEEEE;
-            // width: 100%;
-            width: 380px;
-        }
-        .filecoinnode-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: end;
-            text-decoration: none;
-            color: inherit;
-            font-size: 8px;
+            height: 600px;
         }
     }
 }

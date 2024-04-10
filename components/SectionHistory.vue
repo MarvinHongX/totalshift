@@ -4,24 +4,36 @@ import { ref } from 'vue';
 const { historyLogUrl, authBUrl } = useImg();
 
 const events = ref([
-    { year: '2020', content: [
-        { month: '10', detail: '(주)필데이타 법인 설립' },
-    ]},
-    { year: '2021', content: [
-        { month: '03', detail: 'NICE평가정보 기술평가 우수기업 선정' },
-        { month: '08', detail: '가산 지식산업센터 IDC 구축' },
-    ]},
-    { year: '2022', content: [
-        { month: '04', detail: '법인명 변경 (주)토탈쉬프트(Total Shift)' },
-        { month: '05', detail: '클라우드 서비스 The Sky Zone 오픈' },
-        { month: '06', detail: 'IDC 구축 및 확산 프로젝트' },
-        { month: '08', detail: '(주)토탈쉬프트 기업부설연구소 설립' },
-    ]},
-    { year: '2023', content: [
-        { month: '05', detail: 'Aleo Proving Center 구축(경기도 안성)' },
-        { month: '07', detail: 'Aloe 익스플로러(aleotrak.com) 개발' },
-        { month: '09', detail: '한국IPFS발전협동조합 이사회 참여' },
-    ]},
+    { year: '2020', 
+        content: [
+            { month: '10', detail: '(주)필데이타 법인 설립' },
+        ],
+        class: 'timeline-event flex flex-row mb-1',
+    },
+    { year: '2021', 
+        content: [
+            { month: '03', detail: 'NICE평가정보 기술평가 우수기업 선정' },
+            { month: '08', detail: '가산 지식산업센터 IDC 구축' },
+        ],
+        class: 'timeline-event flex flex-row mb-1',
+    },
+    { year: '2022', 
+        content: [
+            { month: '04', detail: '법인명 변경 (주)토탈쉬프트(Total Shift)' },
+            { month: '05', detail: '클라우드 서비스 The Sky Zone 오픈' },
+            { month: '06', detail: 'IDC 구축 및 확산 프로젝트' },
+            { month: '08', detail: '(주)토탈쉬프트 기업부설연구소 설립' },
+        ],
+        class: 'timeline-event flex flex-row mb-1',
+    },
+    { year: '2023', 
+        content: [
+            { month: '05', detail: 'Aleo Proving Center 구축(경기도 안성)' },
+            { month: '07', detail: 'Aloe 익스플로러(aleotrak.com) 개발' },
+            { month: '09', detail: '한국IPFS발전협동조합 이사회 참여' },
+        ],
+        class: 'timeline-eventEnd flex flex-row mb-1',
+    },
     
 ]);
 </script>
@@ -29,24 +41,24 @@ const events = ref([
 
 <template>
 <FullCard class="section-history">
-    <div class="history-left">
-        <div class="auth-img-wrapper">
+    <div class="history-auth">
+        <div class="auth-wrapper">
             <img :src="authBUrl" alt="authB" class="auth-img mb-4" />
-            <div class="auth-img-header mb-1">
+            <div class="auth-header mb-1">
                 <span>도전의 시작을 알리다.</span>
             </div>
-            <div class="auth-img-header">
-                <span class="auth-img-header-point">기술평가 우수기업 인증서</span>
+            <div class="auth-header">
+                <span class="auth-point">기술평가 우수기업 인증서</span>
                 <span> 입니다.</span>
             </div>
         </div>
     </div>
 
     <div class="history-timeline">
-        <div class="timeline-logo">
-            <img :src="historyLogUrl" alt="historyLog" />
+        <div class="timeline-logo-wrapper">
+            <img class="timeline-logo" :src="historyLogUrl" alt="historyLog" />
         </div>
-        <div v-for="event in events" :key="event.year" class="timeline-event flex flex-row mb-8">
+        <div v-for="event in events" :key="event.year" :class="event.class">
             <div class="timeline-event-left">
                 <div class="timeline-marker"></div>
             </div>
@@ -78,37 +90,37 @@ const events = ref([
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    color: #ECECEC;
-    background-color: #111112;
-    padding: 10rem 0;
     width: 100%;
-    height: 1700px;
-    .history-left {
+    height: 1300px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
+    background-color: #111112;
+    .history-auth {
         display: flex;
         flex-direction: column;
-        align-items: end;
-        width: 45%;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
         height: 100%;
-        .auth-img-wrapper {
+        .auth-wrapper {
+            position: sticky;
             display: flex;
             flex-direction: column;
-            position: relative; 
             width: 353px;
-            height: 100%;
             overflow: hidden;
-            margin-bottom: 10px;
-            position: sticky;
+            padding: 8rem 0rem;
             top: 0;
             z-index: 4; 
             .auth-img {
                 width: 100%;
                 height: auto;
-                
             }
-            .auth-img-header {
+            .auth-header {
                 color: #EEEEEE;
             }
-            .auth-img-header-point {
+            .auth-point {
                 color: #057FFC;
             }
         }
@@ -116,36 +128,39 @@ const events = ref([
     .history-timeline {
         display: flex;
         flex-direction: column;
-        // background-color: white;
         border-left: 1.4px solid #3E3E3E;
-        width: 50%;
-        margin-left: 4rem;
-        .timeline-logo > img {
-            transform: translate(-50%, -73%);
+        width: 100%;
+        .timeline-logo-wrapper {
+            .timeline-logo {
+                transform: translate(-50%, -73%);
+            }
         }
         .timeline-event {
-            padding-bottom: 5rem;
+            padding-bottom: 8rem;
+        }
+        .timeline-eventEnd {
+            padding-bottom: 0rem;
+        }
+        .timeline-event, .timeline-eventEnd {
             .timeline-event-left {
-                width: 21px;
-                height: 100%;
+                width: 24px;
                 border-top: 1.4px solid #3E3E3E;
+                .timeline-marker {
+                    position: relative;
+                    top: 0%;
+                    left: 0%;
+                    transform: translate(-55%, -52%);
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: #37459B;
+                }    
             }
-            .timeline-marker {
-                position: relative;
-                top: 50%;
-                // left: 50%;
-                transform: translate(-55%, -52%);
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background-color: #37459B;
-            }    
             .timeline-event-right {
                 padding-left: 25px;
                 .event-right-year {
                     position: relative;
                     top: -20px;
-
                     font-weight: 800;
                     font-size: 30px;
                     color: #EEEEEE;
@@ -164,83 +179,42 @@ const events = ref([
             }
         }
     }
-
 }
 
-
-
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-history {
         flex-direction: column;
-        height: 2400px;
-        .history-left {
-            align-items: center;
-            width: 100%;
-            .auth-img-wrapper {
-                height: 620px;
-                .auth-img {
-                    width: 100%;
-                    height: auto;
-                    
-                }
-                .auth-img-header {
-                    color: #EEEEEE;
-                }
-                .auth-img-header-point {
-                    color: #057FFC;
-                }
+        height: 1600px;
+        .history-auth {
+            height: 700px;
+            .auth-wrapper {
+                width: 320px;
             }
         }
         .history-timeline {
             width: 70%;
-            margin-left: 0rem;
             .timeline-event {
-                padding-bottom: 1rem;
-                .timeline-marker {
-                    position: relative;
-                    top: 0%;
-                    // left: 50%;
-                    transform: translate(-55%, -52%);
-                }    
-                .timeline-event-right {
-                    padding-left: 25px;
-                    .event-right-year {
-                        position: relative;
-                        top: -20px;
-
-                        font-weight: 800;
-                        font-size: 30px;
-                        color: #EEEEEE;
-                    }
-                    .event-right-month {
-                        font-weight: 700;
-                        font-size: 18px;
-                        color: #A3A3A3;
-                    }
-                    .event-right-detail {
-                        font-weight: 500;
-                        font-size: 18px;
-                        color: #A3A3A3;
-                        padding-left: 15px;
-                    }
-                }
+                padding-bottom: 5rem;
+            }
+            .timeline-eventEnd {
+                padding-bottom: 0rem;
             }
         }
     }
 }
 
-
 @media (max-width: 530px) {
     .section-history {
-        .history-left {
-            .auth-img-wrapper {
-                width: 303px;
+        height: 1150px;
+        .history-auth {
+            height: 550px;
+            .auth-wrapper {
+                width: 240px;
             }
         }
         .history-timeline {
             width: 80%;
-            .timeline-event {
-                padding-bottom: 1rem;
+            .timeline-event, .timeline-eventEnd {
                 .timeline-event-right {
                     padding-left: 15px;
                     .event-right-year {

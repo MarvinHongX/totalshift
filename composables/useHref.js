@@ -1,4 +1,7 @@
 export const useHref = () => {
+    const defiHref = computed(() => {
+        return `https://aleoworks.com/`;
+    });
     const youtubeHref = computed(() => {
         return `https://www.youtube.com/@FIL-ALEO`;
     });
@@ -46,6 +49,7 @@ export const useHref = () => {
     });
 
     return {
+        defiHref,
         youtubeHref,
         skyzoneHref,
         aleotrackHref,

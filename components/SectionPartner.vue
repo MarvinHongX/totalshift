@@ -52,10 +52,13 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 825px;
-    // padding-top: 11rem;
-    padding: 11rem 2rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     background-color: #FFFFFF;
     .partner-header {
         font-weight: 700;
@@ -84,8 +87,7 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
                 justify-content: center;
                 height: 100%;
                 width: auto; 
-                overflow: hidden;  // 이미지 비율 유지를 위해 필요
-                
+                overflow: hidden; 
             }
         }
     }
@@ -96,35 +98,26 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
         margin: 6.5rem 0 3rem 0;
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-partner {
         height: 825px;
-        padding: 8rem 1rem;
+        padding: 0rem 1rem;
         .partner-header {
-            font-weight: 700;
             font-size: 12px;
         }
         .partner-header2 {
-            font-weight: 800;
             font-size: 25px;
         }
         .partner-items {
-            display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: between;
-            width: 100%;
             .item-group {
                 width: 100%;
                 height: auto;
-                align-items: center;  
                 justify-content: start;
                 margin-bottom: 30px;
                 .partner-item {
                     width: 50%;
-                    display: flex;
                     flex-direction: column;
-                    align-items: center;
                     justify-content: start;
                     height: auto; 
                 }
@@ -133,7 +126,6 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
         .partner-separator {
             height: 1px;
             width: 75%;
-            background-color: #707070;
             margin: 2.5rem 0 3rem 0;
         }
     }

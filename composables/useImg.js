@@ -2,8 +2,11 @@ export const useImg = () => {
     const gotoUrl = computed(() => {
         return `/layout/images/goto.png`;
     });
-    const introduceUrl = computed(() => {
-        return `/layout/images/home/introduce.mov`;
+    const defiUrl = computed(() => {
+        return `/layout/images/defi.png`;
+    });
+    const totalshiftUrl = computed(() => {
+        return `/layout/images/home/totalshift.mov`;
     });
     const logoUrl = computed(() => {
         return `/layout/images/logo.png`;
@@ -143,10 +146,22 @@ export const useImg = () => {
     const centerBDUrl = computed(() => {
         return `/layout/images/web3/centerB-d.png`;
     });
-
+    const postUrl = computed(() => {
+        return `/layout/images/web3/post.png`;
+    });
+    const porepUrl = computed(() => {
+        return `/layout/images/web3/porep.png`;
+    });
+    const retrievalUrl = computed(() => {
+        return `/layout/images/web3/retrieval.png`;
+    });
+    const storagemarketUrl = computed(() => {
+        return `/layout/images/web3/storagemarket.png`;
+    });
     return {
         gotoUrl,
-        introduceUrl,
+        defiUrl,
+        totalshiftUrl,
         logoUrl,
         logoSecondaryUrl,
         businessAUrl, 
@@ -193,6 +208,10 @@ export const useImg = () => {
         centerBBUrl,
         centerBCUrl,
         centerBDUrl,
+        postUrl,
+        porepUrl,
+        retrievalUrl,
+        storagemarketUrl,
     };
 };
 

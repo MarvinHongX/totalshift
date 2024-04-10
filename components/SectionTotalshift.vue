@@ -1,7 +1,7 @@
 <script setup>
-const { introduceUrl } = useImg();
+const { totalshiftUrl } = useImg();
 
-const texts = [
+const slogans = [
     '속도보다 방향 Direction',
     '능력보다 태도 Attitude',
     '숫자보다 가치 Quality',
@@ -9,40 +9,39 @@ const texts = [
     '그리고 밸런스 Balance'
 ];
 
-const currentText = ref(texts[0]);
+const currentSlogan = ref(slogans[0]);
 const currentIndex = ref(0);
 const currentOpacity = ref(0);
 const intervalId = ref(null);
-const changeCycle = ref(0);
+const cycle = ref(0);
 
-const changeText = () => {
-    if (changeCycle.value == 0) {
-        currentText.value = texts[currentIndex.value];
+const changeSlogan = () => {
+    if (cycle.value == 0) {
+        currentSlogan.value = slogans[currentIndex.value];
         currentOpacity.value = 1
-        changeCycle.value = changeCycle.value + 1
-    } else if (changeCycle.value == 1) {
-        currentIndex.value = (currentIndex.value + 1) % texts.length;
-        changeCycle.value = changeCycle.value + 1
+        cycle.value = cycle.value + 1
+    } else if (cycle.value == 1) {
+        currentIndex.value = (currentIndex.value + 1) % slogans.length;
+        cycle.value = cycle.value + 1
     } else {
         currentOpacity.value = 0
-        changeCycle.value = 0;
+        cycle.value = 0;
     }
 };
 
 onMounted(() => {
-    intervalId.value = setInterval(changeText, 1000);
+    intervalId.value = setInterval(changeSlogan, 1000);
 });
 
 onUnmounted(() => {
     clearInterval(intervalId.value);
 });
-
 </script>
 
 <template>
     <FullCard class="section-totalshift">
-        <div class="video-background">
-            <video v-if="introduceUrl" :src="introduceUrl" autoplay loop muted playsinline></video>
+        <div class="totalshift-background-wrapper">
+            <video v-if="totalshiftUrl" class="totalshift-background" :src="totalshiftUrl" autoplay loop muted playsinline></video>
         </div>
         <div class="totalshift-header mb-5">
             <span>TOTAL SHIFT</span>
@@ -51,40 +50,41 @@ onUnmounted(() => {
             <span>웹3.0 데이터 센터 & 서비스</span>
         </div>
         <div class="totalshift-header3" :style="{ opacity: currentOpacity }">
-            <span>{{ currentText }}</span>
+            <span>{{ currentSlogan }}</span>
         </div>
     </FullCard>
 </template>
 
 <style lang="scss" scoped>
 .section-totalshift {
+    position: relative;
+    overflow: hidden;  
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: center;
     width: 100%;
-    height: 984px;
-    padding: 12rem 12rem;  
+    height: 720px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     color: #FFFFFF;
-    position: relative;
-    overflow: hidden;  
     z-index: 1;        
-
-    .video-background {
+    .totalshift-background-wrapper {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         z-index: -1;
-
-        video {
+        .totalshift-background {
             width: 100%;
             height: 100%;
             object-fit: cover;
             opacity: 0.65;
         }
     }
-
     .totalshift-header {
         font-weight: 600;
         font-size: 20px;
@@ -99,10 +99,11 @@ onUnmounted(() => {
         transition: opacity 0.5s ease-in-out;
     }
 }
-@media (max-width: 992px) {
+
+@media (max-width: 1350px) {
     .section-totalshift {
-        height: 716px;
-        padding: 18rem 2rem;  
+        height: 720px;
+        padding: 0rem 2rem;  
         .totalshift-header {
             font-weight: 400;
             font-size: 15px;
@@ -114,16 +115,14 @@ onUnmounted(() => {
         .totalshift-header3 {
             font-weight: 500;
             font-size: 24px;
-            transition: opacity 0.5s ease-in-out;
         }
     }
 }
+
 @media (max-width: 390px) {
     .section-totalshift {
-        height: 616px;
-        padding: 16rem 2rem; 
+        height: 620px;
         .totalshift-header {
-            font-weight: 400;
             font-size: 10px;
         }
         .totalshift-header2 {
@@ -131,11 +130,8 @@ onUnmounted(() => {
             font-size: 19px;
         }
         .totalshift-header3 {
-            font-weight: 500;
             font-size: 17px;
-            transition: opacity 0.5s ease-in-out;
         }
     }
-
 }
 </style>

@@ -3,7 +3,7 @@ const { ipfsLogoUrl } = useImg();
 const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
 </script>
 <template>
-    <FullCard class="section-ipfs">
+    <FullFoldCard class="section-ipfs" :logoUrl="ipfsLogoUrl" logoName="IPFS" :isExpanded="false">
         <div class="ipfs-img-wrapperer">
             <img :src="ipfsLogoUrl" alt="ipfsLogo" class="ipfs-img"/>
         </div>
@@ -68,20 +68,50 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
         </div>  
         <div class="ipfs-link-wrapper mb-5">
             <a :href="ipfsIntroHref" target="_blank" class="ipfs-link">
-                <div class="ipfs-header4">IPFS Intro ▶</div>
+                <div class="ipfs-header4">
+                    <span class="mr-2">IPFS Intro </span>
+                    <svg class="ipfs-none" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#707070" stroke-width="1.5"/>
+                        <polygon points="23,15 12,23 12,7" fill="#333333" />
+                    </svg>
+                    <svg class="ipfs-display" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="8" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+                        <polygon points="14,9 6,14 6,4" fill="#333333" />
+                    </svg>
+                </div>
             </a>    
         </div>
         <div class="ipfs-link-wrapper mb-5">
             <a :href="ipfsDocsHref" target="_blank" class="ipfs-link">
-                <div class="ipfs-header4">IPFS Docs ▶</div>
+                <div class="ipfs-header4">
+                    <span class="mr-2">IPFS Docs </span>
+                    <svg class="ipfs-none" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#707070" stroke-width="1.5"/>
+                        <polygon points="23,15 12,23 12,7" fill="#333333" />
+                    </svg>
+                    <svg class="ipfs-display" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="8" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+                        <polygon points="14,9 6,14 6,4" fill="#333333" />
+                    </svg>
+                </div>
             </a>    
         </div>
         <div class="ipfs-link-wrapper">
             <a :href="ipfsNewsHref" target="_blank" class="ipfs-link">
-                <div class="ipfs-header4">IPFS News ▶</div>
+                <div class="ipfs-header4">
+                    <span class="mr-2">IPFS News </span>
+                    <svg class="ipfs-none" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#707070" stroke-width="1.5"/>
+                        <polygon points="23,15 12,23 12,7" fill="#333333" />
+                    </svg>
+                    <svg class="ipfs-display" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="8" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+                        <polygon points="14,9 6,14 6,4" fill="#333333" />
+                    </svg>
+                </div>
             </a>    
         </div>
-    </FullCard>
+    </FullFoldCard>
 </template>
 
 <style lang="scss" scoped>
@@ -91,13 +121,16 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
     align-items: start;
     justify-content: start;
     width: 100%;
-    height: 1700px;
-    padding: 9rem;
+    // height: 1700px;
+    // padding: 9rem;
     background-color: #F4F6F8;
     color: #333333;
     font-weight: 400;
     font-size: 20px;
-
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
 
     .ipfs-bold {
         font-weight: 700;
@@ -116,11 +149,15 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
         font-size: 20px;
     }
     .ipfs-header3 {
+        display: flex;
+        flex-direction: row;
         color: #333333;
         font-weight: 500;
         font-size: 30px;
     }
     .ipfs-header4 {
+        display: flex;
+        flex-direction: row;
         color: #666666;
         font-weight: 500;
         font-size: 25px;
@@ -137,6 +174,12 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
     }
     .ipfs-top-block {
         padding-bottom: 50px;
+        .ipfs-top-paragraph2 {
+            display: inline-block;
+        }
+        .ipfs-top-paragraph2 > span{
+            display: inline-block;
+        }
     }
     .ipfs-bottom {
         display: flex;
@@ -148,6 +191,12 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
     .ipfs-img-wrapperer {
         width: 87px;
         margin-bottom: 50px;
+    }
+    .ipfs-none {
+        display: block;
+    }
+    .ipfs-display {
+        display: none;
     }
     .ipfs-img {
         width: 87px;
@@ -164,19 +213,19 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
         .ipfs-link {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: start;
             justify-content: end;
             text-decoration: none;
             color: inherit;
         }
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-ipfs {
-        padding: 5rem 1rem;
+        padding: 2rem 2rem;
         font-weight: 400;
         font-size: 12px;
-        height: 1380px;
+        // height: 1380px;
         align-items: center;
         background-color: #FFFFFF;
         .ipfs-bold {
@@ -231,8 +280,7 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding-bottom: 20px;
-                // margin-bottom: 20px;
+                // padding-bottom: 20px;
                 .ipfs-top-title{
                     font-size: 14px;
                     padding-bottom: 20px;
@@ -251,10 +299,18 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
             margin-top: 30px;
         }
         .ipfs-img-wrapperer {
-            width: 58px;
+            // width: 58px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
         .ipfs-none {
-            display: none;
+            display: none !important;
+        }
+        .ipfs-display {
+            display: block !important;
         }
         .ipfs-img {
             width: 58px;
@@ -302,4 +358,3 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
     }
 }
 </style>
-

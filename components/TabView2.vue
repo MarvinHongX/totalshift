@@ -29,7 +29,7 @@ const getMinerInfo = () => {
             <span
                 v-for="(tab, index) in tabItems"
                 :key="index"
-                :class="{'active-tab mr-5': activeTab === index, 'inactive-tab mr-5': activeTab !== index}"
+                :class="{'active-tab mr-3': activeTab === index, 'inactive-tab mr-3': activeTab !== index}"
                 @click="toggleMenu(index)"
             >
                 {{ tab.name }}
@@ -37,7 +37,6 @@ const getMinerInfo = () => {
         </div>
         <div class="separator"></div>
         <div class="contents">
-            <!-- Dynamic component rendering based on activeTab -->
             <MinerInfo :item="getMinerInfo()"/>
         </div>
     </div>
@@ -47,58 +46,67 @@ const getMinerInfo = () => {
 <style lang="scss" scoped>
 .tab-view {
     width: 100%;
+    height: 100%;
 }
 .tabs {
     display: flex;
     flex-direction: row; 
-    justify-content: start;
+    justify-content: space-between; 
     width: 100%;
     display: flex;
 }
-
 .tabs span {
     padding: 0px;
     cursor: pointer;
     margin-right: 0;
 }
-
 .tabs span:last-child {
     margin-right: 0;
 }
-
+.active-tab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .inactive-tab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     color: #666666; 
 }
-
 .separator {
     width: 100%;
     height: 2px;
     background-color: #707070;
     margin: 20px 0;
 }
-
 .contents {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
     width: 100%;
     // margin-top: 5rem;
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .tab-view {
         width: 100%;
     }
     .tabs {
         display: flex;
         flex-direction: row; 
-        justify-content: start;
+        // justify-content: space-between; 
+        justify-content: start; 
         width: 100%;
         height: 30px;
-        display: flex;
         overflow-x: auto;
     }
 
     .tabs span {
         padding: 0px;
         cursor: pointer;
-        margin-right: 0;
+        margin-right: 0px;
     }
 
     .tabs span:last-child {
@@ -106,10 +114,22 @@ const getMinerInfo = () => {
     }
 
     .active-tab {
+        width: 15%;
+        min-width: 60px;
+        // width: 60px;
+        height: 100%;
+        background-color: #1C1C1C;
+        border-radius: 5px;
         font-size: 12px;
     }
     .inactive-tab {
+        width: 15%;
+        min-width: 60px;
+        height: 100%;
+        // margin-right: 100px;
         color: #666666; 
+        background-color: #1C1C1C;
+        border-radius: 5px;
         font-size: 12px;
     }
 
@@ -121,7 +141,10 @@ const getMinerInfo = () => {
     }
 
     .contents {
+        // width: 320px;
         width: 100%;
+        height: 450px;
+        padding: 1rem;
         // margin-top: 5rem;
     }
 }

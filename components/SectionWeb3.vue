@@ -16,71 +16,66 @@ const tabNames = [
             <span>(Inter Planetary File System)까지 솔루션을 개발 및 제공 하면서 </span>
             <span>미래의 시장을 선도해 나가겠습니다.</span>
         </div>
-        <div class="web3-tab flex flex-rows">
+        <div class="web3-tab">
             <TabView :tabNames="tabNames">
                 <template #default="{ tabIndex }">
-                    <div v-if="tabIndex === 0">
-                        <div class="web3-items">
-                            <div class="item-group">
-                                <div class="web3-item mr-3">
-                                    <div class="web3-item-a mb-3">
-                                        <span>1</span>
-                                    </div>
-                                    <div class="web3-item-b mb-2">
-                                        <span>분산스토리지 네트워크</span>
-                                    </div>
-                                    <div class="web3-item-c mb-5">
-                                        <span>Decentralized Storage Network</span>
-                                    </div>
+                    <div v-if="tabIndex === 0" class="web3-items">
+                        <div class="item-group">
+                            <div class="web3-item mr-3">
+                                <div class="web3-item-a mb-3">
+                                    <span>1</span>
                                 </div>
-                                <div class="web3-item">
-                                    <div class="web3-item-a mb-3">
-                                        <span>2</span>
-                                    </div>
-                                    <div class="web3-item-b mb-2">
-                                        <span>새로운 스토리지 증명</span>
-                                    </div>
-                                    <div class="web3-item-c mb-5">
-                                        <span>Novel Proofs-of-Storage</span>
-                                    </div>
+                                <div class="web3-item-b mb-2">
+                                    <span>분산스토리지 네트워크</span>
+                                </div>
+                                <div class="web3-item-c mb-5">
+                                    <span>Decentralized Storage Network</span>
                                 </div>
                             </div>
-                            <div class="item-group">
-                                <div class="web3-item mr-3">
-                                    <div class="web3-item-a mb-3">
-                                        <span>3</span>
-                                    </div>
-                                    <div class="web3-item-b mb-2">
-                                        <span>검증 가능한 시장</span>
-                                    </div>
-                                    <div class="web3-item-c mb-5">
-                                        <span>Variable Markets</span>
-                                    </div>
+                            <div class="web3-item">
+                                <div class="web3-item-a mb-3">
+                                    <span>2</span>
                                 </div>
-                                <div class="web3-item">
-                                    <div class="web3-item-a mb-3">
-                                        <span>4</span>
-                                    </div>
-                                    <div class="web3-item-b mb-2">
-                                        <span>유용한 작업증명서</span>
-                                    </div>
-                                    <div class="web3-item-c mb-5">
-                                        <span>Useful Proof-of-Work</span>
-                                    </div>
+                                <div class="web3-item-b mb-2">
+                                    <span>새로운 스토리지 증명</span>
+                                </div>
+                                <div class="web3-item-c mb-5">
+                                    <span>Novel Proofs-of-Storage</span>
                                 </div>
                             </div>
                         </div>
-                    
+                        <div class="item-group">
+                            <div class="web3-item mr-3">
+                                <div class="web3-item-a mb-3">
+                                    <span>3</span>
+                                </div>
+                                <div class="web3-item-b mb-2">
+                                    <span>검증 가능한 시장</span>
+                                </div>
+                                <div class="web3-item-c mb-5">
+                                    <span>Variable Markets</span>
+                                </div>
+                            </div>
+                            <div class="web3-item">
+                                <div class="web3-item-a mb-3">
+                                    <span>4</span>
+                                </div>
+                                <div class="web3-item-b mb-2">
+                                    <span>유용한 작업증명서</span>
+                                </div>
+                                <div class="web3-item-c mb-5">
+                                    <span>Useful Proof-of-Work</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div v-if="tabIndex === 1">
-                        <div class="web3-items">
-                            <div class="item-group">
-                                <div class="web3-item mr-3">
-                                    <span class="web3-item-b mb-8">준비중입니다.</span>
-                                </div>
+                    <div v-if="tabIndex === 1" class="web3-items">
+                        <div class="item-group">
+                            <div class="web3-item mr-3">
+                                <span class="web3-item-b mb-8">준비중입니다.</span>
                             </div>
-                            
                         </div>
+                        
                     </div>
                 </template>
             </TabView>
@@ -93,13 +88,16 @@ const tabNames = [
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: center;
     width: 100%;
-    height: 1025px;
-    padding: 4rem 8rem;  
+    height: 825px;
     background-color: #111112;
-    color: #111112;
     font-weight: 600;
     font-size: 18px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     .web3-header {
         font-weight: 700;
         font-size:45px;
@@ -116,35 +114,43 @@ const tabNames = [
         color: #525252;
     }
     .web3-tab {
+        display: flex;
+        flex-direction: row;
         font-weight: 700;
         font-size: 45px;
         color: #FFFFFF;
         width: 100%;
+        // max-width: 1024px;
         .web3-items {
-            width: 100%;
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: between;
+            justify-content: center;
+            width: 100%;
+            height: 240px;
             .item-group {
-                min-width: 550px;
+                width: 48%;
+                // width: 500px;
+                height: 220px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                justify-content: center;
                 margin-right: 15px;
                 margin-bottom: 15px;
                 .web3-item {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-content: end;
+                    justify-content: center;
                     width: 320px;
-                    height: 224px;
+                    height: 100%;
+                    padding-top: 20px;
                     background-color: #252525;
-                    border-radius: 30px;
+                    border-radius: 20px;
                     .web3-item-a {
                         font-weight: 600;
-                        font-size: 24;
+                        font-size: 24px;
                         color: #057FFC;
                     }
                     .web3-item-b {
@@ -166,15 +172,10 @@ const tabNames = [
         }
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-web3 {
-        flex-direction: column;
-        align-items: start;
         height: 625px;
-        width: 100%;
         padding: 4rem 1rem;  
-        font-weight: 600;
-        font-size: 18px;
         .web3-paragraph {
             display: flex;
             flex-direction: column;
@@ -185,59 +186,30 @@ const tabNames = [
             margin-bottom: 8px;
         }
         .web3-header {
-            font-weight: 700;
             font-size: 24px;
-            color: #FFFFFF;
         }
         .web3-header2 {
-            font-weight: 700;
             font-size: 12px;
-            color: #FFFFFF;
-        }
-        .web3-header3 {
-            font-weight: 700;
-            font-size: 45px;
-            color: #525252;
         }
         .web3-tab {
             .web3-items {
-                // width: 100%;
-                display: flex;
                 flex-direction: column;
-                align-items: center;
                 .item-group {
-                    min-width: 50%;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
+                    width: 100%;
                     .web3-item {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
                         justify-content: end;
-                        width: 166px;
-                        height: 123px;
-                        background-color: #252525;
+                        width: 156px;
+                        height: 113px;
                         border-radius: 15px;
                         .web3-item-a {
-                            font-weight: 600;
                             font-size: 15px;
-                            color: #057FFC;
                         }
                         .web3-item-b {
-                            font-weight: 600;
                             font-size: 12px;
-                            color: #FFFFFF;
                         }
                         .web3-item-c {
-                            font-weight: 600;
                             font-size: 8px;
-                            color: #525252;
                         }
-                    }
-                    .web3-item > img {
-                        width: 100%; 
-                        height: auto;
                     }
                 }
             }

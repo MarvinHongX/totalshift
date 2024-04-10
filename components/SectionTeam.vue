@@ -4,52 +4,52 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
 <template>
     <FullCard class="section-team">
         <div class="team-left">
-            <div class="lee-img-wrapper">
+            <div class="lee-wrapper">
                 <img :src="leeUrl" alt="lee" class="lee-img" />
                 <span class="lee-label">연구소장 이영모</span>
                 <img :src="authAUrl" alt="authA" class="auth-img" />
             </div>
         </div>
         <div class="team-right">
-            <div class="team-right-top flex flex-column justify-content-end team-item mb-8">
+            <div class="team-right-top mb-8">
                 <div class="team-header2 mb-4">
-                    <span>team</span>
+                    <span>Team</span>
                 </div>
                 <div class="team-header mb-4">
                     <span>최고의 팀을 만들다</span>
                 </div>
                 <div class="team-header2 mb-2">
-                    <span>전문성을 가진 </span><span class="team-header2-point">경력있는 팀을 형성하여</span>
+                    <span>전문성을 가진 </span><span class="team-point">경력있는 팀을 형성하여</span>
                 </div>
                 <div class="team-header2 mb-2">
                     <span>시너지를 높이 끌어올립니다.</span>
                 </div>
             </div>
-            <div class="lee-img-wrapper2">
+            <div class="lee-wrapper2">
                 <img :src="leeUrl" alt="lee" class="lee-img" />
                 <span class="lee-label">연구소장 이영모</span>
                 <img :src="authAUrl" alt="authA" class="auth-img" />
             </div>
-            <div class="team-right-body flex flex-row align-items-start justify-content-start">
-                <div class="team-item flex flex-column mr-4">
-                    <div class="team-img-wrapper flex">
+            <div class="team-right-body">
+                <div class="team-item mr-4">
+                    <div class="team-img-wrapper">
                         <img :src="teamAUrl" alt="teamA" class="team-img" />
                         <span class="team-label">기술팀</span>
                     </div>
                 </div>
-                <div class="team-item flex flex-column mr-4">
+                <div class="team-item mr-4">
                     <div class="team-img-wrapper">
                         <img :src="teamBUrl" alt="teamB" class="team-img" />
                         <span class="team-label">기획팀</span>
                     </div>
                 </div>
-                <div class="team-item flex flex-column mr-4">
+                <div class="team-item mr-4">
                     <div class="team-img-wrapper">
                         <img :src="teamCUrl" alt="teamC" class="team-img" />
                         <span class="team-label">개발팀</span>
                     </div>
                 </div>
-                <div class="team-item flex flex-column">
+                <div class="team-item">
                     <div class="team-img-wrapper">
                         <img :src="teamDUrl" alt="teamD" class="team-img" />
                         <span class="team-label">영업지원팀</span>
@@ -64,13 +64,15 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
 .section-team {
     display: flex;
     flex-direction: row;
-    align-items: end;
-    justify-content: between;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 1350px;
-    padding: 7rem 0rem;
+    height: 1050px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     background-color: #171717;
-
     .team-header {
         color: #FFFFFF;
         font-weight: 700;
@@ -81,33 +83,33 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
         font-weight: 500;
         font-size: 18px;
     }
-    .team-header2-point {
+    .team-point {
         color: #057FFC;
     }
     .team-left {
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: start;
         justify-content: end;
-        width: 800px; 
+        width: 600px; 
         height: 800px;
-        padding: 0 4rem;
-        .lee-img-wrapper {
+        .lee-wrapper {
             display: flex;
             flex-direction: column;
             align-items: end;
             justify-content: center;
             position: relative; 
-            width: 650px;
+            width: 100%;
             height: 532px;
             overflow: hidden;
             margin-bottom: 10px;
+            padding-right: 3rem;
             .auth-img {
                 width: 45%;
                 z-index: 2;
                 position: absolute;
                 top: 15%;  
-                left: 90px;  
+                left: -10px;  
                 object-fit: cover;
                 z-index: 2;
                 border-radius: 0px;
@@ -131,38 +133,45 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
                 font-weight: 500;
                 text-align: center;
                 padding: 30px 30px;
+                margin-right: 3rem;
                 z-index: 1; 
             }
         }
     }
-
-
-
 
     .team-right {
         display: flex;
         flex-direction: column;
         align-items: end;
         justify-content: end;
-        width: calc(100% - 800px);
+        width: calc(100% - 600px);
         height: 800px;
         .team-right-top {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
             width: 100%;
             text-align: right;
             padding-right: 3rem;
         }    
         .team-right-body {
+            display: flex;
+            flex-direction: row;
+            align-items: start;
+            justify-content: start;
             width: 100%;
             overflow-x: scroll;
             .team-item {
+                display: flex;
+                flex-direction: column;
                 width: 250px;
                 height: 250px;
                 color: #FFFFFF;
                 font-weight: 500;
                 font-size: 18px;
                 flex-shrink: 0;
-
                 .team-img-wrapper {
+                    display: flex;
                     width: 250px;
                     height: 250px;
                     overflow: hidden;
@@ -181,9 +190,6 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
                         bottom: 0;
                         left: 0;
                         width: 100%;
-                        
-                        // background-color: #606060;
-                        // background: #606060 0% 0% no-repeat padding-box;
                         backdrop-filter: blur(15px);
                         color: #ffffff;
                         font-size: 25px;
@@ -193,33 +199,64 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
                     }
                 }
             }
-
         }
-        .lee-img-wrapper2 {
+        .lee-wrapper2 {
             display: none;
         }
     }
 
 }
+@media (max-width: 1350px) {
+    .section-team {
+        padding: 0rem 1rem;
+        .team-header {
+            font-weight: 600;
+            font-size: 35px;
+        }
+        .team-header2 {
+            font-size: 16px;
+        }
+        .team-left {
+            width: 500px; 
+            height: 700px;
+            .lee-wrapper {
+                height: 450px;
+                .auth-img {
+                    top: 30%;  
+                    left: -5px;
+                }
+                .lee-img {
+                    width: 320px;
+                }
+                .lee-label {
+                    position: absolute;
+                    width: 320px;
+                }
+            }
+        }
+        .team-right {
+            height: 700px;
+            .lee-wrapper2 {
+                display: none;
+            }
+        }
 
-@media (max-width: 890px) {
+    }
+}
+
+@media (max-width: 1350px) {
     .section-team {
         flex-direction: column;
         height: 1250px;
-        padding: 10rem 1rem;
+        padding: 0rem 9rem;
 
         .team-header {
-            color: #FFFFFF;
             font-weight: 600;
             font-size: 38px;
         }
         .team-header2 {
-            color: #FFFFFF;
             font-weight: 400;
             font-size: 14px;
-        }
-        .team-header2-point {
-            color: #057FFC;
         }
         .team-left {
             display: none;
@@ -257,7 +294,7 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
                     }
                 }
             }
-            .lee-img-wrapper2 {
+            .lee-wrapper2 {
                 display: flex;
                 flex-direction: column;
                 align-items: end;
@@ -300,6 +337,13 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
                 }
             }
         }
+
+    }
+
+}
+@media (max-width: 665px) {
+    .section-team {
+        padding: 0rem 3rem;
 
     }
 

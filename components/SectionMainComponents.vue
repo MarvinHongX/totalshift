@@ -28,10 +28,14 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: center;
     width: 100%;
-    height: 1520px;
-    padding: 9rem;
+    height: 1180px;
     background-color: #111112;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
 
     .maincomponents-header {
         color: #FFFFFF;
@@ -56,15 +60,10 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
         margin: 4.5rem 0;
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-maincomponents {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        height: 1020px;
-        width: 100%;
+        height: 1380px;
         padding: 9rem 1rem;
-        background-color: #111112;
 
         .maincomponents-header {
             color: #FFFFFF;

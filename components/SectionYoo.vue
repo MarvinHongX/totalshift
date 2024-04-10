@@ -10,11 +10,11 @@ const { youtubeHref } = useHref();
         <div class="yoo-pic2 mb-4">
             <img :src="yooProfileUrl" alt="yoo" style="width: 100%;" />
         </div>
-        <div class="yoo-me flex flex-column align-items-center">
+        <div class="yoo-me">
             <div class="yoo-me-header mb-6">
                 <span class="yoo-me-name">이사 유 상 진</span>
             </div>
-            <div class="yoo-me-body flex flex-column align-items-center">
+            <div class="yoo-me-body">
                 <div class="inline-flex mb-2">
                     <span>회사의 가치와 비전에 대한 소식을 빠르고 정확하게 전달하고, </span>  
                 </div>
@@ -41,12 +41,15 @@ const { youtubeHref } = useHref();
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 812px;
+    height: 599px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
     background-color: #CECED6;
     color: #070707;
     font-weight: 500;
     font-size: 18px;
-    
     .yoo-pic {
         display: flex;
         flex-direction: column;
@@ -63,11 +66,18 @@ const { youtubeHref } = useHref();
         width: 100%; 
         height: auto;
     }
-
     .yoo-me {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: calc(100% - 500px);
         height: 100%;
-        padding-top: 17rem;
+        padding-top: 13rem;
+        .yoo-me-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .yoo-me-name {
             font-weight: 600;
             font-size: 30px;            
@@ -80,14 +90,12 @@ const { youtubeHref } = useHref();
         }
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-yoo {
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
         height: 612px;
-        font-weight: 500;
         font-size: 12px;
-        padding-top: 6rem;
         .yoo-pic {
             display: none;
         }
@@ -100,11 +108,6 @@ const { youtubeHref } = useHref();
             height: 210px;
             overflow: hidden;
         }
-        .yoo-pic2 > img {
-            width: 100%; 
-            height: auto;
-        }
-
         .yoo-me {
             width: 100%;
             height: 100px;

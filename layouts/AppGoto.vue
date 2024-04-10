@@ -1,5 +1,6 @@
 <script setup>
-const { gotoUrl } = useImg();
+const { gotoUrl, defiUrl } = useImg();
+const { defiHref } = useHref();
 
 defineProps({
     simple: {
@@ -7,7 +8,6 @@ defineProps({
         default: false
     }
 });
-
 
 const onGotoButtonClick = () => {
     window.scrollTo({
@@ -19,11 +19,18 @@ const onGotoButtonClick = () => {
 </script>
 
 <template>
-    <a v-if="!simple" class="layout-goto-button" @click="onGotoButtonClick()">
-        <div class="goto-img-wrapperer">
-            <img :src="gotoUrl" alt="goto" class="goto-img"/>
-        </div>
-    </a>
+    <div class="goto">    
+        <a v-if="!simple" class="layout-defi-button" :href="defiHref" target="_blank">
+            <div class="defi-img-wrapperer">
+                <img :src="defiUrl" alt="defi" class="defi-img"/>
+            </div>
+        </a>
+        <a v-if="!simple" class="layout-goto-button" @click="onGotoButtonClick()">
+            <div class="goto-img-wrapperer">
+                <img :src="gotoUrl" alt="goto" class="goto-img"/>
+            </div>
+        </a>
+    </div>
 </template>
 
 <style lang="scss" scoped></style>

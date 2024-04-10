@@ -3,7 +3,7 @@ const { filecoinLogoUrl } = useImg();
 const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } = useHref();
 </script>
 <template>
-    <FullCard class="section-filecoin">
+    <FullFoldCard class="section-filecoin" :logoUrl="filecoinLogoUrl" logoName="Filecoin" :isExpanded="false">
         <div class="filecoin-img-wrapperer">
             <img :src="filecoinLogoUrl" alt="filecoinLogo" class="filecoin-img"/>
         </div>
@@ -56,20 +56,50 @@ const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } 
         </div>  
         <div class="filecoin-link-wrapper mb-5">
             <a :href="filecoinDocsHref" target="_blank" class="filecoin-link">
-                <div class="filecoin-header4">Filecoin Docs ▶</div>
+                <div class="filecoin-header4">
+                    <span class="mr-2">Filecoin Docs </span>
+                    <svg class="filecoin-none" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#707070" stroke-width="1.5"/>
+                        <polygon points="23,15 12,23 12,7" fill="#333333" />
+                    </svg>
+                    <svg class="filecoin-display" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="8" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+                        <polygon points="14,9 6,14 6,4" fill="#333333" />
+                    </svg>
+                </div>
             </a>    
         </div>
         <div class="filecoin-link-wrapper mb-5">
             <a :href="filecoinCryptoEconomicsHref" target="_blank" class="filecoin-link">
-                <div class="filecoin-header4">Filecoin Crypto-economics ▶</div>
+                <div class="filecoin-header4">
+                    <span class="mr-2">Filecoin Crypto-economics </span>
+                    <svg class="filecoin-none" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#707070" stroke-width="1.5"/>
+                        <polygon points="23,15 12,23 12,7" fill="#333333" />
+                    </svg>
+                    <svg class="filecoin-display" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="8" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+                        <polygon points="14,9 6,14 6,4" fill="#333333" />
+                    </svg>
+                </div>
             </a>    
         </div>
         <div class="filecoin-link-wrapper">
             <a :href="filecoinBlockchainHref" target="_blank" class="filecoin-link">
-                <div class="filecoin-header4">Filecoin Blockchain ▶</div>
-            </a>    
+                <div class="filecoin-header4">
+                    <span class="mr-2">Filecoin Blockchain </span>
+                    <svg class="filecoin-none" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="15" cy="15" r="13" fill="#FFFFFF" stroke="#707070" stroke-width="1.5"/>
+                        <polygon points="23,15 12,23 12,7" fill="#333333" />
+                    </svg>
+                    <svg class="filecoin-display" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="8" fill="#FFFFFF" stroke="#333333" stroke-width="1"/>
+                        <polygon points="14,9 6,14 6,4" fill="#333333" />
+                    </svg>
+                </div>
+            </a>  
         </div>
-    </FullCard>
+    </FullFoldCard>
 </template>
 
 <style lang="scss" scoped>
@@ -79,12 +109,16 @@ const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } 
     align-items: start;
     justify-content: start;
     width: 100%;
-    height: 1300px;
+    // height: 1300px;
     padding: 9rem;
     background-color: #F4F6F8;
     color: #333333;
     font-weight: 400;
     font-size: 20px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: calc((100% - 1280px) / 2 );
+    padding-right: calc((100% - 1280px) / 2 );
 
 
     .filecoin-bold {
@@ -104,14 +138,19 @@ const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } 
         font-size: 20px;
     }
     .filecoin-header3 {
+        display: flex;
+        flex-direction: row;
         color: #333333;
         font-weight: 500;
         font-size: 30px;
     }
     .filecoin-header4 {
+        display: flex;
+        flex-direction: row;
         color: #666666;
         font-weight: 500;
         font-size: 25px;
+
     }
     .filecoin-header2-point {
         color: #057FFC;
@@ -126,10 +165,22 @@ const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } 
     }
     .filecoin-top-block {
         padding-bottom: 50px;
+        .filecoin-top-paragraph2 {
+            display: inline-block;
+        }
+        .filecoin-top-paragraph2 > span{
+            display: inline-block;
+        }
     }
     .filecoin-img-wrapperer {
         width: 87px;
         margin-bottom: 50px;
+    }
+    .filecoin-none {
+        display: block;
+    }
+    .filecoin-display {
+        display: none;
     }
     .filecoin-img {
         width: 87px;
@@ -142,23 +193,23 @@ const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } 
         margin: 4.5rem 0;
     }
     .filecoin-link-wrapper {
-        width: 325px;
+        width: 100%;
         .filecoin-link {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: start;
             justify-content: end;
             text-decoration: none;
             color: inherit;
         }
     }
 }
-@media (max-width: 890px) {
+@media (max-width: 1350px) {
     .section-filecoin {
-        padding: 5rem 1rem;
+        padding: 2rem 2rem;
         font-weight: 400;
         font-size: 12px;
-        height: 1350px;
+        // height: 1350px;
         align-items: center;
         background-color: #FFFFFF;
         .filecoin-bold {
@@ -235,10 +286,18 @@ const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } 
             margin-top: 30px;
         }
         .filecoin-img-wrapperer {
-            width: 58px;
+            // width: 58px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
         .filecoin-none {
-            display: none;
+            display: none !important;
+        }
+        .filecoin-display {
+            display: block !important;
         }
         .filecoin-img {
             width: 58px;
@@ -273,4 +332,3 @@ const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } 
     }
 }
 </style>
-
