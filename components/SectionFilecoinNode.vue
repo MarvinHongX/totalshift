@@ -1,15 +1,15 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue';
-const { filecoinUrl, filecoinBackgroundUrl, filfoxBtnUrl } = useImg();
+const { filecoinUrl, filecoinBackgroundUrl } = useImg();
 const { filfoxHref, filswanHref } = useHref();
 const loading =ref(true);
 const tabItems = ref([
-    { name: 'f01115949', score: null, power: null, balance: null },
-    { name: 'f01770778', score: null, power: null, balance: null },
-    { name: 'f01900525', score: null, power: null, balance: null },
-    { name: 'f01924824', score: null, power: null, balance: null },
-    { name: 'f01927163', score: null, power: null, balance: null },
-    { name: 'f01924891', score: null, power: null, balance: null },
+    { name: 'f01115949', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01115949' },
+    { name: 'f01770778', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01770778' },
+    { name: 'f01900525', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01900525' },
+    { name: 'f01924824', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01924824' },
+    { name: 'f01927163', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01927163' },
+    { name: 'f01924891', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01924891' },
 ]);
 
 const getScore = async (minerId) => {
@@ -99,7 +99,6 @@ onBeforeMount(async () => {
         power: powers[index],
         balance: balances[index],
     }));
-
     loading.value = false;
 });
 </script>
@@ -169,11 +168,6 @@ onBeforeMount(async () => {
         </div>
         <div v-if="tabItems" class="filecoinnode-tab flex flex-rows">
             <TabView2 :tabItems="tabItems" />
-        </div>
-        <div class="filfox-img-wrapper filecoinnode-none">
-            <a :href="filfoxHref" target="_blank" class="filecoinnode-link">
-                <img :src="filfoxBtnUrl" alt="filecoin" class="filfox-img" />
-            </a>
         </div>
     </FullCard>
 </template>
@@ -328,20 +322,6 @@ onBeforeMount(async () => {
         color: #EEEEEE;
         width: 100%;
         height: 360px;
-    }
-    
-    .filfox-img-wrapper {
-        margin-top: 5px;
-        width: 109px;
-        height: auto;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    .filfox-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: relative;
     }
 
 }

@@ -1,5 +1,27 @@
 <script setup>
 const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
+
+const isHovering = ref(false);
+
+onMounted(() => {
+    const container = document.querySelector('.team-right-body');
+
+    container.addEventListener('mouseover', () => {
+        isHovering.value = true;
+    });
+
+    container.addEventListener('mouseout', () => {
+        isHovering.value = false;
+    });
+
+    container.addEventListener('wheel', (event) => {
+        if (isHovering.value) {
+            event.preventDefault();
+            container.scrollLeft += event.deltaY;
+        }
+    });
+});
+
 </script>
 <template>
     <FullCard class="section-team">
@@ -30,7 +52,7 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
                 <span class="lee-label">연구소장 이영모</span>
                 <img :src="authAUrl" alt="authA" class="auth-img" />
             </div>
-            <div class="team-right-body">
+            <div  class="team-right-body">
                 <div class="team-item mr-4">
                     <div class="team-img-wrapper">
                         <img :src="teamAUrl" alt="teamA" class="team-img" />
@@ -160,6 +182,7 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
             align-items: start;
             justify-content: start;
             width: 100%;
+            min-width: 600px;
             overflow-x: scroll;
             .team-item {
                 display: flex;

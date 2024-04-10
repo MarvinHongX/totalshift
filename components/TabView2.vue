@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+const { filfoxBtnUrl } = useImg();
 
 const props = defineProps({
     tabItems: {
@@ -38,6 +39,11 @@ const getMinerInfo = () => {
         <div class="separator"></div>
         <div class="contents">
             <MinerInfo :item="getMinerInfo()"/>
+        </div>
+        <div class="filfox-img-wrapper tab-none">
+            <a :href="getMinerInfo().filfoxMinerHref" target="_blank">
+                <img :src="filfoxBtnUrl" alt="filfoxBtn" class="filfox-img" />
+            </a>
         </div>
     </div>
 </template>
@@ -89,9 +95,25 @@ const getMinerInfo = () => {
     width: 100%;
     // margin-top: 5rem;
 }
+.filfox-img-wrapper {
+    margin-top: 5px;
+    width: 109px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.filfox-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
 @media (max-width: 1350px) {
     .tab-view {
         width: 100%;
+    }
+    .tab-none {
+            display: none;
     }
     .tabs {
         display: flex;

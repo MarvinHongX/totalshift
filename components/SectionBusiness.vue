@@ -1,5 +1,27 @@
 <script setup>
 const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
+
+const isHovering = ref(false);
+
+onMounted(() => {
+    const container = document.querySelector('.business-items');
+
+    container.addEventListener('mouseover', () => {
+        isHovering.value = true;
+    });
+
+    container.addEventListener('mouseout', () => {
+        isHovering.value = false;
+    });
+
+    container.addEventListener('wheel', (event) => {
+        if (isHovering.value) {
+            event.preventDefault();
+            container.scrollLeft += event.deltaY;
+        }
+    });
+});
+
 </script>
 <template>
     <FullCard class="section-business">
@@ -26,7 +48,8 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
             </div>
         </div>
         <div class="business-right">
-            <div  class="business-items">
+            <div class="business-items">
+
                 <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper flex">
                         <img :src="businessAUrl" alt="businessA" class="business-img" />
@@ -153,6 +176,7 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
         align-items: start;
         justify-content: start;
         width: 100%;
+        min-width: 500px;
         overflow-x: scroll;
         .business-item {
             width: 340px;

@@ -1,9 +1,38 @@
 <script setup>
 const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeUrl } = useImg();
+
+const isHovering = ref(false);
+const scrollContainer = ref(null);
+
+const scrollLeft = () => {
+    if (scrollContainer.value) {
+        const item = document.querySelector('.centerADetail-item');
+        const itemWidth = item.offsetWidth;
+        scrollContainer.value.scrollLeft -= itemWidth;
+
+        
+    }
+};
+
+const scrollRight = () => {
+    if (scrollContainer.value) {
+        const item = document.querySelector('.centerADetail-item');
+        const itemWidth = item.offsetWidth;
+        scrollContainer.value.scrollLeft += itemWidth;
+    }
+};
+
 </script>
 <template>
     <FullCard class="section-centerADetail">
-        <div class="centerADetail-items">
+        <div class="scroll-buttons">
+            <button @click="scrollLeft">
+                <svg width="70" height="100" viewBox="0 0 2 1" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(90deg);">
+                    <path d="M0 0L1 1L2 0" stroke="#FFFFFF" stroke-width="0.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="centerADetail-items" ref="scrollContainer">
             <div class="centerADetail-item">
                 <div class="centerADetail-item-left">
                     <div class="centerADetail-header mb-4">
@@ -37,7 +66,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                         <span>· 내장 스토리지 16GB</span>
                     </div>
                 </div>
-                <div class="centerADetail-item-center flex">
+                <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
                         <img :src="firewallUrl" alt="firewall" class="centerADetail-img" />
                     </div>
@@ -83,7 +112,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                         <span class="mr-2"></span><span> 풍량 105CMM</span>
                     </div>
                 </div>
-                <div class="centerADetail-item-center flex">
+                <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
                         <img :src="tempHumidityUrl" alt="tempHumidity" class="centerADetail-img" />
                     </div>
@@ -141,7 +170,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                         <span>· 솔레노이드: DC 24V, 1.5A</span>
                     </div>
                 </div>
-                <div class="centerADetail-item-center flex">
+                <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
                         <img :src="extinguisherUrl" alt="extinguisher" class="centerADetail-img" />
                     </div>
@@ -199,7 +228,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                         <span class="mr-2"></span><span>( 양문 DOOR 및 계량기 포함 )</span>
                     </div>
                 </div>
-                <div class="centerADetail-item-center flex">
+                <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
                         <img :src="upsUrl" alt="ups" class="centerADetail-img" />
                     </div>
@@ -239,7 +268,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                         <span>· UPS 전압측정</span>
                     </div>
                 </div>
-                <div class="centerADetail-item-center flex">
+                <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
                         <img :src="realtimeUrl" alt="realtime" class="centerADetail-img" />
                     </div>
@@ -259,16 +288,25 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
                 </div>
             </div>
         </div>
+        <div class="scroll-buttons">
+            <button @click="scrollRight">
+                <svg width="70" height="100" viewBox="0 0 2 1" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-90deg);">
+                    <path d="M0 0L1 1L2 0" stroke="#FFFFFF" stroke-width="0.1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+
+            </button>
+        </div>
     </FullCard>
 </template>
 
 <style lang="scss" scoped>
 .section-centerADetail {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 600px;
+    height: 400px;
     width: 100%;
     background-color: #1C1C1C;
     padding-top: 0rem;
@@ -276,10 +314,36 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
     padding-left: calc((100% - 1280px) / 2 );
     padding-right: calc((100% - 1280px) / 2 );
 
+    .scroll-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+        width: 70px;
+        height: 400px;
+        z-index: 10;
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            transition: opacity 0.3s;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            svg {
+                width: 70px;
+                height: 100px;
+            }
+        }
+    }
     .centerADetail-items {
         display: flex;
         flex-direction: row;
-        width: 1024px;
+        align-items: center;
+        width: 80%;
         height: 400px;
         overflow: visible; 
         overflow-x: scroll;
@@ -287,6 +351,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
     }
     .centerADetail-item {
         display: flex;
+        // flex: 0 0 calc(20% - 2rem);
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
@@ -317,6 +382,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
             margin-right: 1rem;
         }
         .centerADetail-item-center {
+            display: flex;
             width: 320px;
             height: 320px;
             background-color: #202022;
