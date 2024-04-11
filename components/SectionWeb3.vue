@@ -21,7 +21,7 @@ const tabNames = [
                 <template #default="{ tabIndex }">
                     <div v-if="tabIndex === 0" class="web3-items">
                         <div class="item-group">
-                            <div class="web3-item mr-3">
+                            <div class="web3-item">
                                 <div class="web3-item-a mb-3">
                                     <span>1</span>
                                 </div>
@@ -32,7 +32,7 @@ const tabNames = [
                                     <span>Decentralized Storage Network</span>
                                 </div>
                             </div>
-                            <div class="web3-item">
+                            <div class="web3-itemEnd">
                                 <div class="web3-item-a mb-3">
                                     <span>2</span>
                                 </div>
@@ -45,7 +45,7 @@ const tabNames = [
                             </div>
                         </div>
                         <div class="item-group">
-                            <div class="web3-item mr-3">
+                            <div class="web3-item">
                                 <div class="web3-item-a mb-3">
                                     <span>3</span>
                                 </div>
@@ -56,7 +56,7 @@ const tabNames = [
                                     <span>Variable Markets</span>
                                 </div>
                             </div>
-                            <div class="web3-item">
+                            <div class="web3-itemEnd">
                                 <div class="web3-item-a mb-3">
                                     <span>4</span>
                                 </div>
@@ -71,7 +71,7 @@ const tabNames = [
                     </div>
                     <div v-if="tabIndex === 1" class="web3-items">
                         <div class="item-group">
-                            <div class="web3-item mr-3">
+                            <div class="web3-item">
                                 <span class="web3-item-b mb-8">준비중입니다.</span>
                             </div>
                         </div>
@@ -139,6 +139,9 @@ const tabNames = [
                 margin-right: 15px;
                 margin-bottom: 15px;
                 .web3-item {
+                    margin-right: 15px;
+                }
+                .web3-item, .web3-itemEnd {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -174,8 +177,8 @@ const tabNames = [
 }
 @media (max-width: 1350px) {
     .section-web3 {
-        height: 625px;
-        padding: 4rem 1rem;  
+        height: 825px;
+        padding: 2rem 1rem;  
         .web3-paragraph {
             display: flex;
             flex-direction: column;
@@ -193,24 +196,68 @@ const tabNames = [
         }
         .web3-tab {
             .web3-items {
+                height: 500px;
                 flex-direction: column;
+
                 .item-group {
+                    height: 100%;
                     width: 100%;
                     .web3-item {
-                        justify-content: end;
-                        width: 156px;
-                        height: 113px;
-                        border-radius: 15px;
-                        .web3-item-a {
-                            font-size: 15px;
-                        }
-                        .web3-item-b {
-                            font-size: 12px;
-                        }
-                        .web3-item-c {
-                            font-size: 8px;
-                        }
+                        margin-right: 15px;
                     }
+                    // .web3-item {
+                    //     justify-content: end;
+                    //     width: 320px;
+                    //     height: 180px;
+                    //     border-radius: 15px;
+                        // .web3-item-a {
+                        //     font-size: 15px;
+                        // }
+                        // .web3-item-b {
+                        //     font-size: 12px;
+                        // }
+                        // .web3-item-c {
+                        //     font-size: 8px;
+                        // }
+                    // }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 680px) {
+    .section-web3 {
+        height: 1225px;
+        padding: 2rem 1rem;  
+        .web3-tab {
+            .web3-items {
+                // padding-top: 30px;
+                height: 100%;
+                width: 100%;
+                // height: 750px;
+                padding: 1rem 1rem;
+                .item-group {
+                    // height: 500px;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    // background-color: red;
+                    .web3-item {
+                        margin-bottom: 15px;
+                        margin-right: 0px;
+                    }
+                    .web3-itemEnd {
+                        margin-bottom: 0px;
+                        margin-right: 0px;
+                    }
+                    .web3-item, .web3-itemEnd {
+                        justify-content: start;
+                        width: 100%;
+                        height: 180px;
+                        border-radius: 15px;
+                        padding-top: 40px;
+                        // margin-bottom: 10px;
+                    }
+
                 }
             }
         }

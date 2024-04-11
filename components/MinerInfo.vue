@@ -72,6 +72,7 @@ const props = defineProps({
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 100%;
     height: 100%;
     background-color:#1C1C1C;
 }
@@ -79,6 +80,7 @@ const props = defineProps({
     display: flex;
     flex-direction: row; 
     background-color:#1C1C1C;
+    width: 100%;
     height: 280px;
 }
 
@@ -87,6 +89,7 @@ const props = defineProps({
     flex-direction: row; 
     justify-content: space-between;
     padding: 1.5rem 0rem;
+    width: 100%;
     height: 280px;
 }
 .filecoinnode-tabitem-left {
@@ -94,7 +97,8 @@ const props = defineProps({
     flex-direction: column; 
     align-items: start;
     justify-content: space-between;
-    width: 320px;
+    // width: 320px;
+    width: 33%;
     height: 100%;
     padding: 2.2rem 0rem 3.5rem 1.5rem;
 }
@@ -103,7 +107,8 @@ const props = defineProps({
     flex-direction: column; 
     align-items: start;
     justify-content: space-between;
-    width: 320px;
+    // width: 320px;
+    width: 33%;
     height: 100%;
     background-color: #1C1C1C;
     border-left: 1px solid #707070;
@@ -115,7 +120,8 @@ const props = defineProps({
     align-items: center;
     justify-content: center;
     
-    width: 320px;
+    // width: 320px;
+    width: 33%;
     height: 100%;
     background-color: #1C1C1C;
     // padding: 3rem;

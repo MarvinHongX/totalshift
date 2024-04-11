@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue';
-const { filecoinUrl, filecoinBackgroundUrl } = useImg();
+const { filecoin2Url, filecoinBackgroundUrl } = useImg();
 const { filfoxHref, filswanHref } = useHref();
 const loading =ref(true);
 const tabItems = ref([
@@ -119,7 +119,7 @@ onBeforeMount(async () => {
         <div class="filecoinnode-item mb-7">
             <div class="filecoinnode-item-left" :style="{ backgroundImage: `url(${filecoinBackgroundUrl})` }">
                 <div class="filecoinnode-img-wrapper">
-                    <img :src="filecoinUrl" alt="filecoin" class="filecoinnode-img" />
+                    <img :src="filecoin2Url" alt="filecoin2" class="filecoinnode-img" />
                 </div>
             </div>
             <div class="filecoinnode-item-center">
@@ -233,15 +233,17 @@ onBeforeMount(async () => {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 1000px;
-        height: 230px;
+        // width: 1000px;
+        width: 100%;
+        height: 280px;
     }
     .filecoinnode-item-left {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 320px;
+        // width: 320px;
+        width: 33%;
         height: 100%;
         
         background-color: #EEEEEE;
@@ -253,7 +255,8 @@ onBeforeMount(async () => {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        width: 320px;
+        // width: 320px;
+        width: 33%;
         height: 100%;
         background-color: #1C1C1C;
         margin-right: 2rem;
@@ -284,7 +287,8 @@ onBeforeMount(async () => {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
-        width: 320px;
+        // width: 320px;
+        width: 33%;
         height: 100%;
         background-color: #1C1C1C;
         padding-top: 2rem;
@@ -328,7 +332,7 @@ onBeforeMount(async () => {
 @media (max-width: 1350px) {
     .section-filecoinnode {
         justify-content: start;
-        height: 1200px;
+        height: 1100px;
         padding: 6rem 1rem;
         .filecoinnode-none {
             display: none;
@@ -353,22 +357,27 @@ onBeforeMount(async () => {
             background-color:#1C1C1C;
         }
         .filecoinnode-item {
-            width: 325px;
-            height: 100px;
+            // align-items: start;
+            justify-content: start;
+            width: 100%;
+            // width: 325px;
+            height: 150px;
         }
         .filecoinnode-item-left {
             display: none;
         }
         .filecoinnode-item-center {
             justify-content: space-evenly;
-            width: 175px;
+            // width: 175px;
+            width: 48%;
             height: 100%;
             margin-right: 1rem;
             padding-top: 1rem;
         }
         .filecoinnode-item-right {
             justify-content: space-evenly;
-            width: 175px;
+            // width: 175px;
+            width: 48%;
             padding-top: 1rem;
             .filcoinnode-link-wrapper  {
                 .filecoinnode-link {

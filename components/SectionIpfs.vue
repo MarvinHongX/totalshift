@@ -222,7 +222,7 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
 }
 @media (max-width: 1350px) {
     .section-ipfs {
-        padding: 2rem 2rem;
+        padding: 2rem 1rem;
         font-weight: 400;
         font-size: 12px;
         // height: 1380px;

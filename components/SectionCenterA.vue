@@ -50,13 +50,18 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
     .centerA-img-wrapperer {
         width: 1130px;
         overflow: visible; 
+        
     }
     
     .centerA-img {
         width: 100%;
         position: relative; 
         top: 0; left: 0;
+        
         // object-fit: cover;
+    }
+    .centerA-img > img {
+        border-radius: 15px;
     }
 }
 @media (max-width: 1350px) {

@@ -377,7 +377,7 @@ const scrollRight = () => {
             width: 320px;
             height: 320px;
             
-            background-color: #202022;
+            // background-color: #202022;
             padding: 2em;
             margin-right: 1rem;
         }
@@ -387,6 +387,19 @@ const scrollRight = () => {
             height: 320px;
             background-color: #202022;
             margin-right: 1rem;
+            .centerADetail-img-wrapper {
+                width: 320px;
+                height: 320px;
+                overflow: hidden;
+                position: relative;
+                margin-bottom: 10px;
+                .centerADetail-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: relative;
+                }
+            }
         }
         .centerADetail-item-right {
             display: flex;
@@ -397,35 +410,48 @@ const scrollRight = () => {
             background-color: transparent;
         }
     }
-
-    .centerADetail-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: relative;
-    }
-
-    .centerADetail-img-wrapper {
-        width: 320px;
-        height: 320px;
-        overflow: hidden;
-        position: relative;
-        margin-bottom: 10px;
-    }
 }
 @media (max-width: 1350px) {
     .section-centerADetail {
-        height: 1100px;
-        padding: 8rem 1rem;
+        height: 900px;
+        padding: 2rem 0rem;
+
+        .scroll-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            width: 50px;
+            height: 300px;
+            z-index: 10;
+
+            button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin: 0 0.5rem;
+                transition: opacity 0.3s;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+
+                svg {
+                    width: 30px;
+                    height: 100px;
+                }
+            }
+        }
         .centerADetail-items {
-            width: 264px;
+            width: 294px;
             height: 100%; 
-            padding-top: 2.5rem;
+            // padding-top: 2.5rem;
             overflow-x: auto;
         }
         .centerADetail-item {
             flex-direction: column-reverse;
-            justify-content: space-between;
+            // justify-content: space-between;
+            justify-content: start;
+            width: 100%;
             height: 800px;
             .centerADetail-header {
                 font-size: 18px;
@@ -434,25 +460,66 @@ const scrollRight = () => {
                 font-size: 24px;
             }
             .centerADetail-item-left {
-                width: 240px;
-                height: 600px;
-                padding: 2.5em;
-                margin-right: 2rem;
+                // width: 270px;
+                width: 100%;
+                // height: 500px;
+
+                padding: 1.5em;
+                margin-right: 0rem;
             }
             .centerADetail-item-center {
-                width: 240px;
-                height: 325px;
-                margin-right: 2rem;
+                width: 100%;
+                height: auto;
+                // height: 100%;
+                // height: 355px;
+                margin-right: 0rem;
+                .centerADetail-img-wrapper {
+                    // width: 270px;
+                    width: 100%;
+                    height: 240px;
+                }
             }
             .centerADetail-item-right {
-                width: 240px;
-                height: 170px;
+                width: 100%;
+                height: 120px;
             }
         }
 
-        .centerADetail-img-wrapper {
-            width: 240px;
-            height: 240px;
+    }
+}
+@media (max-width: 750px) {
+    .section-centerADetail {
+        height: 900px;
+        padding: 1rem 0rem;
+        .scroll-buttons {
+            width: 50px;
+            height: 300px;
+
+            button {
+                svg {
+                    width: 30px;
+                    height: 80px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 550px) {
+    .section-centerADetail {
+        height: 900px;
+        padding: 1rem 0rem;
+
+        .scroll-buttons {
+            margin-bottom: 1rem;
+            width: 20px;
+            height: 300px;
+
+            button {
+                svg {
+                    width: 20px;
+                    height: 70px;
+                }
+            }
         }
     }
 }

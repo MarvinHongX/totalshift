@@ -62,7 +62,7 @@ const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
 }
 @media (max-width: 1350px) {
     .section-maincomponents {
-        height: 1380px;
+        height: 1300px;
         padding: 9rem 1rem;
 
         .maincomponents-header {

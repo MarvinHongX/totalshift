@@ -206,7 +206,7 @@ const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } 
 }
 @media (max-width: 1350px) {
     .section-filecoin {
-        padding: 2rem 2rem;
+        padding: 2rem 1rem;
         font-weight: 400;
         font-size: 12px;
         // height: 1350px;

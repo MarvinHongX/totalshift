@@ -83,6 +83,9 @@ export const useImg = () => {
     const filecoinUrl = computed(() => {
         return `/layout/images/home/Filecoin.png`;
     });
+    const filecoin2Url = computed(() => {
+        return `/layout/images/web3/Filecoin2.png`;
+    });
     const filecoinLogoUrl = computed(() => {
         return `/layout/images/web3/filecoinLogo.png`;
     });
@@ -187,6 +190,7 @@ export const useImg = () => {
         ipfsUrl,
         ipfsLogoUrl,
         filecoinUrl,
+        filecoin2Url,
         filecoinLogoUrl,
         filecoinBackgroundUrl,
         filfoxBtnUrl,

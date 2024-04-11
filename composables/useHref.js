@@ -1,6 +1,6 @@
 export const useHref = () => {
     const defiHref = computed(() => {
-        return `https://aleoworks.com/`;
+        return `https://tsdefi.com`;
     });
     const youtubeHref = computed(() => {
         return `https://www.youtube.com/@FIL-ALEO`;

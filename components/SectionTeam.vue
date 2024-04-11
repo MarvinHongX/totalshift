@@ -182,7 +182,7 @@ onMounted(() => {
             align-items: start;
             justify-content: start;
             width: 100%;
-            min-width: 600px;
+            // min-width: 600px;
             overflow-x: scroll;
             .team-item {
                 display: flex;

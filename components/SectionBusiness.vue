@@ -176,7 +176,7 @@ onMounted(() => {
         align-items: start;
         justify-content: start;
         width: 100%;
-        min-width: 500px;
+        // min-width: 500px;
         overflow-x: scroll;
         .business-item {
             width: 340px;

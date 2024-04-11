@@ -15,20 +15,20 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
         </div>
         <div class="service-items">
             <div class="item-group">
-                <div class="service-item mr-3">
+                <div class="service-item">
                     <a :href="skyzoneHref" target="_blank" class="service-link">
-                        <div class="mb-5">
-                            <img :src="skyzoneUrl" alt="skyzone" style="width: 90%;" />
+                        <div class="mb-5 img-wrapper">
+                            <img :src="skyzoneUrl" alt="skyzone"/>
                         </div>
                         <div class="mb-3">
                             <span>더스카이존</span>
                         </div>
                     </a>
                 </div>
-                <div class="service-item">
+                <div class="service-itemEnd">
                     <a :href="aleotrackHref" target="_blank" class="service-link">
-                        <div class="mb-6">
-                            <img :src="aleoTrackUrl" alt="aleotrack" style="width: 90%;" />
+                        <div class="mb-6 img-wrapper">
+                            <img :src="aleoTrackUrl" alt="aleotrack"/>
                         </div>
                         <div class="mb-3">
                             <span>알레오 트랙</span>
@@ -37,10 +37,10 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
                 </div>
             </div>
             <div class="item-groupEnd">
-                <div class="service-item mr-3">
+                <div class="service-itemEnd">
                     <a :href="aleocatHref" target="_blank" class="service-link">
-                        <div class="mb-6">
-                            <img :src="aleoCatUrl" alt="aleocat" style="width: 90%;" />
+                        <div class="mb-6 img-wrapper">
+                            <img :src="aleoCatUrl" alt="aleocat"/>
                         </div>
                         <div class="mb-3" >
                             <span>알레오 캣</span>
@@ -107,6 +107,9 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
             margin-right: 15px;
             margin-bottom: 15px;
             .service-item {
+                margin-right: 15px;
+            }
+            .service-item, .service-itemEnd {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -119,26 +122,25 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-content: end;
+                    justify-content: start;
                     text-decoration: none;
                     color: inherit;
+                    .img-wrapper > img {
+                        width: 90%; 
+                        height: auto;
+                    }
                 }
-            }
-            .service-item-none {
-                background-color: transparent;
-            }
-            .service-item > img {
-                width: 100%; 
-                height: auto;
+                .service-item-none {
+                    background-color: transparent;
+                }
             }
         }
     }
 }
 @media (max-width: 1350px) {
     .section-service {
-        height: 625px;
+        height: 925px;
         padding: 1rem 1rem;  
-        font-size: 7px;
         .service-header {
             font-weight: 600;
             font-size: 24px;
@@ -150,31 +152,135 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
         .service-items {
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             width: 100%;
-            .item-group {
+            height: 510px;
+            // height: 100%;
+            .item-group, .item-groupEnd {
+                width: 640px;
+                height: 100%;
                 .service-item {
-                    width: 100%;
+                    justify-content: end;
+                    margin-right: 15px;
                 }
+                .service-itemEnd {
+                    margin-right: 0px;
+                }
+                .service-item, .service-itemEnd {  
+                    .service-link {
+                        .img-wrapper {
+                            padding-left: 20px;
+                        }
+                        .img-wrapper > img {
+                            width: 80%; 
+                            height: auto;
+                        }
+                    }
+                }                
             }
             .item-groupEnd {
-                .service-item {
-                    width: 156px;
-                }
-            }
-            .item-group, .item-groupEnd {
-                width: 324px;
-                height: 113px;
-                .service-item-none {
-                    background-color: transparent;
-                }
-                .service-item {
-                    padding: 0rem;
+                .service-item, .service-itemEnd {
+                    width: 49%;
                     .service-link {
-                        padding: 1.5rem 1.5rem 0 1.5rem;
+                        .img-wrapper > img {
+                            width: 80%; 
+                            height: auto;
+                        }
                     }
                 }
             }
         }
     }
 }
+@media (max-width: 680px) {
+    .section-service {
+        height: 1225px;
+        .service-items {
+            // padding-top: 50px;
+            width: 100%;
+            // height: 700px;
+            height: 100%;
+            padding: 1rem 2rem;
+            .item-group, .item-groupEnd {
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                // height: 700px;
+                .service-item {
+                    // justify-content: end;
+                    // margin-right: 15px;
+                    width: 100%;
+                    margin-right: 0px;
+                    margin-bottom: 15px;
+                }
+                .service-itemEnd {
+                    width: 100%;
+                    margin-right: 0px;
+                }
+                .service-item, .service-itemEnd {  
+                    // width: 320px;
+                    // height: 240px;
+                    height: 100%;
+                    .service-link {
+                        .img-wrapper {
+                            padding-left: 20px;
+                        }
+                        .img-wrapper > img {
+                            width: 80%; 
+                            height: auto;
+                        }
+                    }
+                }                
+            }
+            .item-group {
+                height: 100%;
+            }
+            .item-groupEnd {
+                height: 100%;
+                .service-item, .service-itemEnd {
+                    // width: 50%;
+                    height: 50%;
+                    width: 100%;
+                    .service-link {
+                        .img-wrapper > img {
+                            width: 80%; 
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 580px) {
+    .section-service {
+        height: 925px;
+        .service-items {
+            // padding-top: 50px;
+            width: 100%;
+            height: 750px;
+            padding: 1rem 1rem;
+            .item-group, .item-groupEnd {
+                .service-item, .service-itemEnd {  
+                    padding-bottom: 0px;
+                    .service-link {
+                        .img-wrapper {
+                            padding-left: 20px;
+                        }
+                        .img-wrapper > img {
+                            width: 80%; 
+                            height: auto;
+                        }
+                    }
+                }                
+            }
+        }
+    }
+
+}
+
+
+
 </style>

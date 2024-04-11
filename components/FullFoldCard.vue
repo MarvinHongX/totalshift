@@ -72,13 +72,18 @@ onMounted(() => {
     align-items: center;
     justify-content: end;
     width: 100%;
-    height: 78px;
+    height: 48px;
     .logo-wrapper {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: start;
         width: calc(100% - 30px);
+        .full-fold-img-wrapperer{
+            .full-fold-img {
+                width: 80%;
+            }
+        }
     }
 }
 
@@ -94,5 +99,20 @@ onMounted(() => {
 
 .collapsed {
     display: none;
+}
+
+
+
+
+@media (max-width: 1350px) {
+    .toggle-wrapper {
+        .logo-wrapper {
+            .full-fold-img-wrapperer{
+                .full-fold-img {
+                    width: 70%;
+                }
+            }
+        }
+    }
 }
 </style>

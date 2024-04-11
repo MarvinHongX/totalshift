@@ -138,7 +138,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
 
 @media (max-width: 1350px) {
     .section-centerB {
-        height: 1582px;
+        height: 2082px;
         padding: 9rem 1rem;
         .centerB {
             .centerB-header {
@@ -156,6 +156,55 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                 }
             }
         }
+    }
+}
+@media (max-width: 1000px) {
+    .section-centerB {
+        height: 1882px;
+        
+    }
+}
+
+@media (max-width: 950px) {
+    .section-centerB {
+        height: 1782px;
+        
+    }
+}
+@media (max-width: 900px) {
+    .section-centerB {
+        height: 1712px;
+        
+    }
+}
+@media (max-width: 870px) {
+    .section-centerB {
+        height: 1542px;
+        
+    }
+}
+@media (max-width: 670px) {
+    .section-centerB {
+        height: 1342px;
+        
+    }
+}
+@media (max-width: 570px) {
+    .section-centerB {
+        height: 1242px;
+        
+    }
+}
+@media (max-width: 470px) {
+    .section-centerB {
+        height: 1182px;
+        
+    }
+}
+@media (max-width: 370px) {
+    .section-centerB {
+        height: 1082px;
+        
     }
 }
 </style>
