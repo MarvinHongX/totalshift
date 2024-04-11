@@ -12,8 +12,7 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
         </div>
         <div class="aleo-top mb-6">
             <div class="aleo-top-paragraph mb-1">
-                <span class="aleo-none">Aleo는 </span>
-                <span>완전히 개인화된 애플리케이션을 제공하는 최초의 플랫폼입니다.</span>
+                <span class="aleo-none">Aleo는 </span><span> 완전히 개인화된 애플리케이션을 제공하는 최초의 플랫폼입니다.</span>
             </div>
             <div class="aleo-top-paragraph mb-1">
                 <span>분산 시스템의 강점과 개인정보 보호를 강화하는</span>
@@ -167,6 +166,7 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
         align-items: center;
     }
     .aleo-top-paragraph {
+        display: block;
         padding-bottom: 4px;
     }
     .aleo-top-block {
@@ -183,7 +183,7 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
         margin-bottom: 50px;
     }
     .aleo-none {
-        display: block;
+        display: inline-block;
     }
     .aleo-display {
         display: none;
