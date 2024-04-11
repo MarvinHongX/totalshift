@@ -1,6 +1,7 @@
 <script setup>
 const { layoutState, onHamburgerMenuToggle, isHamburgerMenuActive } = useLayout();
 const { logoUrl } = useImg();
+const { defiHref } = useHref();
 
 const items = [
     { label: 'About Us', path: '/' },
@@ -10,6 +11,10 @@ const items = [
 
 const onItemClick = (path) => {
     layoutState.hamburgerMenuActive.value = false;
+    if (path === '/defi') {
+        window.open(defiHref.value, '_blank');
+        return;
+    } 
     navigateTo(path);
 };
 
