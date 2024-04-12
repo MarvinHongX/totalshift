@@ -42,7 +42,7 @@ const getMinerInfo = () => {
         </div>
         <div class="filfox-img-wrapper tab-none">
             <a :href="getMinerInfo().filfoxMinerHref" target="_blank">
-                <img :src="filfoxBtnUrl" alt="filfoxBtn" class="filfox-img" />
+                <img loading="lazy" :src="filfoxBtnUrl" alt="filfoxBtn" class="filfox-img" />
             </a>
         </div>
     </div>

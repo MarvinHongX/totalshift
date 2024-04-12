@@ -43,7 +43,7 @@ const events = ref([
 <FullCard class="section-history">
     <div class="history-auth">
         <div class="auth-wrapper">
-            <img :src="authBUrl" alt="authB" class="auth-img mb-4" />
+            <img loading="lazy" :src="authBUrl" alt="authB" class="auth-img mb-4" />
             <div class="auth-header mb-1">
                 <span>도전의 시작을 알리다.</span>
             </div>
@@ -56,7 +56,7 @@ const events = ref([
 
     <div class="history-timeline">
         <div class="timeline-logo-wrapper">
-            <img class="timeline-logo" :src="historyLogUrl" alt="historyLog" />
+            <img loading="lazy" class="timeline-logo" :src="historyLogUrl" alt="historyLog" />
         </div>
         <div v-for="event in events" :key="event.year" :class="event.class">
             <div class="timeline-event-left">

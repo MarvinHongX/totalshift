@@ -17,13 +17,13 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
             </div>
         </div>
         <div class="idc-right">
-            <div class="idc-main mb-8">
-                <img :src="idcUrl" alt="idc" style="width: 100%;" />
+            <div class="idc-main">
+                <img loading="lazy" :src="idcUrl" alt="idc" style="width: 100%;" />
             </div>
             <div class="idc-body">
                 <div class="idc-right-a">
                     <div class="idc-item">
-                        <img class="mb-3" :src="realtimeUrl" alt="realtime" />
+                        <img loading="lazy" class="mb-3" :src="realtimeUrl" alt="realtime" />
                         <div class="idc-item-header mb-3">
                             <span>실시간 제어 시스템</span>
                         </div>
@@ -38,7 +38,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                         </div>
                     </div>
                     <div class="idc-item">
-                        <img class="mb-3" :src="extinguisherUrl" alt="extinguisher" />
+                        <img loading="lazy" class="mb-3" :src="extinguisherUrl" alt="extinguisher" />
                         <div class="idc-item-header mb-3">
                             <span>자동소화 시스템</span>
                         </div>
@@ -57,7 +57,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                         
                     </div>
                     <div class="idc-item">
-                        <img class="mb-3" :src="firewallUrl" alt="firewall" />
+                        <img loading="lazy" class="mb-3" :src="firewallUrl" alt="firewall" />
                         <div class="idc-item-header mb-3">
                             <span>방화벽 시스템</span>
                         </div>
@@ -77,7 +77,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                 </div>
                 <div class="idc-right-b">
                     <div class="idc-item">
-                        <img class="mb-3" :src="tempHumidityUrl" alt="tempHumidity" />
+                        <img loading="lazy" class="mb-3" :src="tempHumidityUrl" alt="tempHumidity" />
                         <div class="idc-item-header mb-3">
                             <span>항온항습 시스템</span>
                         </div>
@@ -95,7 +95,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                         </div>
                     </div>
                     <div class="idc-item">
-                        <img class="mb-3" :src="upsUrl" alt="ups" />
+                        <img loading="lazy" class="mb-3" :src="upsUrl" alt="ups" />
                         <div class="idc-item-header mb-3">
                             <span>무정전 UPS 시스템</span>
                         </div>
@@ -178,6 +178,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
             color: #FFFFFF;
             font-weight: 500;
             font-size: 18px;
+            margin-bottom: 4rem;
             .idc-item-header {
                 color: #FFFFFF;
                 font-weight: 600;
@@ -267,6 +268,9 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
             justify-content: start;
             width: 100%;
             padding: 1rem;
+            .idc-main {
+                margin-bottom: 1rem;
+            }
             .idc-main > img {
                 width: 100%;
                 border-radius: 10px;
@@ -344,7 +348,6 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
             .idc-body {                
                 .idc-right-a {
                     margin-right: 30px;
-                    
                 }
             }
         }
@@ -364,7 +367,6 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
             .idc-body {                
                 .idc-right-a {
                     margin-right: 20px;
-                    
                 }
             }
         }
@@ -376,7 +378,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
 }
 @media (max-width: 420px) {
     .section-idc {
-        height: 1480px;
+        height: 1490px;
         .idc-right {
             .idc-item > img {
                 border-radius: 10px;

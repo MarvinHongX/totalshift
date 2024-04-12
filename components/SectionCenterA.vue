@@ -16,7 +16,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
         </div>
         <div class="centerA-img-wrapperer">
             <div class="centerA-img">
-                <img :src="idcUrl" alt="centerA" style="width: 100%;" />
+                <img loading="lazy" :src="idcUrl" alt="centerA" style="width: 100%;" />
             </div>
         </div>
     </FullCard>

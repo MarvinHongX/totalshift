@@ -27,9 +27,9 @@ onMounted(() => {
     <FullCard class="section-team">
         <div class="team-left">
             <div class="lee-wrapper">
-                <img :src="leeUrl" alt="lee" class="lee-img" />
+                <img loading="lazy" :src="leeUrl" alt="lee" class="lee-img" />
                 <span class="lee-label">연구소장 이영모</span>
-                <img :src="authAUrl" alt="authA" class="auth-img" />
+                <img loading="lazy" :src="authAUrl" alt="authA" class="auth-img" />
             </div>
         </div>
         <div class="team-right">
@@ -48,32 +48,32 @@ onMounted(() => {
                 </div>
             </div>
             <div class="lee-wrapper2">
-                <img :src="leeUrl" alt="lee" class="lee-img" />
+                <img loading="lazy" :src="leeUrl" alt="lee" class="lee-img" />
                 <span class="lee-label">연구소장 이영모</span>
-                <img :src="authAUrl" alt="authA" class="auth-img" />
+                <img loading="lazy" :src="authAUrl" alt="authA" class="auth-img" />
             </div>
             <div  class="team-right-body">
                 <div class="team-item mr-4">
                     <div class="team-img-wrapper">
-                        <img :src="teamAUrl" alt="teamA" class="team-img" />
+                        <img loading="lazy" :src="teamAUrl" alt="teamA" class="team-img" />
                         <span class="team-label">기술팀</span>
                     </div>
                 </div>
                 <div class="team-item mr-4">
                     <div class="team-img-wrapper">
-                        <img :src="teamBUrl" alt="teamB" class="team-img" />
+                        <img loading="lazy" :src="teamBUrl" alt="teamB" class="team-img" />
                         <span class="team-label">기획팀</span>
                     </div>
                 </div>
                 <div class="team-item mr-4">
                     <div class="team-img-wrapper">
-                        <img :src="teamCUrl" alt="teamC" class="team-img" />
+                        <img loading="lazy" :src="teamCUrl" alt="teamC" class="team-img" />
                         <span class="team-label">개발팀</span>
                     </div>
                 </div>
                 <div class="team-item">
                     <div class="team-img-wrapper">
-                        <img :src="teamDUrl" alt="teamD" class="team-img" />
+                        <img loading="lazy" :src="teamDUrl" alt="teamD" class="team-img" />
                         <span class="team-label">영업지원팀</span>
                     </div>
                 </div>

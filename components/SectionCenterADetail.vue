@@ -8,9 +8,7 @@ const scrollLeft = () => {
     if (scrollContainer.value) {
         const item = document.querySelector('.centerADetail-item');
         const itemWidth = item.offsetWidth;
-        scrollContainer.value.scrollLeft -= itemWidth;
-
-        
+        scrollContainer.value.scrollLeft -= itemWidth;        
     }
 };
 
@@ -68,7 +66,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img :src="firewallUrl" alt="firewall" class="centerADetail-img" />
+                        <img loading="lazy" :src="firewallUrl" alt="firewall" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">
@@ -114,7 +112,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img :src="tempHumidityUrl" alt="tempHumidity" class="centerADetail-img" />
+                        <img loading="lazy" :src="tempHumidityUrl" alt="tempHumidity" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">
@@ -172,7 +170,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img :src="extinguisherUrl" alt="extinguisher" class="centerADetail-img" />
+                        <img loading="lazy" :src="extinguisherUrl" alt="extinguisher" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">
@@ -230,7 +228,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img :src="upsUrl" alt="ups" class="centerADetail-img" />
+                        <img loading="lazy" :src="upsUrl" alt="ups" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">
@@ -270,7 +268,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img :src="realtimeUrl" alt="realtime" class="centerADetail-img" />
+                        <img loading="lazy" :src="realtimeUrl" alt="realtime" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">

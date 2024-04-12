@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 const { totalshiftUrl } = useImg();
 
 const slogans = [
@@ -14,6 +15,8 @@ const currentIndex = ref(0);
 const currentOpacity = ref(0);
 const intervalId = ref(null);
 const cycle = ref(0);
+const videoRef = ref(null);
+
 
 const changeSlogan = () => {
     if (cycle.value == 0) {
@@ -31,6 +34,10 @@ const changeSlogan = () => {
 
 onMounted(() => {
     intervalId.value = setInterval(changeSlogan, 1000);
+    // const video = videoRef.value;
+    // if (video) {
+    //     video.play();
+    // }
 });
 
 onUnmounted(() => {
@@ -38,10 +45,12 @@ onUnmounted(() => {
 });
 </script>
 
+
 <template>
     <FullCard class="section-totalshift">
         <div class="totalshift-background-wrapper">
-            <video v-if="totalshiftUrl" class="totalshift-background" :src="totalshiftUrl" autoplay loop muted playsinline></video>
+            <video ref="videoRef" class="totalshift-background" :src="totalshiftUrl" loop muted autoplay playsinline preload="none">
+            </video>
         </div>
         <div class="totalshift-header mb-5">
             <span>TOTAL SHIFT</span>
@@ -102,7 +111,7 @@ onUnmounted(() => {
 
 @media (max-width: 1350px) {
     .section-totalshift {
-        height: 720px;
+        height: 700px;
         padding: 0rem 2rem;  
         .totalshift-header {
             font-weight: 400;
@@ -118,10 +127,34 @@ onUnmounted(() => {
         }
     }
 }
-
+@media (max-width: 900px) {
+    .section-totalshift {
+        height: 650px;
+    }
+}
+@media (max-width: 800px) {
+    .section-totalshift {
+        height: 600px;
+    }
+}
+@media (max-width: 700px) {
+    .section-totalshift {
+        height: 550px;
+    }
+}
+@media (max-width: 600px) {
+    .section-totalshift {
+        height: 500px;
+    }
+}
+@media (max-width: 500px) {
+    .section-totalshift {
+        height: 450px;
+    }
+}
 @media (max-width: 390px) {
     .section-totalshift {
-        height: 620px;
+        height: 400px;
         .totalshift-header {
             font-size: 10px;
         }

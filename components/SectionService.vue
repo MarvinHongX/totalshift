@@ -18,7 +18,7 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
                 <div class="service-item">
                     <a :href="skyzoneHref" target="_blank" class="service-link">
                         <div class="mb-5 img-wrapper">
-                            <img :src="skyzoneUrl" alt="skyzone"/>
+                            <img loading="lazy" :src="skyzoneUrl" alt="skyzone"/>
                         </div>
                         <div class="mb-3">
                             <span>더스카이존</span>
@@ -28,7 +28,7 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
                 <div class="service-itemEnd">
                     <a :href="aleotrackHref" target="_blank" class="service-link">
                         <div class="mb-6 img-wrapper">
-                            <img :src="aleoTrackUrl" alt="aleotrack"/>
+                            <img loading="lazy" :src="aleoTrackUrl" alt="aleotrack"/>
                         </div>
                         <div class="mb-3">
                             <span>알레오 트랙</span>
@@ -40,7 +40,7 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
                 <div class="service-itemEnd">
                     <a :href="aleocatHref" target="_blank" class="service-link">
                         <div class="mb-6 img-wrapper">
-                            <img :src="aleoCatUrl" alt="aleocat"/>
+                            <img loading="lazy" :src="aleoCatUrl" alt="aleocat"/>
                         </div>
                         <div class="mb-3" >
                             <span>알레오 캣</span>

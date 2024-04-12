@@ -16,31 +16,31 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
         <div class="partner-items">
             <div class="item-group">
                 <div class="partner-item mr-3">
-                    <img :src="ktUrl" alt="kt" />
+                    <img loading="lazy" :src="ktUrl" alt="kt" />
                 </div>
                 <div class="partner-item">
-                    <img :src="seagateUrl" alt="seagate" />
+                    <img loading="lazy" :src="seagateUrl" alt="seagate" />
                 </div>
             </div>
             <div class="item-group">
                 <div class="partner-item">
-                    <img :src="protocolLabsUrl" alt="protocolLabs"/>
+                    <img loading="lazy" :src="protocolLabsUrl" alt="protocolLabs"/>
                 </div>
                 <div class="partner-item">
-                    <img :src="ipfsUrl" alt="IPFS" />
+                    <img loading="lazy" :src="ipfsUrl" alt="IPFS" />
                 </div>
             </div>
             <div class="item-group">
                 <div class="partner-item mr-3">
-                    <img :src="filecoinUrl" alt="filecoin" />
+                    <img loading="lazy" :src="filecoinUrl" alt="filecoin" />
                 </div>
                 <div class="partner-item mr-4">
-                    <img :src="kidcUrl" alt="KIDC" />
+                    <img loading="lazy" :src="kidcUrl" alt="KIDC" />
                 </div>
             </div>
             <div class="item-group">
                 <div class="partner-item">
-                    <img :src="aleoUrl" alt="aleo" />
+                    <img loading="lazy" :src="aleoUrl" alt="aleo" />
                 </div>
             </div>
         </div>

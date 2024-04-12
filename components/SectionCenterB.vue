@@ -3,19 +3,21 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
 </script>
 <template>
     <FullCard class="section-centerB">
-        <div class="centerB">
-            <div class="centerB-header mb-1">
-                <span>알레오웍스</span>
-            </div>
-            <div class="centerB-header mb-8">
-                <span>클라우드 프로빙 안성센터</span>
+        <div class="centerB-wrapper">
+            <div class="centerB-top">
+                <div class="centerB-header mb-1">
+                    <span>알레오웍스</span>
+                </div>
+                <div class="centerB-header">
+                    <span>클라우드 프루빙 안성센터</span>
+                </div>
             </div>
             <div class="centerB">
                 <div class="centerB-a">
-                    <div class="centerB-item mb-8">
-                        <img class="mb-3" :src="centerBAUrl" alt="centerBA" />
+                    <div class="centerB-item">
+                        <img loading="lazy" class="mb-3" :src="centerBAUrl" alt="centerBA" />
                         <div class="centerB-item-header mb-3">
-                            <span>안성 프로빙 센터</span>
+                            <span>안성 프루빙 센터</span>
                         </div>
                         <div class="mb-1">
                             <span>경기도 안성 소재</span>
@@ -24,8 +26,8 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                             <span>실평수 150명</span>
                         </div>
                     </div>
-                    <div class="centerB-item mb-8">
-                        <img class="mb-3" :src="centerBBUrl" alt="centerBB" />
+                    <div class="centerB-item">
+                        <img loading="lazy" class="mb-3" :src="centerBBUrl" alt="centerBB" />
                         <div class="centerB-item-header mb-3">
                             <span>전원 관리시설</span>
                         </div>
@@ -38,10 +40,10 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                     </div>
                 </div>
                 <div class="centerB-b">
-                    <div class="centerB-item mb-8">
-                        <img class="mb-3" :src="centerBCUrl" alt="centerBC" />
+                    <div class="centerB-item">
+                        <img loading="lazy" class="mb-3" :src="centerBCUrl" alt="centerBC" />
                         <div class="centerB-item-header mb-3">
-                            <span>프로빙 센터 내부 전경</span>
+                            <span>프루빙 센터 내부 전경</span>
                         </div>
                         <div class="mb-1">
                             <span>GPU 6-Way 서버 세팅 완료 </span>
@@ -51,7 +53,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                         </div>
                     </div>
                     <div class="centerB-item centerB-item-last">
-                        <img class="mb-3" :src="centerBDUrl" alt="centerBD" />
+                        <img loading="lazy" class="mb-3" :src="centerBDUrl" alt="centerBD" />
                         <div class="centerB-item-header mb-3">
                             <span>환풍 시스템</span>
                         </div>
@@ -76,16 +78,23 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
     justify-content: center;
     width: 100%;
     height: 2082px;
-    // padding: 9rem;
     padding-top: 0rem;
     padding-bottom: 0rem;
     padding-left: calc((100% - 1280px) / 2 );
     padding-right: calc((100% - 1280px) / 2 );
-    .centerB {
+    .centerB-wrapper {
         display: flex;
         flex-direction: column;
         align-items: start;
         justify-content: start;
+        .centerB-top {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            width: 100%;
+
+        }
         .centerB-header {
             color: #FFFFFF;
             font-weight: 700;
@@ -99,11 +108,13 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
         .centerB {
             display: flex;
             flex-direction: row;
+            justify-content: start;
             align-items: center;
             .centerB-a {
                 display: flex;
                 flex-direction: column;
                 justify-content: start;
+                margin-right: 60px;
             }
             .centerB-b {
                 display: flex;
@@ -129,7 +140,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                 padding-bottom: 0rem;
             }
             .centerB-item > img {
-                width: 82%;
+                width: 90%;
                 border-radius: 15px;
             }
         }
@@ -139,12 +150,20 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
 @media (max-width: 1350px) {
     .section-centerB {
         height: 2082px;
-        padding: 9rem 1rem;
-        .centerB {
+        padding: 4rem 1rem;
+        .centerB-wrapper {
+            align-items: center;
+            justify-content: start;
+            width: 100%;
+            padding: 1rem;
             .centerB-header {
                 font-size: 24px;
             }
             .centerB {
+                // padding: 0rem 8rem;
+                .centerB-a {
+                    margin-right: 15px;
+                }
                 .centerB-item {
                     font-size: 12px;
                     .centerB-item-header {
@@ -152,6 +171,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                     }
                 }
                 .centerB-item > img {
+                    width: 90%;
                     border-radius: 10px;
                 }
             }
@@ -161,7 +181,17 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
 @media (max-width: 1000px) {
     .section-centerB {
         height: 1882px;
-        
+        .centerB-wrapper {
+            .centerB {
+                .centerB-a {
+                    margin-right: 20px;
+                }
+                .centerB-item > img {
+                    width: 95%;
+                    border-radius: 10px;
+                }
+            }
+        }
     }
 }
 
@@ -186,19 +216,34 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
 @media (max-width: 670px) {
     .section-centerB {
         height: 1342px;
-        
+        .centerB-wrapper {
+            .centerB {
+                .centerB-a {
+                    margin-right: 20px;
+                }
+                .centerB-item > img {
+                    width: 100%;
+                    border-radius: 10px;
+                }
+            }
+        }       
     }
 }
 @media (max-width: 570px) {
     .section-centerB {
         height: 1242px;
-        
     }
 }
 @media (max-width: 470px) {
     .section-centerB {
         height: 1182px;
-        
+        .centerB-wrapper {
+            .centerB {
+                .centerB-a {
+                    margin-right: 10px;
+                }
+            }
+        }
     }
 }
 @media (max-width: 370px) {
