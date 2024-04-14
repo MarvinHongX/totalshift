@@ -91,7 +91,7 @@ onUnmounted(() => {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.65;
+            opacity: 0.45;
         }
     }
     .totalshift-header {

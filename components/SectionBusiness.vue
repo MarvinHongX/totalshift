@@ -229,7 +229,7 @@ onMounted(() => {
 @media (max-width: 1350px) {
     .section-business {
         flex-direction: column;
-        height: 308px;
+        height: 408px;
         padding-top: 0rem;
         .business-header {
             font-weight: 700;
