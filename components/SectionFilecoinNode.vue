@@ -119,7 +119,7 @@ onBeforeMount(async () => {
         <div class="filecoinnode-item mb-7">
             <div class="filecoinnode-item-left" :style="{ backgroundImage: `url(${filecoinBackgroundUrl})` }">
                 <div class="filecoinnode-img-wrapper">
-                    <img loading="lazy" :src="filecoin2Url" alt="filecoin2" class="filecoinnode-img" />
+                    <NuxtImg format="webp" loading="lazy" :src="filecoin2Url" alt="filecoin2" class="filecoinnode-img" />
                 </div>
             </div>
             <div class="filecoinnode-item-center">

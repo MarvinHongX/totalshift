@@ -5,7 +5,7 @@ const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
 <template>
     <FullFoldCard class="section-ipfs" :logoUrl="ipfsLogoUrl" logoName="IPFS" :isExpanded="false">
         <div class="ipfs-img-wrapperer">
-            <img loading="lazy" :src="ipfsLogoUrl" alt="ipfsLogo" class="ipfs-img"/>
+            <NuxtImg format="webp" loading="lazy" :src="ipfsLogoUrl" alt="ipfsLogo" class="ipfs-img"/>
         </div>
         <div class="ipfs-header mb-6">
             <span>IPFS</span>

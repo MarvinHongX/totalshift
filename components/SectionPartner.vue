@@ -81,12 +81,14 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
             flex-direction: row;
             align-items: center;   
             justify-content: between;  
+            width: 100%;
             .partner-item {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 100%;
                 width: auto; 
+                width: 100%;
                 overflow: hidden; 
             }
         }

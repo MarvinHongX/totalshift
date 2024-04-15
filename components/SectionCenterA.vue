@@ -16,7 +16,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
         </div>
         <div class="centerA-img-wrapperer">
             <div class="centerA-img">
-                <img loading="lazy" :src="idcUrl" alt="centerA" style="width: 100%;" />
+                <NuxtImg format="webp" loading="lazy" :src="idcUrl" alt="centerA" style="width: 100%;" />
             </div>
         </div>
     </FullCard>

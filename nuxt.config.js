@@ -28,6 +28,7 @@ export default defineNuxtConfig({
   },
   modules: [
     'nuxt-primevue',
+    '@nuxt/image',
     '@nuxtjs/sitemap',
   ],
   primevue: {
@@ -43,5 +44,5 @@ export default defineNuxtConfig({
           },        
     }
   },
-  css: ['primeflex/primeflex.scss', 'primevue/resources/primevue.min.css', '@/assets/styles.scss'],
+  css: ['primeflex/primeflex.scss', '@/assets/styles.scss'],
 });

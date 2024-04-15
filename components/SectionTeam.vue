@@ -27,9 +27,9 @@ onMounted(() => {
     <FullCard class="section-team">
         <div class="team-left">
             <div class="lee-wrapper">
-                <img loading="lazy" :src="leeUrl" alt="lee" class="lee-img" />
+                <NuxtImg format="webp" loading="lazy" :src="leeUrl" alt="lee" class="lee-img" />
                 <span class="lee-label">연구소장 이영모</span>
-                <img loading="lazy" :src="authAUrl" alt="authA" class="auth-img" />
+                <NuxtImg format="webp" loading="lazy" :src="authAUrl" alt="authA" class="auth-img" />
             </div>
         </div>
         <div class="team-right">
@@ -55,25 +55,25 @@ onMounted(() => {
             <div  class="team-right-body">
                 <div class="team-item mr-4">
                     <div class="team-img-wrapper">
-                        <img loading="lazy" :src="teamAUrl" alt="teamA" class="team-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="teamAUrl" alt="teamA" class="team-img" />
                         <span class="team-label">기술팀</span>
                     </div>
                 </div>
                 <div class="team-item mr-4">
                     <div class="team-img-wrapper">
-                        <img loading="lazy" :src="teamBUrl" alt="teamB" class="team-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="teamBUrl" alt="teamB" class="team-img" />
                         <span class="team-label">기획팀</span>
                     </div>
                 </div>
                 <div class="team-item mr-4">
                     <div class="team-img-wrapper">
-                        <img loading="lazy" :src="teamCUrl" alt="teamC" class="team-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="teamCUrl" alt="teamC" class="team-img" />
                         <span class="team-label">개발팀</span>
                     </div>
                 </div>
                 <div class="team-item">
                     <div class="team-img-wrapper">
-                        <img loading="lazy" :src="teamDUrl" alt="teamD" class="team-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="teamDUrl" alt="teamD" class="team-img" />
                         <span class="team-label">영업지원팀</span>
                     </div>
                 </div>

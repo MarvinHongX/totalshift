@@ -5,7 +5,7 @@ const { aleoIntroHref, aleoDocsHref, aleoBlogHref } = useHref();
 <template>
     <FullFoldCard class="section-aleo" :logoUrl="aleoLogoUrl" logoName="Aleo" :isExpanded="false">
         <div class="aleo-img-wrapperer">
-            <img loading="lazy" :src="aleoLogoUrl" alt="aleoLogo" class="aleo-img"/>
+            <NuxtImg format="webp" loading="lazy" :src="aleoLogoUrl" alt="aleoLogo" class="aleo-img"/>
         </div>
         <div class="aleo-header mb-6">
             <span>Aleo</span>

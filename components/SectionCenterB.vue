@@ -15,7 +15,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
             <div class="centerB">
                 <div class="centerB-a">
                     <div class="centerB-item">
-                        <img loading="lazy" class="mb-3" :src="centerBAUrl" alt="centerBA" />
+                        <NuxtImg format="webp" loading="lazy" class="mb-3" :src="centerBAUrl" alt="centerBA" />
                         <div class="centerB-item-header mb-3">
                             <span>안성 프루빙 센터</span>
                         </div>
@@ -27,7 +27,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                         </div>
                     </div>
                     <div class="centerB-item">
-                        <img loading="lazy" class="mb-3" :src="centerBBUrl" alt="centerBB" />
+                        <NuxtImg format="webp" loading="lazy" class="mb-3" :src="centerBBUrl" alt="centerBB" />
                         <div class="centerB-item-header mb-3">
                             <span>전원 관리시설</span>
                         </div>
@@ -41,7 +41,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                 </div>
                 <div class="centerB-b">
                     <div class="centerB-item">
-                        <img loading="lazy" class="mb-3" :src="centerBCUrl" alt="centerBC" />
+                        <NuxtImg format="webp" loading="lazy" class="mb-3" :src="centerBCUrl" alt="centerBC" />
                         <div class="centerB-item-header mb-3">
                             <span>프루빙 센터 내부 전경</span>
                         </div>
@@ -53,7 +53,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                         </div>
                     </div>
                     <div class="centerB-item centerB-item-last">
-                        <img loading="lazy" class="mb-3" :src="centerBDUrl" alt="centerBD" />
+                        <NuxtImg format="webp" loading="lazy" class="mb-3" :src="centerBDUrl" alt="centerBD" />
                         <div class="centerB-item-header mb-3">
                             <span>환풍 시스템</span>
                         </div>
@@ -87,6 +87,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
         flex-direction: column;
         align-items: start;
         justify-content: start;
+        width: 100%;
         .centerB-top {
             display: flex;
             flex-direction: column;
@@ -108,19 +109,22 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
         .centerB {
             display: flex;
             flex-direction: row;
-            justify-content: start;
+            justify-content: center;
             align-items: center;
+            width: 100%;
             .centerB-a {
                 display: flex;
                 flex-direction: column;
                 justify-content: start;
                 margin-right: 60px;
+                width: 100%;
             }
             .centerB-b {
                 display: flex;
                 flex-direction: column;
                 justify-content: start;
                 margin-top: 15rem;
+                width: 100%;
             }
             .centerB-item {
                 display: flex;

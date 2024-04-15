@@ -4,7 +4,7 @@ const { songUrl, songProfileUrl } = useImg();
 <template>
     <FullCard class="section-song">
         <div class="song-pic2">
-            <img loading="lazy" :src="songProfileUrl" alt="song" style="width: 80%;" />
+            <NuxtImg format="webp" loading="lazy" :src="songProfileUrl" alt="song" style="width: 100%;" />
         </div>
         <div class="song-me">
             <div class="song-me-header mb-6">
@@ -23,7 +23,7 @@ const { songUrl, songProfileUrl } = useImg();
             </div>
         </div>
         <div class="song-pic">
-            <img loading="lazy" :src="songUrl" alt="song" style="width: 80%;" />
+            <NuxtImg format="webp" loading="lazy" :src="songUrl" alt="song" style="width: 80%;" />
         </div>
     </FullCard>
 </template>

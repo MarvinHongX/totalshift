@@ -5,7 +5,7 @@ const { filecoinDocsHref, filecoinCryptoEconomicsHref, filecoinBlockchainHref } 
 <template>
     <FullFoldCard class="section-filecoin" :logoUrl="filecoinLogoUrl" logoName="Filecoin" :isExpanded="false">
         <div class="filecoin-img-wrapperer">
-            <img loading="lazy" :src="filecoinLogoUrl" alt="filecoinLogo" class="filecoin-img"/>
+            <NuxtImg format="webp" loading="lazy" :src="filecoinLogoUrl" alt="filecoinLogo" class="filecoin-img"/>
         </div>
         <div class="filecoin-header mb-1">
             <span>Filecoin</span>

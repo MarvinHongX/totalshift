@@ -43,7 +43,7 @@ const events = ref([
 <FullCard class="section-history">
     <div class="history-auth">
         <div class="auth-wrapper">
-            <img loading="lazy" :src="authBUrl" alt="authB" class="auth-img mb-4" />
+            <NuxtImg format="webp" loading="lazy" :src="authBUrl" alt="authB" class="auth-img mb-4" />
             <div class="auth-header mb-1">
                 <span>도전의 시작을 알리다.</span>
             </div>

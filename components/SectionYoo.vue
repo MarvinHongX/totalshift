@@ -5,10 +5,10 @@ const { youtubeHref } = useHref();
 <template>
     <FullCard class="section-yoo">
         <div class="yoo-pic">
-            <img loading="lazy" :src="yooUrl" alt="yoo" style="width: 100%;" />
+            <NuxtImg format="webp" loading="lazy" :src="yooUrl" alt="yoo" style="width: 100%;" />
         </div>
         <div class="yoo-pic2 mb-4">
-            <img loading="lazy" :src="yooProfileUrl" alt="yoo" style="width: 100%;" />
+            <NuxtImg format="webp" loading="lazy" :src="yooProfileUrl" alt="yoo" style="width: 100%;" />
         </div>
         <div class="yoo-me">
             <div class="yoo-me-header mb-6">
@@ -23,7 +23,7 @@ const { youtubeHref } = useHref();
                 </div>
                 <div class="flex flex-row align-items-center">
                     <a :href="youtubeHref" target="_blank" class="youtube-link flex flex-row">
-                        <img loading="lazy" :src="youtubeUrl" alt="youtube" class="youtube mr-3" /> 
+                        <NuxtImg format="webp" loading="lazy" :src="youtubeUrl" alt="youtube" class="youtube mr-3" /> 
                         <div class="flex flex-row align-items-center">
                             <span class="mr-3">파일&알레오TV 채널운영</span>
                             <span class="mr-1"> 바로가기</span><span>▶</span>

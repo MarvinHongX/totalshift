@@ -27,7 +27,7 @@ const props = defineProps({
                     </div>  
                     <a :href="props.item.filfoxMinerHref" target="_blank" class="filecoinnode-link filecoinnode-display">
                         <div class="filfox-img-wrapper">
-                            <img loading="lazy" :src="filfoxBtnUrl" alt="filecoin" class="filfox-img" />
+                            <NuxtImg format="webp" loading="lazy" :src="filfoxBtnUrl" alt="filecoin" class="filfox-img" />
                         </div>
                     </a>
                 </div>

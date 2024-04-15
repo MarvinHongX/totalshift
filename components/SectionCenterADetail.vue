@@ -66,7 +66,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img loading="lazy" :src="firewallUrl" alt="firewall" class="centerADetail-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="firewallUrl" alt="firewall" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">
@@ -112,7 +112,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img loading="lazy" :src="tempHumidityUrl" alt="tempHumidity" class="centerADetail-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="tempHumidityUrl" alt="tempHumidity" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">
@@ -170,7 +170,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img loading="lazy" :src="extinguisherUrl" alt="extinguisher" class="centerADetail-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="extinguisherUrl" alt="extinguisher" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">
@@ -228,7 +228,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img loading="lazy" :src="upsUrl" alt="ups" class="centerADetail-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="upsUrl" alt="ups" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">
@@ -268,7 +268,7 @@ const scrollRight = () => {
                 </div>
                 <div class="centerADetail-item-center">
                     <div class="centerADetail-img-wrapper">
-                        <img loading="lazy" :src="realtimeUrl" alt="realtime" class="centerADetail-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="realtimeUrl" alt="realtime" class="centerADetail-img" />
                     </div>
                 </div>
                 <div class="centerADetail-item-right">

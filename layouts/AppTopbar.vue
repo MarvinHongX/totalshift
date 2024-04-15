@@ -32,7 +32,7 @@ const onLogoClick = () => {
                 class="topbar-logo"
                 @click="() => onLogoClick()"
             >
-                <img :src="logoUrl" alt="logo" />
+                <NuxtImg format="webp" :src="logoUrl" alt="logo" />
             </a>  
         </div>
         <div class="topbar-right">

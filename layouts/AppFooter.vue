@@ -25,7 +25,7 @@ const { logoSecondaryUrl } = useImg();
                     </div>
                 </div>
                 <div class="footer-logo">
-                    <img :src="logoSecondaryUrl" alt="logo-secondary" />
+                    <NuxtImg format="webp" :src="logoSecondaryUrl" alt="logo-secondary" />
                 </div>
 
             </div>

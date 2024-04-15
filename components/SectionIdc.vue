@@ -18,12 +18,12 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
         </div>
         <div class="idc-right">
             <div class="idc-main">
-                <img loading="lazy" :src="idcUrl" alt="idc" style="width: 100%;" />
+                <NuxtImg format="webp" loading="lazy" :src="idcUrl" alt="idc" style="width: 100%;" />
             </div>
             <div class="idc-body">
                 <div class="idc-right-a">
                     <div class="idc-item">
-                        <img loading="lazy" class="mb-3" :src="realtimeUrl" alt="realtime" />
+                        <NuxtImg format="webp" loading="lazy" class="idc-item-img mb-3" :src="realtimeUrl" alt="realtime" />
                         <div class="idc-item-header mb-3">
                             <span>실시간 제어 시스템</span>
                         </div>
@@ -38,7 +38,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                         </div>
                     </div>
                     <div class="idc-item">
-                        <img loading="lazy" class="mb-3" :src="extinguisherUrl" alt="extinguisher" />
+                        <NuxtImg format="webp" loading="lazy" class="idc-item-img mb-3" :src="extinguisherUrl" alt="extinguisher" />
                         <div class="idc-item-header mb-3">
                             <span>자동소화 시스템</span>
                         </div>
@@ -57,7 +57,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                         
                     </div>
                     <div class="idc-item">
-                        <img loading="lazy" class="mb-3" :src="firewallUrl" alt="firewall" />
+                        <NuxtImg format="webp" loading="lazy" class="idc-item-img mb-3" :src="firewallUrl" alt="firewall" />
                         <div class="idc-item-header mb-3">
                             <span>방화벽 시스템</span>
                         </div>
@@ -77,7 +77,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                 </div>
                 <div class="idc-right-b">
                     <div class="idc-item">
-                        <img loading="lazy" class="mb-3" :src="tempHumidityUrl" alt="tempHumidity" />
+                        <NuxtImg format="webp" loading="lazy" class="idc-item-img mb-3" :src="tempHumidityUrl" alt="tempHumidity" />
                         <div class="idc-item-header mb-3">
                             <span>항온항습 시스템</span>
                         </div>
@@ -95,7 +95,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                         </div>
                     </div>
                     <div class="idc-item">
-                        <img loading="lazy" class="mb-3" :src="upsUrl" alt="ups" />
+                        <NuxtImg format="webp" loading="lazy" class="idc-item-img mb-3" :src="upsUrl" alt="ups" />
                         <div class="idc-item-header mb-3">
                             <span>무정전 UPS 시스템</span>
                         </div>
@@ -200,6 +200,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                 justify-content: start;
                 margin-top: 2rem;
                 margin-right: 60px;
+                width: 100%;
                 
             }
             .idc-right-b {
@@ -207,6 +208,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                 flex-direction: column;
                 justify-content: start;
                 margin-top: 4rem;
+                width: 100%;
             }
         }
         .idc-item {
@@ -222,10 +224,10 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                 font-weight: 600;
                 font-size: 32px;
             }
-        }
-        .idc-item > img {
-            width: 100%;
-            border-radius: 15px;
+            .idc-item-img {
+                width: 100%;
+                border-radius: 15px;
+            }
         }
     }
 }
@@ -298,9 +300,9 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
                 .idc-item-header2 {
                     display: none;
                 }
-            }
-            .idc-item > img {
-                border-radius: 10px;
+                .idc-item-img {
+                    border-radius: 10px;
+                }
             }
         }
     }

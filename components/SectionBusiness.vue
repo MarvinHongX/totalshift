@@ -52,7 +52,7 @@ onMounted(() => {
 
                 <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper flex">
-                        <img loading="lazy" :src="businessAUrl" alt="businessA" class="business-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="businessAUrl" alt="businessA" class="business-img" />
                         <div class="business-label">
                             <div>
                                 <span>Web 3.0</span>
@@ -65,7 +65,7 @@ onMounted(() => {
                 </div>
                 <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper">
-                        <img loading="lazy" :src="businessBUrl" alt="businessB" class="business-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="businessBUrl" alt="businessB" class="business-img" />
                         <span class="business-label">
                             <div>
                                 <span>데이터 센터 (IDC)</span>
@@ -78,7 +78,7 @@ onMounted(() => {
                 </div>
                 <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper">
-                        <img loading="lazy" :src="businessCUrl" alt="businessC" class="business-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="businessCUrl" alt="businessC" class="business-img" />
                         <span class="business-label">
                             <div>
                                 <span>Development</span>
@@ -91,7 +91,7 @@ onMounted(() => {
                 </div>
                 <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper">
-                        <img loading="lazy" :src="businessDUrl" alt="businessD" class="business-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="businessDUrl" alt="businessD" class="business-img" />
                         <span class="business-label">
                             <div>
                                 <span>IT Service</span>
