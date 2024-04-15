@@ -11,6 +11,9 @@ export default defineNuxtConfig({
   app: {
       head: {
           title: 'TOTAL SHIFT',
+          htmlAttrs: {
+            lang: 'ko-KR'
+          },
           meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
