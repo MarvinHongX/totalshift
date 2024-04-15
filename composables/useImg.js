@@ -120,7 +120,7 @@ export const useImg = () => {
         return `/layout/images/home/idc.png`;
     });
     const idcBackgroundUrl = computed(() => {
-        return `/layout/images/home/idcBackground.png`;
+        return `/layout/images/home/idcBackground.webp`;
     });
     const tempHumidityUrl = computed(() => {
         return `/layout/images/home/tempHumidity.png`;

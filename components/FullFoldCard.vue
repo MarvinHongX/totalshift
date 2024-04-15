@@ -33,7 +33,7 @@ onMounted(() => {
         <div class="toggle-wrapper">
             <div v-if="!isExpanded" class="logo-wrapper">
                 <div class="full-fold-img-wrapperer mr-3">
-                    <img format="webp" loading="lazy" :src="logoUrl" alt="logo" class="full-fold-img"/>
+                    <img loading="lazy" :src="logoUrl" alt="logo" class="full-fold-img"/>
                 </div>
                 <div class="full-fold-header">
                     <span>{{ props.logoName }}</span>
