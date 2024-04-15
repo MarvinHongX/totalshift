@@ -48,9 +48,9 @@ onMounted(() => {
                 </div>
             </div>
             <div class="lee-wrapper2">
-                <img loading="lazy" :src="leeUrl" alt="lee" class="lee-img" />
+                <NuxtImg format="webp" loading="lazy" :src="leeUrl" alt="lee" class="lee-img" />
                 <span class="lee-label">연구소장 이영모</span>
-                <img loading="lazy" :src="authAUrl" alt="authA" class="auth-img" />
+                <NuxtImg format="webp" loading="lazy" :src="authAUrl" alt="authA" class="auth-img" />
             </div>
             <div  class="team-right-body">
                 <div class="team-item mr-4">
