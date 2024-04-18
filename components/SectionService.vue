@@ -7,12 +7,12 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
         <div class="service-header mb-4">
             <span>제공중인 서비스</span>
         </div>
-        <div class="service-header2 mb-2">
+        <!-- <div class="service-header2 mb-2">
             <span>테라바이트에서 페타바이트에 이르기까지 최고 용량을 갖춘 클라우드</span>
         </div>
         <div class="service-header2 mb-4">
             <span> 탈중앙화 데이터 스토리지 솔루션을 제공하는 기업입니다.</span>
-        </div>
+        </div> -->
         <div class="service-items">
             <div class="item-group">
                 <div class="service-item">

@@ -117,7 +117,12 @@ onBeforeMount(async () => {
             <span>Update: {{ formatTimestampYYYYMMDDHHMMSS(tabItems[0].balance.timestamp) }}</span>
         </div>
         <div class="filecoinnode-item mb-7">
-            <div class="filecoinnode-item-left" :style="{ backgroundImage: `url(${filecoinBackgroundUrl})` }">
+            <!-- <div class="filecoinnode-item-left" :style="{ backgroundImage: `url(${filecoinBackgroundUrl})` }">
+                <div class="filecoinnode-img-wrapper">
+                    <NuxtImg format="webp" loading="lazy" :src="filecoin2Url" alt="filecoin2" class="filecoinnode-img" />
+                </div>
+            </div> -->
+            <div class="filecoinnode-item-left">
                 <div class="filecoinnode-img-wrapper">
                     <NuxtImg format="webp" loading="lazy" :src="filecoin2Url" alt="filecoin2" class="filecoinnode-img" />
                 </div>
@@ -246,7 +251,8 @@ onBeforeMount(async () => {
         width: 33%;
         height: 100%;
         
-        background-color: #EEEEEE;
+        // background-color: #EEEEEE;
+        background-color: #1C1C1C;
         margin-right: 2rem;
         padding: 2.5em;
     }

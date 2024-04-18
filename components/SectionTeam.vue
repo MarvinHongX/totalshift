@@ -183,7 +183,7 @@ onMounted(() => {
             justify-content: start;
             width: 100%;
             // min-width: 600px;
-            overflow-x: scroll;
+            overflow-x: auto;
             .team-item {
                 display: flex;
                 flex-direction: column;
@@ -222,6 +222,18 @@ onMounted(() => {
                     }
                 }
             }
+        }
+
+        .team-right-body::-webkit-scrollbar {
+            // width: 20px;
+            height: 4px;
+        }
+        .team-right-body::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255);
+            border-radius: 10px;
+        }
+        .team-right-body::-webkit-scrollbar-track {
+            background-color:#3B3B3B;
         }
         .lee-wrapper2 {
             display: none;

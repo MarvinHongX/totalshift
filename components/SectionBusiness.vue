@@ -49,13 +49,12 @@ onMounted(() => {
         </div>
         <div class="business-right">
             <div class="business-items">
-
                 <div class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper flex">
                         <NuxtImg format="webp" loading="lazy" :src="businessAUrl" alt="businessA" class="business-img" />
                         <div class="business-label">
                             <div>
-                                <span>Web 3.0</span>
+                                <span>WEB 3.0</span>
                             </div>
                             <div>
                                 <span class="business-label-small">블록체인 기반 맞춤형 정보</span>
@@ -84,7 +83,7 @@ onMounted(() => {
                                 <span>Development</span>
                             </div>
                             <div>
-                                <span class="business-label-small">혁신을 앞서는 개발</span>
+                                <span class="business-label-small">시대를 앞서는 개발</span>
                             </div>
                         </span>
                     </div>
@@ -112,10 +111,10 @@ onMounted(() => {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: between;
+    justify-content: start;
     width: 100%;
-    height: 420px;
-    padding-top: 0rem;
+    height: 620px;
+    padding-top: 5rem;
     padding-bottom: 0rem;
     padding-left: calc((100% - 1280px) / 2 );
     padding-right: calc((100% - 1280px) / 2 );
@@ -141,9 +140,11 @@ onMounted(() => {
         display: flex;
         flex-direction: column;
         align-items: start;
-        justify-content: end;
-        height: 630px;
-        padding: 0 3.5rem;
+        justify-content: start;
+        width: 100%;
+        height: 100%;
+        padding-top: 0rem;
+        padding-right: 3rem;
         position: relative;
         .business-left-top {
             display: flex;
@@ -151,7 +152,7 @@ onMounted(() => {
             align-items: start;
             justify-content: end;
             width: 100%;
-            padding-right: 3rem;
+            padding-right: 0rem;
         }    
         .business-left-body {
             display: flex;
@@ -160,15 +161,16 @@ onMounted(() => {
             justify-content: end;
             width: 100%;
             height: 150px;
+            padding-top: 13rem;
         }
     }
     .business-right {
         display: flex;
         flex-direction: column;
-        align-items: end;
-        justify-content: end;
-        width: calc(100% - 500px);
-        height: 800px;
+        align-items: start;
+        justify-content: start;
+        width: calc(100% - 400px);
+        height: 100%;
     }
     .business-items {
         display: flex;
@@ -176,11 +178,10 @@ onMounted(() => {
         align-items: start;
         justify-content: start;
         width: 100%;
-        // min-width: 500px;
-        overflow-x: scroll;
+        overflow-x: auto;
         .business-item {
             width: 340px;
-            height: 420px;
+            height: 360px;
             color: #FFFFFF;
             font-weight: 500;
             font-size: 18px;
@@ -224,12 +225,22 @@ onMounted(() => {
             }
         }
     }
+    .business-items::-webkit-scrollbar {
+        height: 4px;
+    }
+    .business-items::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255);
+        border-radius: 10px;
+    }
+    .business-items::-webkit-scrollbar-track {
+        background-color:#3B3B3B;
+    }
 }
 
 @media (max-width: 1350px) {
     .section-business {
         flex-direction: column;
-        height: 408px;
+        height: 658px;
         padding-top: 0rem;
         .business-header {
             font-weight: 700;
@@ -244,7 +255,7 @@ onMounted(() => {
             align-items: end;
             justify-content: start;
             width: 100%; 
-            height: 100%;
+            height: 150px;
             padding: 0 1rem;
             .business-left-top {
                 padding: 0rem;
@@ -257,10 +268,14 @@ onMounted(() => {
         }
         .business-right {
             width: 100%;
-            height: 100%;
+            height: 280px;
             padding: 2rem 1rem;
         }
         .business-items {
+            width: 100%;
+            height: 100%;
+            overflow-y: hidden;
+            overflow-x: auto;
             .business-item {
                 width: 200px;
                 height: 233px;        
@@ -284,11 +299,22 @@ onMounted(() => {
             }
         }
     }
+    .business-items::-webkit-scrollbar {
+        // width: 20px;
+        height: 4px;
+    }
+    .business-items::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255);
+        border-radius: 10px;
+    }
+    .business-items::-webkit-scrollbar-track {
+        background-color:#3B3B3B;
+    }
 }
 
 @media (max-width: 530px) {
     .section-business {
-        height: 285px;
+        height: 485px;
     }
 }
 </style>

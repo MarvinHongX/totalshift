@@ -3,11 +3,11 @@ import { ref } from 'vue';
 const { totalshiftUrl } = useImg();
 
 const slogans = [
-    '속도보다 방향 Direction',
-    '능력보다 태도 Attitude',
-    '숫자보다 가치 Quality',
-    '유행보다 창조 Creative',
-    '그리고 밸런스 Balance'
+    'Direction',
+    'Attitude',
+    'Quality',
+    'Creative',
+    'And Balance'
 ];
 
 const currentSlogan = ref(slogans[0]);
@@ -52,15 +52,21 @@ onUnmounted(() => {
             <video ref="videoRef" class="totalshift-background" :src="totalshiftUrl" loop muted autoplay playsinline preload="none">
             </video>
         </div>
-        <div class="totalshift-header mb-5">
+        <!-- <div class="totalshift-header mb-5">
             <span>TOTAL SHIFT</span>
+        </div> -->
+        <div class="totalshift-header2">
+            <span>WEB 3.0 Data Center</span>
         </div>
-        <div class="totalshift-header2 mb-4">
-            <span>웹3.0 데이터 센터 & 서비스</span>
+        <div class="totalshift-header2 mb-5">
+            <span class="totalshift-point">& </span><span>Service</span>
         </div>
-        <div class="totalshift-header3" :style="{ opacity: currentOpacity }">
+        <div class="totalshift-header">
+            <span>Direction, Attitude, Quality, Creative, and Balance</span>
+        </div>
+        <!-- <div class="totalshift-header3" :style="{ opacity: currentOpacity }">
             <span>{{ currentSlogan }}</span>
-        </div>
+        </div> -->
     </FullCard>
 </template>
 
@@ -106,6 +112,9 @@ onUnmounted(() => {
         font-weight: 600;
         font-size: 40px;
         transition: opacity 0.5s ease-in-out;
+    }
+    .totalshift-point {
+        color: #666666;
     }
 }
 

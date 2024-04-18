@@ -8,14 +8,14 @@ definePageMeta({
     <div class="flex flex-column" style="width:100%">
         <SectionCenterA />
         <SectionCenterADetail />
-        <SectionMainComponents />
-        <SectionCenterB />
+        <SectionMainComponentsTop />
         <SectionIpfs />
         <SectionSeparator />
         <SectionFilecoin />
+        <SectionMainComponentsBottom />
         <SectionFilecoinNode />
         <SectionAleo />
-        <SectionSeparator />
+        <SectionCenterB />
     </div>
 </template>
 

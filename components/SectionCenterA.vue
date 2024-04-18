@@ -29,7 +29,7 @@ const { idcUrl, tempHumidityUrl, upsUrl, firewallUrl, extinguisherUrl, realtimeU
     align-items: start;
     justify-content: center;
     width: 100%;
-    height: 1000px;
+    height: 1100px;
     padding: 9rem;
     background-color: #070707;
     padding-top: 0rem;

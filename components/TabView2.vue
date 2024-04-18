@@ -59,6 +59,7 @@ const getMinerInfo = () => {
     flex-direction: row; 
     justify-content: space-between; 
     width: 100%;
+    height: 50px;
     display: flex;
 }
 .tabs span {
@@ -74,6 +75,12 @@ const getMinerInfo = () => {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    width: 15%;
+    min-width: 60px;
+    height: 100%;
+    background-color: #1C1C1C;
+    border-radius: 5px;
 }
 .inactive-tab {
     display: flex;
@@ -81,7 +88,14 @@ const getMinerInfo = () => {
     align-items: center;
     justify-content: center;
     color: #666666; 
+
+    width: 15%;
+    min-width: 60px;
+    height: 100%;
+    background-color: #1C1C1C;
+    border-radius: 5px;
 }
+
 .separator {
     width: 100%;
     height: 2px;
@@ -96,8 +110,8 @@ const getMinerInfo = () => {
     // margin-top: 5rem;
 }
 .filfox-img-wrapper {
-    margin-top: 5px;
-    width: 109px;
+    margin-top: 20px;
+    width: 150px;
     height: auto;
     border-radius: 10px;
     overflow: hidden;

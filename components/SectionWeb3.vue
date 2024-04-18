@@ -7,7 +7,7 @@ const tabNames = [
 <template>
     <FullCard class="section-web3">
         <div class="web3-header mb-4">
-            <span>WEB 3.0</span>
+            <span>WEB 3.0 Project</span>
         </div>
         <div class="web3-header2 mb-2">
             <span>현시대의 IDC(Internet Data Center)에서 미래의 Web3 대응 IPFS</span>

@@ -332,8 +332,8 @@ const scrollRight = () => {
             }
 
             svg {
-                width: 70px;
-                height: 100px;
+                width: 35px;
+                height: 50px;
             }
         }
     }

@@ -1,5 +1,16 @@
 <script setup>
+import { ref } from 'vue';
 const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoUrl } = useImg();
+
+const items = ref([
+    { name: 'kt', url: ktUrl },
+    { name: 'seagate', url: seagateUrl },
+    { name: 'protocolLabs', url: protocolLabsUrl },
+    { name: 'ipfs', url: ipfsUrl },
+    { name: 'filecoin', url: filecoinUrl },
+    { name: 'kidc', url: kidcUrl },
+    { name: 'aleo', url: aleoUrl },
+]);
 </script>
 <template>
     <FullCard class="section-partner">
@@ -13,34 +24,10 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
             <span>앞으로의 성장을 함께합니다.</span>
         </div>
         <div class="partner-separator"></div>
-        <div class="partner-items">
-            <div class="item-group">
-                <div class="partner-item mr-3">
-                    <img loading="lazy" :src="ktUrl" alt="kt" />
-                </div>
-                <div class="partner-item">
-                    <img loading="lazy" :src="seagateUrl" alt="seagate" />
-                </div>
-            </div>
-            <div class="item-group">
-                <div class="partner-item">
-                    <img loading="lazy" :src="protocolLabsUrl" alt="protocolLabs"/>
-                </div>
-                <div class="partner-item">
-                    <img loading="lazy" :src="ipfsUrl" alt="IPFS" />
-                </div>
-            </div>
-            <div class="item-group">
-                <div class="partner-item mr-3">
-                    <img loading="lazy" :src="filecoinUrl" alt="filecoin" />
-                </div>
-                <div class="partner-item mr-4">
-                    <img loading="lazy" :src="kidcUrl" alt="KIDC" />
-                </div>
-            </div>
-            <div class="item-group">
-                <div class="partner-item">
-                    <img loading="lazy" :src="aleoUrl" alt="aleo" />
+        <div class="partner-items-wrapper">
+            <div class="partner-items">
+                <div class="partner-item" v-for="(item, index) in items" :key="index">
+                    <NuxtImg :src="item.url" :alt="item.name" />
                 </div>
             </div>
         </div>
@@ -70,29 +57,50 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
         font-size: 56px;
         color: #333333;
     }
+    .partner-items-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 85%;
+        height: 100px;
+        overflow: hidden;
+    }
     .partner-items {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: start;
         width: 100%;
-        .item-group {
+        height: 80%;
+        animation: moveItems 20s linear infinite;
+        .partner-item {
             display: flex;
-            flex-direction: row;
-            align-items: center;   
-            justify-content: between;  
-            width: 100%;
-            .partner-item {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                width: auto; 
-                width: 100%;
-                overflow: hidden; 
-            }
+            align-items: center;
+            justify-content: center;
+            width: 500px; 
+            height: 100%;
+            margin: 0 2rem;
+            // width: 100%;
+            // overflow: hidden; 
+        }
+        .partner-item > img {
+            height: 100%;
+            width: auto; 
         }
     }
+
+    @keyframes moveItems {
+        0% {
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+        100% {
+            -webkit-transform: translateX(-180%);
+            transform: translateX(-180%);
+        }
+    }
+
     .partner-separator {
         height: 1.5px;
         width: 85%;
@@ -102,7 +110,7 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
 }
 @media (max-width: 1350px) {
     .section-partner {
-        height: 825px;
+        height: 525px;
         padding: 0rem 1rem;
         .partner-header {
             font-size: 12px;
@@ -110,27 +118,149 @@ const { ktUrl, seagateUrl, protocolLabsUrl, ipfsUrl, filecoinUrl, kidcUrl, aleoU
         .partner-header2 {
             font-size: 25px;
         }
-        .partner-items {
-            flex-direction: column;
-            .item-group {
-                width: 100%;
-                height: auto;
-                justify-content: start;
-                margin-bottom: 30px;
-                .partner-item {
-                    width: 50%;
-                    flex-direction: column;
-                    justify-content: start;
-                    height: auto; 
-                }
-            }
-        }
         .partner-separator {
             height: 1px;
             width: 75%;
             margin: 2.5rem 0 3rem 0;
         }
+        .partner-items-wrapper {
+            width: 75%;
+        }
+        .partner-items {
+            height: 50%;
+            animation: moveItems 20s linear infinite;
+            .partner-item {
+                margin: 0 1rem;
+            }
+        }
+
+        @keyframes moveItems {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-120%);
+                transform: translateX(-120%);
+            }
+        }
     }
 
+}
+@media (max-width: 1000px) {
+    .section-partner {
+        @keyframes moveItems {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-160%);
+                transform: translateX(-160%);
+            }
+        }
+    }
+}
+@media (max-width: 850px) {
+    .section-partner {
+        @keyframes moveItems {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-170%);
+                transform: translateX(-170%);
+            }
+        }
+    }
+}
+@media (max-width: 750px) {
+    .section-partner {
+        @keyframes moveItems {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-190%);
+                transform: translateX(-190%);
+            }
+        }
+    }
+}
+@media (max-width: 650px) {
+    .section-partner {
+        height: 465px;
+        @keyframes moveItems {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-230%);
+                transform: translateX(-230%);
+            }
+        }
+    }
+}
+@media (max-width: 550px) {
+    .section-partner {
+        height: 425px;
+        @keyframes moveItems {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-280%);
+                transform: translateX(-280%);
+            }
+        }
+    }
+}
+@media (max-width: 460px) {
+    .section-partner {
+        @keyframes moveItems {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-330%);
+                transform: translateX(-330%);
+            }
+        }
+    }
+}
+@media (max-width: 400px) {
+    .section-partner {
+        height: 425px;
+        @keyframes moveItems {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-350%);
+                transform: translateX(-350%);
+            }
+        }
+    }
+}
+@media (max-width: 320px) {
+    .section-partner {
+        height: 425px;
+        @keyframes moveItems {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-450%);
+                transform: translateX(-450%);
+            }
+        }
+    }
 }
 </style>
