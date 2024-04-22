@@ -15,7 +15,7 @@ const { logoSecondaryUrl } = useImg();
                         <span class="mb-1">사업자등록번호 : 680-87-01918 </span>
                     </div>
                     <div class="flex flex-row">
-                        <span class="mb-4">주소 : 서울 금천구 가산동9길 66 더리즌밸리 501 ~ 507호</span>
+                        <span class="mb-4">주소 : 서울 금천구 가산로9길 66 더리즌밸리 501 ~ 507호</span>
                     </div>
                     <div class="flex flex-row">
                         <span class="mb-1">이메일 : info@totalshift.co.kr</span>

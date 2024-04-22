@@ -3,6 +3,14 @@ const { leeUrl, teamAUrl, teamBUrl, teamCUrl, teamDUrl, authAUrl } = useImg();
 
 const isHovering = ref(false);
 
+const teamItems = ref([
+    { imgUrl: teamAUrl, label: '기술팀' },
+    { imgUrl: teamBUrl, label: '기획팀' },
+    { imgUrl: teamCUrl, label: '개발팀' },
+    { imgUrl: teamDUrl, label: '영업지원팀' }
+]);
+
+
 onMounted(() => {
     const container = document.querySelector('.team-right-body');
 
@@ -52,29 +60,11 @@ onMounted(() => {
                 <span class="lee-label">연구소장 이영모</span>
                 <NuxtImg format="webp" loading="lazy" :src="authAUrl" alt="authA" class="auth-img" />
             </div>
-            <div  class="team-right-body">
-                <div class="team-item mr-4">
+            <div class="team-right-body">
+                <div v-for="(item, index) in teamItems" :key="index" class="team-item mr-4">
                     <div class="team-img-wrapper">
-                        <NuxtImg format="webp" loading="lazy" :src="teamAUrl" alt="teamA" class="team-img" />
-                        <span class="team-label">기술팀</span>
-                    </div>
-                </div>
-                <div class="team-item mr-4">
-                    <div class="team-img-wrapper">
-                        <NuxtImg format="webp" loading="lazy" :src="teamBUrl" alt="teamB" class="team-img" />
-                        <span class="team-label">기획팀</span>
-                    </div>
-                </div>
-                <div class="team-item mr-4">
-                    <div class="team-img-wrapper">
-                        <NuxtImg format="webp" loading="lazy" :src="teamCUrl" alt="teamC" class="team-img" />
-                        <span class="team-label">개발팀</span>
-                    </div>
-                </div>
-                <div class="team-item">
-                    <div class="team-img-wrapper">
-                        <NuxtImg format="webp" loading="lazy" :src="teamDUrl" alt="teamD" class="team-img" />
-                        <span class="team-label">영업지원팀</span>
+                        <NuxtImg format="webp" loading="lazy" :src="item.imgUrl" :alt="'team' + index" class="team-img" />
+                        <span class="team-label">{{ item.label }}</span>
                     </div>
                 </div>
             </div>
@@ -182,6 +172,7 @@ onMounted(() => {
             align-items: start;
             justify-content: start;
             width: 100%;
+            height: 280px;
             // min-width: 600px;
             overflow-x: auto;
             .team-item {
@@ -271,6 +262,9 @@ onMounted(() => {
         }
         .team-right {
             height: 700px;
+            .team-right-body {
+                height: 280px;
+            }
             .lee-wrapper2 {
                 display: none;
             }
@@ -279,7 +273,7 @@ onMounted(() => {
     }
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1050px) {
     .section-team {
         flex-direction: column;
         height: 1250px;
@@ -309,6 +303,7 @@ onMounted(() => {
             }    
             .team-right-body {
                 margin-top: 100px;
+                height: 230px;
                 .team-item {
                     width: 200px;
                     height: 200px;

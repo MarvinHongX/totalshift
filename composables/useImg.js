@@ -26,6 +26,12 @@ export const useImg = () => {
     const businessDUrl = computed(() => {
         return `/layout/images/home/businessD.jpg`;
     });
+    const businessEUrl = computed(() => {
+        return `/layout/images/home/businessE.jpg`;
+    });
+    const businessFUrl = computed(() => {
+        return `/layout/images/home/businessF.jpg`;
+    });
     const historyLogUrl = computed(() => {
         return `/layout/images/home/historyLogo.png`;
     });
@@ -65,6 +71,18 @@ export const useImg = () => {
     const youtubeUrl = computed(() => {
         return `/layout/images/home/youtube.png`;
     });
+    const web3Filecoin01Url = computed(() => {
+        return `/layout/images/home/web3-filecoin-01.png`;
+    });
+    const web3Filecoin02Url = computed(() => {
+        return `/layout/images/home/web3-filecoin-02.png`;
+    });
+    const web3Filecoin03Url = computed(() => {
+        return `/layout/images/home/web3-filecoin-03.png`;
+    });
+    const web3Filecoin04Url = computed(() => {
+        return `/layout/images/home/web3-filecoin-04.png`;
+    });
     const ktUrl = computed(() => {
         return `/layout/images/home/kt.png`;
     });
@@ -88,6 +106,9 @@ export const useImg = () => {
     });
     const filecoinLogoUrl = computed(() => {
         return `/layout/images/web3/filecoinLogo.png`;
+    });
+    const filecoinLogo2Url = computed(() => {
+        return `/layout/images/web3/filecoinLogo2.png`;
     });
     const filecoinBackgroundUrl = computed(() => {
         return `/layout/images/web3/filecoinBackground.png`;
@@ -171,6 +192,8 @@ export const useImg = () => {
         businessBUrl,
         businessCUrl,
         businessDUrl,
+        businessEUrl,
+        businessFUrl,
         historyLogUrl,
         leeUrl,
         authAUrl,
@@ -184,6 +207,10 @@ export const useImg = () => {
         songUrl,
         songProfileUrl,
         youtubeUrl,
+        web3Filecoin01Url,
+        web3Filecoin02Url,
+        web3Filecoin03Url,
+        web3Filecoin04Url,
         ktUrl,
         seagateUrl,
         protocolLabsUrl,
@@ -192,6 +219,7 @@ export const useImg = () => {
         filecoinUrl,
         filecoin2Url,
         filecoinLogoUrl,
+        filecoinLogo2Url,
         filecoinBackgroundUrl,
         filfoxBtnUrl,
         kidcUrl,

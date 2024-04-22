@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue';
-const { filecoin2Url, filecoinBackgroundUrl } = useImg();
+const { filecoinLogo2Url } = useImg();
 const { filfoxHref, filswanHref } = useHref();
 const loading =ref(true);
 const tabItems = ref([
@@ -124,7 +124,7 @@ onBeforeMount(async () => {
             </div> -->
             <div class="filecoinnode-item-left">
                 <div class="filecoinnode-img-wrapper">
-                    <NuxtImg format="webp" loading="lazy" :src="filecoin2Url" alt="filecoin2" class="filecoinnode-img" />
+                    <NuxtImg format="webp" loading="lazy" :src="filecoinLogo2Url" alt="filecoin2" class="filecoinnode-img" />
                 </div>
             </div>
             <div class="filecoinnode-item-center">
@@ -315,15 +315,18 @@ onBeforeMount(async () => {
     }
 
     .filecoinnode-img {
-        width: 100%;
+        // width: 100%;
         height: 100%;
-        object-fit: cover;
+        // object-fit: cover;
         position: relative;
     }
 
     .filecoinnode-img-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 291px;
-        height: 97px;
+        height: 127px;
         overflow: hidden;
     }
     .filecoinnode-tab {
@@ -338,7 +341,7 @@ onBeforeMount(async () => {
 @media (max-width: 1350px) {
     .section-filecoinnode {
         justify-content: start;
-        height: 1100px;
+        height: 1200px;
         padding: 6rem 1rem;
         .filecoinnode-none {
             display: none;

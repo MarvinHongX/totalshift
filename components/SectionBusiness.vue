@@ -1,7 +1,14 @@
 <script setup>
-const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
+const { businessAUrl, businessBUrl, businessCUrl, businessDUrl, businessEUrl, businessFUrl } = useImg();
 
 const isHovering = ref(false);
+
+const businessItems = ref([
+    { imgUrl: businessAUrl, label: 'WEB 3.0', description: '블록체인 기반 맞춤형 정보' },
+    { imgUrl: businessBUrl, label: '데이터 센터(IDC)', description: '효율적인 데이터, 속도, 안정성' },
+    { imgUrl: businessCUrl, label: 'Development', description: '시대를 앞서는 개발' },
+    { imgUrl: businessDUrl, label: 'IT Service', description: '혁신적인 플랫폼 및 서비스' }
+]);
 
 onMounted(() => {
     const container = document.querySelector('.business-items');
@@ -49,56 +56,17 @@ onMounted(() => {
         </div>
         <div class="business-right">
             <div class="business-items">
-                <div class="business-item flex flex-column mr-4">
+                <div v-for="(item, index) in businessItems" :key="index" class="business-item flex flex-column mr-4">
                     <div class="business-img-wrapper flex">
-                        <NuxtImg format="webp" loading="lazy" :src="businessAUrl" alt="businessA" class="business-img" />
+                        <NuxtImg format="webp" loading="lazy" :src="item.imgUrl" :alt="'business' + index" class="business-img" />
                         <div class="business-label">
                             <div>
-                                <span>WEB 3.0</span>
+                                <span>{{ item.label }}</span>
                             </div>
                             <div>
-                                <span class="business-label-small">블록체인 기반 맞춤형 정보</span>
+                                <span class="business-label-small">{{ item.description }}</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="business-item flex flex-column mr-4">
-                    <div class="business-img-wrapper">
-                        <NuxtImg format="webp" loading="lazy" :src="businessBUrl" alt="businessB" class="business-img" />
-                        <span class="business-label">
-                            <div>
-                                <span>데이터 센터 (IDC)</span>
-                            </div>
-                            <div>
-                                <span class="business-label-small">효율적인 데이터, 속도, 안전성</span>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-                <div class="business-item flex flex-column mr-4">
-                    <div class="business-img-wrapper">
-                        <NuxtImg format="webp" loading="lazy" :src="businessCUrl" alt="businessC" class="business-img" />
-                        <span class="business-label">
-                            <div>
-                                <span>Development</span>
-                            </div>
-                            <div>
-                                <span class="business-label-small">시대를 앞서는 개발</span>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-                <div class="business-item flex flex-column mr-4">
-                    <div class="business-img-wrapper">
-                        <NuxtImg format="webp" loading="lazy" :src="businessDUrl" alt="businessD" class="business-img" />
-                        <span class="business-label">
-                            <div>
-                                <span>IT Service</span>
-                            </div>
-                            <div>
-                                <span class="business-label-small">혁신적인 플랫폼 및 서비스</span>
-                            </div>
-                        </span>
                     </div>
                 </div>
             </div>

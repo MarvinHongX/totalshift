@@ -1,4 +1,5 @@
 <script setup>
+const { web3Filecoin01Url, web3Filecoin02Url, web3Filecoin03Url, web3Filecoin04Url } = useImg();
 const tabNames = [
     { name: '파일코인' },
     { name: '알레오 크레딧 (준비중)' },
@@ -10,12 +11,18 @@ const tabNames = [
             <span>WEB 3.0 Project</span>
         </div>
         <div class="web3-header2 mb-2">
-            <span>현시대의 IDC(Internet Data Center)에서 미래의 Web3 대응 IPFS</span>
+            <span>블록체인은 중앙 기관 없이 안전한 거래를 가능케 하는 기술입니다.</span>
         </div>
-        <div class="web3-header2 web3-paragraph mb-7">
-            <span>(Inter Planetary File System)까지 솔루션을 개발 및 제공 하면서 </span>
-            <span>미래의 시장을 선도해 나가겠습니다.</span>
+        <div class="web3-header2 mb-2">
+            <span>연결된 블록들로 데이터를 분산 저장하며 변경을 방지하고, 금융부터 의료, 공급망 등 다양한 분야에 혁신을 가져옵니다.</span>
         </div>
+        <div class="web3-header2 mb-7">
+            <span>이는 데이터의 안전성과 투명성을 높여 개인의 자유와 안전을 보장합니다.</span>
+        </div>
+        <!-- <div class="web3-header2 web3-paragraph mb-7">
+            <span>연결된 블록들로 데이터를 분산 저장하며 변경을 방지하고, 금융부터 의료, 공급망 등 다양한 분야에 혁신을 가져옵니다.</span>
+            <span>이는 데이터의 안전성과 투명성을 높여 개인의 자유와 안전을 보장합니다.</span>
+        </div> -->
         <div class="web3-tab">
             <TabView :tabNames="tabNames">
                 <template #default="{ tabIndex }">
@@ -23,7 +30,7 @@ const tabNames = [
                         <div class="item-group">
                             <div class="web3-item">
                                 <div class="web3-item-a mb-3">
-                                    <span>1</span>
+                                    <NuxtImg loading="lazy" :src="web3Filecoin01Url" alt="web3Filecoin01"/>
                                 </div>
                                 <div class="web3-item-b mb-2">
                                     <span>분산스토리지 네트워크</span>
@@ -34,7 +41,7 @@ const tabNames = [
                             </div>
                             <div class="web3-itemEnd">
                                 <div class="web3-item-a mb-3">
-                                    <span>2</span>
+                                    <NuxtImg loading="lazy" :src="web3Filecoin02Url" alt="web3Filecoin02"/>
                                 </div>
                                 <div class="web3-item-b mb-2">
                                     <span>새로운 스토리지 증명</span>
@@ -47,7 +54,7 @@ const tabNames = [
                         <div class="item-group">
                             <div class="web3-item">
                                 <div class="web3-item-a mb-3">
-                                    <span>3</span>
+                                    <NuxtImg loading="lazy" :src="web3Filecoin03Url" alt="web3Filecoin03"/>
                                 </div>
                                 <div class="web3-item-b mb-2">
                                     <span>검증 가능한 시장</span>
@@ -58,7 +65,7 @@ const tabNames = [
                             </div>
                             <div class="web3-itemEnd">
                                 <div class="web3-item-a mb-3">
-                                    <span>4</span>
+                                    <NuxtImg loading="lazy" :src="web3Filecoin04Url" alt="web3Filecoin04"/>
                                 </div>
                                 <div class="web3-item-b mb-2">
                                     <span>유용한 작업증명서</span>
@@ -152,9 +159,17 @@ const tabNames = [
                     background-color: #252525;
                     border-radius: 20px;
                     .web3-item-a {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: end;
+                        height: 45%;
                         font-weight: 600;
                         font-size: 24px;
-                        color: #057FFC;
+                        // color: #057FFC;
+                    }
+                    .web3-item-a > img {
+                        height: 80%;
                     }
                     .web3-item-b {
                         font-weight: 600;
@@ -177,7 +192,7 @@ const tabNames = [
 }
 @media (max-width: 1350px) {
     .section-web3 {
-        height: 825px;
+        height: 925px;
         padding: 2rem 1rem;  
         .web3-paragraph {
             display: flex;
@@ -200,11 +215,14 @@ const tabNames = [
                 flex-direction: column;
 
                 .item-group {
-                    height: 100%;
                     width: 100%;
                     .web3-item {
+                        height: 100%;
                         margin-right: 15px;
                     }
+                    
+
+
                     // .web3-item {
                     //     justify-content: end;
                     //     width: 320px;
@@ -252,10 +270,15 @@ const tabNames = [
                     .web3-item, .web3-itemEnd {
                         justify-content: start;
                         width: 100%;
-                        height: 180px;
+                        height: 220px;
                         border-radius: 15px;
                         padding-top: 40px;
                         // margin-bottom: 10px;
+                    }
+                    .web3-item, .web3-itemEnd {
+                        .web3-item-a > img {
+                            height: 100%;
+                        }
                     }
 
                 }

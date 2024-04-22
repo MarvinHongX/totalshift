@@ -72,7 +72,7 @@ const items = ref([
         align-items: center;
         justify-content: start;
         width: 100%;
-        height: 80%;
+        height: 65%;
         animation: moveItems 20s linear infinite;
         .partner-item {
             display: flex;
@@ -96,8 +96,8 @@ const items = ref([
             transform: translateX(100%);
         }
         100% {
-            -webkit-transform: translateX(-180%);
-            transform: translateX(-180%);
+            -webkit-transform: translateX(-150%);
+            transform: translateX(-150%);
         }
     }
 
@@ -169,9 +169,10 @@ const items = ref([
                 transform: translateX(100%);
             }
             100% {
-                -webkit-transform: translateX(-170%);
-                transform: translateX(-170%);
+                -webkit-transform: translateX(-185%);
+                transform: translateX(-185%);
             }
+
         }
     }
 }
@@ -198,8 +199,8 @@ const items = ref([
                 transform: translateX(100%);
             }
             100% {
-                -webkit-transform: translateX(-230%);
-                transform: translateX(-230%);
+                -webkit-transform: translateX(-260%);
+                transform: translateX(-260%);
             }
         }
     }
@@ -213,8 +214,8 @@ const items = ref([
                 transform: translateX(100%);
             }
             100% {
-                -webkit-transform: translateX(-280%);
-                transform: translateX(-280%);
+                -webkit-transform: translateX(-300%);
+                transform: translateX(-300%);
             }
         }
     }
@@ -227,8 +228,8 @@ const items = ref([
                 transform: translateX(100%);
             }
             100% {
-                -webkit-transform: translateX(-330%);
-                transform: translateX(-330%);
+                -webkit-transform: translateX(-340%);
+                transform: translateX(-340%);
             }
         }
     }
@@ -242,8 +243,8 @@ const items = ref([
                 transform: translateX(100%);
             }
             100% {
-                -webkit-transform: translateX(-350%);
-                transform: translateX(-350%);
+                -webkit-transform: translateX(-360%);
+                transform: translateX(-360%);
             }
         }
     }
@@ -257,8 +258,8 @@ const items = ref([
                 transform: translateX(100%);
             }
             100% {
-                -webkit-transform: translateX(-450%);
-                transform: translateX(-450%);
+                -webkit-transform: translateX(-460%);
+                transform: translateX(-460%);
             }
         }
     }

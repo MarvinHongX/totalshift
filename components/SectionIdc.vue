@@ -129,7 +129,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 2800px;
+    height: 3000px;
     padding-top: 10rem;
     padding-bottom: 0rem;
     padding-left: calc((100% - 1280px) / 2 );
@@ -237,7 +237,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
         align-items: start;
         justify-content: start;
         width: 100%;
-        height: 3050px;
+        height: 2450px;
         padding: 4rem 1rem;
 
         .idc-header2 {
@@ -311,13 +311,13 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
 
 @media (max-width: 1100px) {
     .section-idc {
-        height: 2950px;
+        height: 2350px;
     }
 }
 
 @media (max-width: 930px) {
     .section-idc {
-        height: 2650px;
+        height: 2150px;
         .idc-right {
             .idc-item > img {
                 border-radius: 10px;
@@ -337,12 +337,12 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
 }
 @media (max-width: 800px) {
     .section-idc {
-        height: 2250px;
+        height: 2050px;
     }
 }
 @media (max-width: 690px) {
     .section-idc {
-        height: 2050px;
+        height: 1820px;
         .idc-right {
             .idc-item > img {
                 border-radius: 10px;
@@ -361,7 +361,7 @@ const { idcUrl, idcBackgroundUrl, tempHumidityUrl, upsUrl, firewallUrl, extingui
 }
 @media (max-width: 540px) {
     .section-idc {
-        height: 1750px;
+        height: 1680px;
         .idc-right {
             .idc-item > img {
                 border-radius: 10px;
