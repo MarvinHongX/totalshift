@@ -58,7 +58,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                             <span>환풍 시스템</span>
                         </div>
                         <div class="mb-1">
-                            <span>고정식 7시 (창문4, 천정3)</span>
+                            <span>고정식 7기 (창문4, 천정3)</span>
                         </div>
                         <div class="mb-1">
                             <span>이동식 6기</span>

@@ -8,8 +8,8 @@ const tabItems = ref([
     { name: 'f01770778', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01770778' },
     { name: 'f01900525', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01900525' },
     { name: 'f01924824', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01924824' },
-    { name: 'f01927163', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01927163' },
     { name: 'f01924891', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01924891' },
+    { name: 'f01927163', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01927163' },
 ]);
 
 const getScore = async (minerId) => {
