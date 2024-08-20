@@ -132,7 +132,7 @@ export const useImg = () => {
         return `/layout/images/home/aleoTrack.png`;
     });
     const aleoCatUrl = computed(() => {
-        return `/layout/images/home/aleoCat.png`;
+        return `/layout/images/home/aleoCat.svg`;
     });
     const totalshiftVideoUrl = computed(() => {
         return `/layout/images/home/totalshift.mov`;
