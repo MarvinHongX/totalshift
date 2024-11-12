@@ -113,8 +113,8 @@ export const useImg = () => {
     const filecoinBackgroundUrl = computed(() => {
         return `/layout/images/web3/filecoinBackground.png`;
     });
-    const filfoxBtnUrl = computed(() => {
-        return `/layout/images/web3/filfoxBtn.png`;
+    const explorerBtnUrl = computed(() => {
+        return `/layout/images/web3/filutilsBtn.png`;
     });
     const kidcUrl = computed(() => {
         return `/layout/images/home/KIDC.png`;
@@ -221,7 +221,7 @@ export const useImg = () => {
         filecoinLogoUrl,
         filecoinLogo2Url,
         filecoinBackgroundUrl,
-        filfoxBtnUrl,
+        explorerBtnUrl,
         kidcUrl,
         aleoUrl,
         aleoLogoUrl,

@@ -1,19 +1,18 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue';
 const { filecoinLogo2Url } = useImg();
-const { filfoxHref, filswanHref } = useHref();
+const { explorerHref, filswanHref } = useHref();
 const loading =ref(true);
 const tabItems = ref([
-    { name: 'f01115949', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01115949' },
-    { name: 'f01770778', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01770778' },
-    { name: 'f01900525', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01900525' },
-    { name: 'f01924824', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01924824' },
-    { name: 'f01924891', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01924891' },
-    { name: 'f01927163', score: null, power: null, balance: null, filfoxMinerHref: 'https://filfox.info/en/address/f01927163' },
+    { name: 'f01115949', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01115949' },
+    { name: 'f01770778', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01770778' },
+    { name: 'f01900525', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01900525' },
+    { name: 'f01924824', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01924824' },
+    { name: 'f01924891', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01924891' },
+    { name: 'f01927163', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01927163' },
 ]);
 
 const getScore = async (minerId) => {
-    // return 96;
     try {
         const response = await $fetch('/api/miner/score', {
             method: 'POST',
@@ -29,6 +28,7 @@ const getScore = async (minerId) => {
         return 96;
     }
 };
+
 const getPower = async (minerId) => {
     try {
         const response = await $fetch('/api/miner/power', {
@@ -38,14 +38,9 @@ const getPower = async (minerId) => {
                 'Content-Type': 'text/plain'
             }
         });
-        const powerData = response;
-        const lastPowerInfo = powerData[powerData.length - 1];
-
         const extractedInfo = {
-            height: lastPowerInfo.height,
-            timestamp: lastPowerInfo.timestamp,
-            rawBytePower: lastPowerInfo.rawBytePower,
-            qualityAdjPower: lastPowerInfo.qualityAdjPower
+            rawBytePower: response.result.MinerPower.RawBytePower,
+            qualityAdjPower: response.result.MinerPower.QualityAdjPower,
         };
 
         return extractedInfo;
@@ -64,22 +59,34 @@ const getBalance = async (minerId) => {
                 'Content-Type': 'text/plain'
             }
         });
-        const balanceData = response;
-        const lastBalanceInfo = balanceData[balanceData.length - 1];
-
         const extractedInfo = {
-            height: lastBalanceInfo.height,
-            timestamp: lastBalanceInfo.timestamp,
-            balance: lastBalanceInfo.balance,
-            availableBalance: lastBalanceInfo.availableBalance,
-            sectorPledgeBalance: lastBalanceInfo.sectorPledgeBalance,
-            vestingFunds: lastBalanceInfo.vestingFunds
-
-        };
-
+            balance: response.result,
+            availableBalance: 0,
+            sectorPledgeBalance: 0,
+            vestingFunds: 0
+        }
         return extractedInfo;
     } catch (error) {
         console.error('Error fetching balance:', error);
+        return null;
+    }
+};
+
+const getTimestamp = async () => {
+    try {
+        const response = await $fetch('/api/miner/timestamp', {
+            method: 'POST',
+            body: minerId,
+            headers: {
+                'Content-Type': 'text/plain'
+            }
+        });
+        const extractedInfo = {
+            timestamp: response.result,
+        }
+        return extractedInfo;
+    } catch (error) {
+        console.error('Error fetching timestamp:', error);
         return null;
     }
 };
@@ -113,15 +120,10 @@ onBeforeMount(async () => {
         <div class="filecoinnode-header2 mb-6">
             <span>(주) 토탈쉬프트 파일코인 노드 운영현황</span>
         </div>
-        <div class="filecoinnode-header2 filecoinnode-none mb-1">
+        <!-- <div class="filecoinnode-header2 filecoinnode-none mb-1">
             <span>Update: {{ formatTimestampYYYYMMDDHHMMSS(tabItems[0].balance.timestamp) }}</span>
-        </div>
+        </div> -->
         <div class="filecoinnode-item mb-7">
-            <!-- <div class="filecoinnode-item-left" :style="{ backgroundImage: `url(${filecoinBackgroundUrl})` }">
-                <div class="filecoinnode-img-wrapper">
-                    <NuxtImg format="webp" loading="lazy" :src="filecoin2Url" alt="filecoin2" class="filecoinnode-img" />
-                </div>
-            </div> -->
             <div class="filecoinnode-item-left">
                 <div class="filecoinnode-img-wrapper">
                     <NuxtImg format="webp" loading="lazy" :src="filecoinLogo2Url" alt="filecoin2" class="filecoinnode-img" />
@@ -144,8 +146,8 @@ onBeforeMount(async () => {
                     </div>
                 </div>
                 <div class="filcoinnode-link-wrapper filecoinnode-header2">
-                    <a :href="filfoxHref" target="_blank" class="filecoinnode-link">
-                        <span>filfox.io</span>
+                    <a :href="explorerHref" target="_blank" class="filecoinnode-link">
+                        <span>www.filutils.com</span>
                     </a>
                 </div>                  
             </div>

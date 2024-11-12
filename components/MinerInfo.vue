@@ -1,5 +1,5 @@
 <script setup>
-const { filfoxBtnUrl } = useImg();
+const { explorerBtnUrl } = useImg();
 const props = defineProps({
     item: {
         type: Object,
@@ -19,15 +19,15 @@ const props = defineProps({
                     <div class="filecoinnode-header6">
                         <span>{{ convertToFil(props.item.balance.balance) }} FIL</span>
                     </div>
-                    <div class="filecoinnode-header5">
+                    <!-- <div class="filecoinnode-header5">
                         <span>Available Balance : {{ convertToFil(props.item.balance.availableBalance) }} FIL</span>
                     </div>  
                     <div class="filecoinnode-header5">
                         <span>Initial Pledge: {{ convertToFil(props.item.balance.sectorPledgeBalance) }} FIL</span>
-                    </div>  
-                    <a :href="props.item.filfoxMinerHref" target="_blank" class="filecoinnode-link filecoinnode-display">
-                        <div class="filfox-img-wrapper">
-                            <NuxtImg format="webp" loading="lazy" :src="filfoxBtnUrl" alt="filecoin" class="filfox-img" />
+                    </div>   -->
+                    <a :href="props.item.explorerMinerHref" target="_blank" class="filecoinnode-link filecoinnode-display">
+                        <div class="explorer-img-wrapper">
+                            <NuxtImg format="webp" loading="lazy" :src="explorerBtnUrl" alt="filecoin" class="explorer-img" />
                         </div>
                     </a>
                 </div>
@@ -249,14 +249,15 @@ const props = defineProps({
         color: inherit;
         font-size: 8px;
     }
-    .filfox-img-wrapper {
+    .explorer-img-wrapper {
         width: 89px;
         height: 39px;
         border-radius: 5px;
         margin-top: 10px;
-        .filfox-img {
-            width: 80%;
-            height: 80%;
+        .explorer-img {
+            width: 90%;
+            height: 90%;
+            border-radius: 5px;
         }
     }
     .filecoinnode-display {

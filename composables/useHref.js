@@ -14,26 +14,8 @@ export const useHref = () => {
     const aleocatHref = computed(() => {
         return `https://aleocat.com`;
     });
-    const filfoxHref = computed(() => {
-        return `https://filfox.info`;
-    });
-    const filfoxMiner01BtnHref = computed(() => {
-        return `https://filfox.info/en/address/f01115949`;
-    });
-    const filfoxMiner02BtnHref = computed(() => {
-        return `https://filfox.info/en/address/f01770778`;
-    });
-    const filfoxMiner03BtnHref = computed(() => {
-        return `https://filfox.info/en/address/f01900525`;
-    });
-    const filfoxMiner04BtnHref = computed(() => {
-        return `https://filfox.info/en/address/f01924824`;
-    });
-    const filfoxMiner05BtnHref = computed(() => {
-        return `https://filfox.info/en/address/f01924891`;
-    });
-    const filfoxMiner06BtnHref = computed(() => {
-        return `https://filfox.info/en/address/f01927163`;
+    const explorerHref = computed(() => {
+        return `https://www.filutils.com`;
     });
     const filswanHref = computed(() => {
         return `https://console.filswan.com`;
@@ -72,13 +54,7 @@ export const useHref = () => {
         skyzoneHref,
         aleotrackHref,
         aleocatHref,
-        filfoxHref,
-        filfoxMiner01BtnHref, 
-        filfoxMiner02BtnHref, 
-        filfoxMiner03BtnHref, 
-        filfoxMiner04BtnHref, 
-        filfoxMiner05BtnHref, 
-        filfoxMiner06BtnHref,
+        explorerHref,
         filswanHref,
         ipfsIntroHref,
         ipfsDocsHref,

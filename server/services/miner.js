@@ -1,4 +1,4 @@
-import { getScoreById, getPowerById, getBalanceById } from "@/server/models/miner";
+import { getScoreById, getPowerById, getBalanceById, getTimestamps } from "@/server/models/miner";
 
 const minerScore = async (minerId) => {
     if (!minerId || minerId == '') return false;
@@ -10,7 +10,7 @@ const minerScore = async (minerId) => {
 const minerPower = async (minerId) => {
     if (!minerId || minerId == '') return false;
     const power = await getPowerById(minerId);
-
+    
     return power;
 };
 
@@ -21,6 +21,12 @@ const minerBalance = async (minerId) => {
     return balance;
 };
 
+const timestamp = async () => {
+    const timestamp = await getTimestamps();
+
+    return timestamp;
+};
 
 
-export { minerScore, minerPower, minerBalance }
+
+export { minerScore, minerPower, minerBalance, timestamp }
