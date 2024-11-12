@@ -4,12 +4,12 @@ const { filecoinLogo2Url } = useImg();
 const { explorerHref, filswanHref } = useHref();
 const loading =ref(true);
 const tabItems = ref([
-    { name: 'f01115949', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01115949' },
-    { name: 'f01770778', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01770778' },
-    { name: 'f01900525', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01900525' },
-    { name: 'f01924824', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01924824' },
-    { name: 'f01924891', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01924891' },
-    { name: 'f01927163', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/address/f01927163' },
+    { name: 'f01115949', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/miner/f01115949' },
+    { name: 'f01770778', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/miner/f01770778' },
+    { name: 'f01900525', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/miner/f01900525' },
+    { name: 'f01924824', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/miner/f01924824' },
+    { name: 'f01924891', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/miner/f01924891' },
+    { name: 'f01927163', score: null, power: null, balance: null, explorerMinerHref: 'https://www.filutils.com/en/miner/f01927163' },
 ]);
 
 const getScore = async (minerId) => {
