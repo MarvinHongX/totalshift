@@ -49,7 +49,7 @@ const { centerBAUrl, centerBBUrl, centerBCUrl, centerBDUrl } = useImg();
                             <span>GPU 6-Way 서버 세팅 완료 </span>
                         </div>
                         <div class="mb-1">
-                            <span>ASIC 서버 (준비중)</span>
+                            <span>ASIC 서버 세팅 완료</span>
                         </div>
                     </div>
                     <div class="centerB-item centerB-item-last">

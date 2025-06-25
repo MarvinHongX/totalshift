@@ -33,7 +33,7 @@ const { logoSecondaryUrl } = useImg();
             <div class="footer-separator"></div>
             <!-- 하단 -->
             <div class="footer-copyright">
-                Copyright ⓒ 2024 Total Shift Inc. All rights reserved
+                Copyright ⓒ 2025 Total Shift Inc. All rights reserved
             </div>
         </div>
     </div>

@@ -20,11 +20,11 @@ const onGotoButtonClick = () => {
 
 <template>
     <div class="goto">    
-        <a v-if="!simple" class="layout-defi-button" :href="defiHref" target="_blank">
+        <!-- <a v-if="!simple" class="layout-defi-button" :href="defiHref" target="_blank">
             <div class="defi-img-wrapperer">
                 <NuxtImg format="webp" :src="defiUrl" alt="defi" class="defi-img"/>
             </div>
-        </a>
+        </a> -->
         <a v-if="!simple" class="layout-goto-button" @click="onGotoButtonClick()">
             <div class="goto-img-wrapperer">
                 <NuxtImg format="webp" :src="gotoUrl" alt="goto" class="goto-img"/>

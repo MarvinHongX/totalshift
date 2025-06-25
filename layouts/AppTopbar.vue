@@ -6,7 +6,7 @@ const { defiHref } = useHref();
 const items = [
     { label: 'About Us', path: '/' },
     { label: 'Web3.0', path: '/web3' },
-    { label: 'DEFI', path: '#' },
+    // { label: 'DEFI', path: '#' },
 ];
 
 const onItemClick = (path) => {

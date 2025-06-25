@@ -1,18 +1,12 @@
 <script setup>
-const { skyzoneUrl, aleoTrackUrl, aleoCatUrl } = useImg();
-const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
+const { skyzoneUrl, aleoCatUrl } = useImg();
+const { skyzoneHref, aleocatHref } = useHref();
 </script>
 <template>
     <FullCard class="section-service">
         <div class="service-header mb-4">
             <span>제공중인 서비스</span>
         </div>
-        <!-- <div class="service-header2 mb-2">
-            <span>테라바이트에서 페타바이트에 이르기까지 최고 용량을 갖춘 클라우드</span>
-        </div>
-        <div class="service-header2 mb-4">
-            <span> 탈중앙화 데이터 스토리지 솔루션을 제공하는 기업입니다.</span>
-        </div> -->
         <div class="service-items">
             <div class="item-group">
                 <div class="service-item">
@@ -26,29 +20,15 @@ const { skyzoneHref, aleotrackHref, aleocatHref } = useHref();
                     </a>
                 </div>
                 <div class="service-itemEnd">
-                    <a :href="aleotrackHref" target="_blank" class="service-link">
-                        <div class="mb-6 img-wrapper">
-                            <img loading="lazy" :src="aleoTrackUrl" alt="aleotrack"/>
-                        </div>
-                        <div class="mb-3">
-                            <span>알레오 트랙</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="item-groupEnd">
-                <div class="service-itemEnd">
                     <a :href="aleocatHref" target="_blank" class="service-link">
                         <div class="mb-6 img-wrapper">
                             <img loading="lazy" :src="aleoCatUrl" alt="aleocat"/>
                         </div>
-                        <div class="mb-3" >
+                        <div class="mb-3">
                             <span>알레오 캣</span>
                         </div>
                     </a>
                 </div>
-                <!-- <div class="service-item service-item-none">
-                </div> -->
             </div>
         </div>
     </FullCard>
