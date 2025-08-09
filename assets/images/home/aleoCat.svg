@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 249 63.86">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_무제_그라디언트_38);
+      }
+
+      .cls-2 {
+        fill: url(#_무제_그라디언트_40);
+      }
+
+      .cls-3 {
+        fill: #334a7a;
+        font-family: Roboto-Bold, Roboto;
+        font-weight: 700;
+      }
+
+      .cls-3, .cls-4 {
+        font-size: 39.7px;
+      }
+
+      .cls-5 {
+        fill: url(#_무제_그라디언트_40-2);
+      }
+
+      .cls-6 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-4 {
+        fill: #4d6191;
+        font-family: Roboto-Medium, Roboto;
+        font-weight: 500;
+      }
+
+      .cls-7 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-8 {
+        fill: url(#_무제_그라디언트_38-2);
+      }
+    </style>
+    <linearGradient id="_무제_그라디언트_40" data-name="무제 그라디언트 40" x1="642.71" y1="1365.77" x2="679.55" y2="1402.62" gradientTransform="translate(548.59 -1426.69) rotate(45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6c86c3"/>
+      <stop offset=".11" stop-color="#667fbb"/>
+      <stop offset=".69" stop-color="#4d6196"/>
+      <stop offset="1" stop-color="#445688"/>
+    </linearGradient>
+    <linearGradient id="_무제_그라디언트_38" data-name="무제 그라디언트 38" x1="651.17" y1="1399.56" x2="681.41" y2="1369.26" gradientTransform="translate(548.59 -1426.69) rotate(45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6c86c3"/>
+      <stop offset=".03" stop-color="#6982be"/>
+      <stop offset=".19" stop-color="#5a71aa"/>
+      <stop offset=".38" stop-color="#50659c"/>
+      <stop offset=".61" stop-color="#4a5e94"/>
+      <stop offset="1" stop-color="#495c92"/>
+    </linearGradient>
+    <linearGradient id="_무제_그라디언트_40-2" data-name="무제 그라디언트 40" x1="3303.41" y1="-1580.34" x2="3340.25" y2="-1543.49" gradientTransform="translate(3479.86 1288.74) rotate(-135)" xlink:href="#_무제_그라디언트_40"/>
+    <linearGradient id="_무제_그라디언트_38-2" data-name="무제 그라디언트 38" x1="3311.87" y1="-1546.55" x2="3342.12" y2="-1576.86" gradientTransform="translate(3479.86 1288.74) rotate(-135)" xlink:href="#_무제_그라디언트_38"/>
+  </defs>
+  <g>
+    <path class="cls-2" d="M55.19,53.81c11.79-12.52,11.57-32.22-.67-44.46C42.5-2.67,23.29-3.09,10.75,8.05,21.16-.98,36.93-.55,46.83,9.35c9.81,9.81,10.31,25.38,1.53,35.8-.27.34-.55.67-.84.99l7.68,7.68Z"/>
+    <path class="cls-1" d="M46.83,9.35C36.93-.55,21.16-.98,10.75,8.05c-.23.21-.47.41-.69.62,0,0,0,0,0,0l7.68,7.68c8.27-7.55,21.11-7.33,29.11.67,7.69,7.69,8.19,19.84,1.52,28.12,8.78-10.41,8.27-25.99-1.53-35.8Z"/>
+    <path class="cls-5" d="M8.68,10.05c-11.79,12.52-11.57,32.22.67,44.46,12.02,12.02,31.23,12.44,43.77,1.29-10.41,9.03-26.18,8.6-36.08-1.29-9.81-9.81-10.31-25.38-1.53-35.8.27-.34.55-.67.84-.99l-7.68-7.68Z"/>
+    <path class="cls-8" d="M17.04,54.52c9.9,9.9,25.67,10.32,36.08,1.29.23-.21.47-.41.69-.62,0,0,0,0,0,0l-7.68-7.68c-8.27,7.55-21.11,7.33-29.11-.67-7.69-7.69-8.19-19.84-1.52-28.12-8.78,10.41-8.27,25.99,1.53,35.8Z"/>
+  </g>
+  <text class="cls-3" transform="translate(77.62 45.14)"><tspan x="0" y="0">ALEO</tspan></text>
+  <text class="cls-4" transform="translate(175.72 45.14)"><tspan x="0" y="0">C</tspan><tspan class="cls-7" x="25.92" y="0">A</tspan><tspan class="cls-6" x="50.01" y="0">T</tspan></text>
+</svg>

@@ -1,5 +1,5 @@
 <script setup>
-const { businessAUrl, businessBUrl, businessCUrl, businessDUrl, businessEUrl, businessFUrl } = useImg();
+const { businessAUrl, businessBUrl, businessCUrl, businessDUrl } = useImg();
 
 const isHovering = ref(false);
 
