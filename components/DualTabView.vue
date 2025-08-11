@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-const { postUrl, porepUrl, retrievalUrl, storagemarketUrl } = useImg();
+// const { postUrl, porepUrl, retrievalUrl, storagemarketUrl } = useImg();
 
 const categories = ref([
 {
@@ -39,14 +39,14 @@ const categories = ref([
                 <div class="content2">
                     <div class="content2-item">
                         <div class="content2-img-wrapper">
-                            <img src="/layout/images/web3/porep.png" alt="porep" class="content2-img" />
+                            <img src="/layout/images/web3/porep.webp" alt="porep" class="content2-img" />
                         </div>                        
                         <div>복제증명 _PoRep</div>
                         <div>Proof of Replication</div>
                     </div>
                     <div class="content2-item">
                         <div class="content2-img-wrapper">
-                            <img src="/layout/images/web3/post.png" alt="porep" class="content2-img" />
+                            <img src="/layout/images/web3/post.webp" alt="porep" class="content2-img" />
                         </div>
                         <div>시공간증명 _PoST</div>
                         <div>Proof of SpaceTime</div>
@@ -61,14 +61,14 @@ const categories = ref([
                 <div class="content2">
                     <div class="content2-item">
                         <div class="content2-img-wrapper">
-                            <img src="/layout/images/web3/storagemarket.png" alt="porep" class="content2-img" />
+                            <img src="/layout/images/web3/storagemarket.webp" alt="porep" class="content2-img" />
                         </div>                        
                         <div>스토리지 시장</div>
                         <div>Storage Market</div>
                     </div>
                     <div class="content2-item">
                         <div class="content2-img-wrapper">
-                            <img src="/layout/images/web3/retrieval.png" alt="porep" class="content2-img" />
+                            <img src="/layout/images/web3/retrieval.webp" alt="porep" class="content2-img" />
                         </div>
                         <div>검색(회수) 시장</div>
                         <div>Retrieval Market</div>
