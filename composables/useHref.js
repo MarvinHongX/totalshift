@@ -15,7 +15,8 @@ export const useHref = () => {
         return `https://aleocat.com`;
     });
     const explorerHref = computed(() => {
-        return `https://www.filutils.com/en`;
+        // return `https://www.filutils.com/en`;
+        return `https://filfox.info/en`;
     });
     const filswanHref = computed(() => {
         return `https://console.filswan.com`;

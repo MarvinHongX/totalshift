@@ -47,7 +47,8 @@ import filecoinLogoImg from '~/assets/images/web3/filecoinLogo.webp';
 import filecoinLogo2Img from '~/assets/images/web3/filecoinLogo2.webp';
 import filecoinBackgroundImg from '~/assets/images/web3/filecoinBackground.webp';
 
-import explorerBtnImg from '~/assets/images/web3/filutilsBtn.webp';
+// import explorerBtnImg from '~/assets/images/web3/filutilsBtn.webp';
+import explorerBtnImg from '~/assets/images/web3/filfoxBtn.webp';
 
 import kidcImg from '~/assets/images/home/KIDC.webp';
 import aleoImg from '~/assets/images/home/aleo.webp';

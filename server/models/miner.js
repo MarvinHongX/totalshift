@@ -15,11 +15,11 @@ const getPowerById = async (minerId) => {
         const rpcUrl = `${apiBase}/rpc/v0`;
         const rpcMethod = "Filecoin.StateMinerPower";
 
-        const cids = await getCids();
-
-        if (!cids) {
-            throw new Error('CIDs not found or invalid');
-        }
+        // const cids = await getCids();
+        const cids = null;
+        // if (!cids) {
+        //     throw new Error('CIDs not found or invalid');
+        // }
 
         const rpcParams = [
             minerId,
@@ -27,11 +27,9 @@ const getPowerById = async (minerId) => {
         ];
 
         const response = await rpcRequest(rpcUrl, rpcMethod, rpcParams);
-
         if (!response || !response.result) {
             throw new Error('Invalid response from the RPC request');
         }
-
         return response;
 
     } catch (error) {
@@ -66,19 +64,6 @@ const getBalanceById = async (minerId) => {
     }
 }
 
-const getTimestamps = async () => {
-    const config  = useRuntimeConfig();
-    
-    const apiBase = config.apiBase;
-
-    const rpcUrl = `${apiBase}/rpc/v0`;
-    let rpcMethod = "Filecoin.ChainHead";
-    const rpcParams = [];
-    const response = await rpcRequest(rpcUrl, rpcMethod, rpcParams);
-
-    return response.result && response.result.Blocks[0].Timestamp ? response.result.Blocks[0].Timestamp : null;
-}
-
 const getCids = async () => {
     const config  = useRuntimeConfig();
     
@@ -110,4 +95,4 @@ const rpcRequest = async (url, method, params) => {
 };
 
 
-export { getScoreById, getPowerById, getBalanceById, getTimestamps }
+export { getScoreById, getPowerById, getBalanceById }
