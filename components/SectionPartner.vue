@@ -7,9 +7,9 @@ const items = ref([
     { name: 'seagate', url: seagateUrl },
     { name: 'protocolLabs', url: protocolLabsUrl },
     { name: 'ipfs', url: ipfsUrl },
-    { name: 'filecoin', url: filecoinUrl },
+    // { name: 'filecoin', url: filecoinUrl },
     { name: 'kidc', url: kidcUrl },
-    { name: 'aleo', url: aleoUrl },
+    // { name: 'aleo', url: aleoUrl },
 ]);
 </script>
 <template>

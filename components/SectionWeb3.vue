@@ -1,8 +1,7 @@
 <script setup>
 const { web3Filecoin01Url, web3Filecoin02Url, web3Filecoin03Url, web3Filecoin04Url } = useImg();
 const tabNames = [
-    { name: '파일코인' },
-    { name: '알레오 크레딧 (준비중)' },
+    { name: 'Web3.0' },
 ];
 </script>
 <template>
@@ -19,12 +18,8 @@ const tabNames = [
         <div class="web3-header2 mb-7">
             <span>이는 데이터의 안전성과 투명성을 높여 개인의 자유와 안전을 보장합니다.</span>
         </div>
-        <!-- <div class="web3-header2 web3-paragraph mb-7">
-            <span>연결된 블록들로 데이터를 분산 저장하며 변경을 방지하고, 금융부터 의료, 공급망 등 다양한 분야에 혁신을 가져옵니다.</span>
-            <span>이는 데이터의 안전성과 투명성을 높여 개인의 자유와 안전을 보장합니다.</span>
-        </div> -->
         <div class="web3-tab">
-            <TabView :tabNames="tabNames">
+            <JustView :tabNames="tabNames">
                 <template #default="{ tabIndex }">
                     <div v-if="tabIndex === 0" class="web3-items">
                         <div class="item-group">
@@ -85,7 +80,7 @@ const tabNames = [
                         
                     </div>
                 </template>
-            </TabView>
+            </JustView>
         </div>
     </FullCard>
 </template>

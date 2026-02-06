@@ -11,7 +11,7 @@ definePageMeta({
         <SectionHistory />
         <SectionBusiness />
         <SectionTeam />
-        <SectionYoo />
+        <!-- <SectionYoo /> -->
         <SectionSong />
         <SectionPartner />
         <SectionIdc />

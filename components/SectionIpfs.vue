@@ -3,7 +3,7 @@ const { ipfsLogoUrl } = useImg();
 const { ipfsIntroHref, ipfsDocsHref, ipfsNewsHref } = useHref();
 </script>
 <template>
-    <FullFoldCard class="section-ipfs" :logoUrl="ipfsLogoUrl" logoName="IPFS" :isExpanded="false">
+    <FullFoldCard class="section-ipfs" :logoUrl="ipfsLogoUrl" logoName="IPFS" :isExpanded="true">
         <div class="ipfs-img-wrapperer">
             <NuxtImg format="webp" loading="lazy" :src="ipfsLogoUrl" alt="ipfsLogo" class="ipfs-img"/>
         </div>

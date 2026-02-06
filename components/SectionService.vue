@@ -19,7 +19,7 @@ const { skyzoneHref, aleocatHref } = useHref();
                         </div>
                     </a>
                 </div>
-                <div class="service-itemEnd">
+                <!-- <div class="service-itemEnd">
                     <a :href="aleocatHref" target="_blank" class="service-link">
                         <div class="mb-6 img-wrapper">
                             <img loading="lazy" :src="aleoCatUrl" alt="aleocat"/>
@@ -28,7 +28,7 @@ const { skyzoneHref, aleocatHref } = useHref();
                             <span>알레오 캣</span>
                         </div>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </FullCard>

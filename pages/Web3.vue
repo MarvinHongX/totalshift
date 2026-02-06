@@ -11,11 +11,11 @@ definePageMeta({
         <SectionMainComponentsTop />
         <SectionIpfs />
         <SectionSeparator />
-        <SectionFilecoin />
-        <SectionMainComponentsBottom />
-        <SectionFilecoinNode />
-        <SectionAleo />
-        <SectionCenterB />
+        <!-- <SectionFilecoin /> -->
+        <!-- <SectionMainComponentsBottom /> -->
+        <!-- <SectionFilecoinNode /> -->
+        <!-- <SectionAleo /> -->
+        <!-- <SectionCenterB /> -->
     </div>
 </template>
 
